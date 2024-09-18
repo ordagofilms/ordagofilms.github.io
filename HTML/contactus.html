@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./favicon.ico">
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="bg-gray-900 fixed w-full z-50 flex items-center justify-between px-8 py-4">
+        <div class="flex items-center">
+            <a href="./index.html">
+                <img src="../Assets/Logo/Ordago_VerdeNegro.png" class="h-12">
+            </a>
+        </div>
+        <ul class="flex items-center gap-8">
+            <li><a href="./aboutus.html" class="text-white text-lg hover:text-gray-400">Quiénes Somos</a></li>
+            <li><a href="./contactus.html" class="text-white text-lg hover:text-gray-400">Contacto</a></li>
+        </ul>
+    </nav>   
+<section id="contact" class="py-20 ">
+    <h2 class="text-4xl font-bold text-center mb-12">Contacto</h2>
+    <form action="../PHP/submit_form.php" method="POST" class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8">
+        <label for="name" class="block text-lg mb-2">Nombre:</label>
+        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded mb-4" required>
+
+        <label for="email" class="block text-lg mb-2">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded mb-4" required>
+
+        <label for="message" class="block text-lg mb-2">Mensaje:</label>
+        <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded mb-4" required></textarea>
+
+        <button type="submit" class="w-full bg-gray-900 text-white py-3 rounded">Enviar</button>
+    </form>
+</section>
+
+
+
+
+
+</body>
+</html>
