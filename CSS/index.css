@@ -18,3 +18,16 @@ html::-webkit-scrollbar {
   font-family: "Gotham";
   src: url("../Assets/Fonts/Gotham-Light.otf");
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 4px;
+  }
+  nav img {
+    height: 48px;
+  }
+  nav ul li {
+    text-align: center;
+  }
+}
