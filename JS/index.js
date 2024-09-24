@@ -1,9 +1,17 @@
+
+
 function carousel() {
     return {
         activeSlide: 0,
+        interval : null,
         slides: [
             { 
-                imgSrc: '../Assets/Producciones/Ficcion/LTDSF/LTDSF_1.jpg', 
+                imgSrc: '../Assets/Producciones/Spot/perfectskull-7.jpg', 
+                title: 'SPOT', 
+                description: '' 
+            },
+            { 
+                imgSrc: '../Assets/Producciones/Ficcion/LTDSF/LTDSF_4.jpg', 
                 title: 'CINE', 
                 description: '' 
             },
@@ -36,14 +44,23 @@ function carousel() {
         ],
         prevSlide() {
             this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1;
+            this.stopAutoSlide()
         },
         nextSlide() {
             this.activeSlide = this.activeSlide === this.slides.length - 1 ? 0 : this.activeSlide + 1;
+            this.stopAutoSlide()
+        },
+        nextAutoSlide() {
+            this.activeSlide = this.activeSlide === this.slides.length - 1 ? 0 : this.activeSlide + 1;
         },
         startAutoSlide() {
-            setInterval(() => {
-                this.nextSlide();
-            }, 5000); 
+            this.interval = setInterval(() => {
+                this.nextAutoSlide();
+            }, 100); 
+        },
+        stopAutoSlide() {
+            clearInterval(this.interval);
         }
-    }
+        }
+
 }
