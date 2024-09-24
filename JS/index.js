@@ -56,7 +56,7 @@ function carousel() {
         startAutoSlide() {
             this.interval = setInterval(() => {
                 this.nextAutoSlide();
-            }, 100); 
+            }, 7000); 
         },
         stopAutoSlide() {
             clearInterval(this.interval);
