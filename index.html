@@ -10,6 +10,8 @@
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="icon" href="./HTML/favicon.ico">
+    <!-- Use the public CDN for Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body class="font-sans antialiased">
 <nav class="bg-gray-900 bg-opacity-0 fixed w-full z-50 flex items-center justify-between px-8 py-4">
@@ -37,7 +39,7 @@
               x-transition:leave-start="translate-x-0"
               x-transition:leave-end="-translate-x-full"
           >
-              <img :src="slide.imgSrc" alt="Slide Image" class="w-full h-full object-cover">
+              <img :src="slide.imgSrc" alt="Slide Image" class="w-full object-cover">
           </div>
       </template>
   </div>
@@ -56,51 +58,14 @@
     <h1 class="text-5xl md:text-7xl font-bold" style="font-family: SpiritsSharp; color: #20e2cf; opacity: 75%;" x-text="slides[activeSlide].title"></h1>
     <p class="text-lg md:text-2xl mt-4" x-text="slides[activeSlide].description"></p>
   </div>
+
+
+  <div class="absolute inset-x-0 bottom-4 flex justify-center items-center gap-4 z-30">
+      <a href="https://www.instagram.com/ordago.films/" target="_blank" class="text-[#20e2cf] text-4xl hover:text-[#167d73]">
+          <i class="fab fa-instagram"></i>
+      </a>
+  </div>
 </header>
 
- <!--
-    <section id="projects" class="py-20 bg-gray-100">
-      <h2 class="text-4xl font-bold text-center mb-12">Nuestros Proyectos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
-          <div class="w-full relative">
-              <div class="w-full max-w-4xl mx-auto" x-data="carousel()" x-init="startAutoSlide()">
-                  <div class="relative overflow-hidden rounded-lg shadow-lg h-96">
-                      <template x-for="(slide, index) in slides" :key="index">
-                          <div
-                              class="absolute inset-0 transition-all transform"
-                              x-show="activeSlide === index"
-                              x-transition:enter="transform ease-out duration-700"
-                              x-transition:enter-start="translate-x-full"
-                              x-transition:enter-end="translate-x-0"
-                              x-transition:leave="transform ease-out duration-700"
-                              x-transition:leave-start="translate-x-0"
-                              x-transition:leave-end="-translate-x-full"
-                          >
-                              <img :src="slide" alt="Slide" class="w-full h-full object-cover">
-                          </div>
-                      </template>
-                      <button @click="prevSlide()"
-                              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full">
-                          &#10094;
-                      </button>
-                      <button @click="nextSlide()"
-                              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full">
-                          &#10095;
-                      </button>
-                  </div>
-                  <div class="flex justify-center space-x-2 mt-4">
-                      <template x-for="(slide, index) in slides" :key="index">
-                          <button
-                              class="w-4 h-4 rounded-full focus:outline-none"
-                              :class="{ 'bg-gray-800': activeSlide === index, 'bg-gray-400': activeSlide !== index }"
-                              @click="activeSlide = index"
-                          ></button>
-                      </template>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  -->
 </body>
 </html>

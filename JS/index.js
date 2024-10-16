@@ -6,6 +6,11 @@ function carousel() {
         interval : null,
         slides: [
             { 
+                imgSrc: '../Assets/Producciones/Documental/Scan-Web-rana.jpg', 
+                title: 'DOCUMENTAL', 
+                description: '' 
+            },
+            { 
                 imgSrc: '../Assets/Producciones/Spot/perfectskull-7.jpg', 
                 title: 'SPOT', 
                 description: '' 
@@ -40,7 +45,13 @@ function carousel() {
                 imgSrc: '../Assets/Producciones/Videoclip/Scan_web_tequedas.jpg', 
                 title: 'VIDEOCLIP', 
                 description: '' 
+            },
+            { 
+                imgSrc: '../Assets/Producciones/Ficcion/Cigarrillos/Cigarrillos-1.jpg', 
+                title: 'CINE', 
+                description: '' 
             }
+            
         ],
         prevSlide() {
             this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1;
