@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos - Órdago</title>
+    <link rel="stylesheet" href="../CSS/articles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js with defer -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased bg-gray-100">
+    <!-- Barra de navegación -->
+    <nav class="bg-gray-900 fixed w-full z-50 flex items-center justify-between px-4 md:px-8 py-4 shadow-md">
+        <div class="flex items-center">
+            <a href="../index.html">
+                <img src="../Assets/Logo/Ordago_VerdeBlanco.png" class="h-16 md:h-24" alt="Órdago Logo">
+            </a>
+        </div>
+        <ul class="flex items-center gap-4 md:gap-8">
+            <li><a href="./articles.html" class="text-white text-sm md:text-lg hover:text-gray-400">Artículos</a></li>
+            <li><a href="./aboutus.html" class="text-white text-sm md:text-lg hover:text-gray-400">Quiénes Somos</a></li>
+            <li><a href="./contactus.html" class="text-white text-sm md:text-lg hover:text-gray-400">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección principal -->
+    <main class="pt-36 px-4 md:px-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+    </main>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-header" id="modal-title">Título del Artículo</div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div id="modal-details">
+                    <p><strong>Director:</strong> <span id="modal-director"></span></p>
+                    <p><strong>Actores:</strong> <span id="modal-actors"></span></p>
+                    <p><strong>Producción:</strong> <span id="modal-production"></span></p>
+                    <p><strong>DOP:</strong> <span id="modal-dop"></span></p>
+                    <p><strong>Sonido:</strong> <span id="modal-sound"></span></p>
+                    <p><strong>Asistente:</strong> <span id="modal-assistant"></span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="footer-content">
+                    <img src="../Assets/icons/instagram-white.svg" alt="Instagram" class="footer-icon" />
+                </div>
+                <div class="footer-content">
+                    <p>info@ordagofilms.com</p>
+                </div>
+                <div class="footer-content">
+                    <img src="../Assets/icons/whatsapp-white.svg" alt="WhatsApp" class="footer-icon" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <!-- Place articles.js at the end of the body to ensure the DOM is loaded -->
+    <script defer src="../JS/articles.js"></script>
+</body>
+</html>

@@ -75,3 +75,32 @@ function carousel() {
         }
 
 }
+
+const initAnimations = () => {
+    const logo = document.querySelector('img[src*="Logo"]');
+    const instagramIcon = document.querySelector('.fa-instagram');
+
+    if (logo) {
+        logo.style.transition = 'transform 0.5s ease-in-out';
+        logo.addEventListener('mouseenter', () => {
+            logo.style.transform = 'scale(1.1)';
+        });
+        logo.addEventListener('mouseleave', () => {
+            logo.style.transform = 'scale(1)';
+        });
+    }
+
+    if (instagramIcon) {
+        instagramIcon.style.transition = 'color 0.3s';
+        instagramIcon.addEventListener('mouseenter', () => {
+            instagramIcon.style.color = '#167d73';
+        });
+        instagramIcon.addEventListener('mouseleave', () => {
+            instagramIcon.style.color = '#20e2cf';
+        });
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initAnimations();
+});
