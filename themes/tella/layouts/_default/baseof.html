@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ or .Site.Language.Lang "ja" }}">
+
+<head>
+  {{- partial "head.html" . -}}
+  {{ block "meta_tags" . }}{{end}}
+</head>
+
+<body class="flex flex-col min-h-screen bg-neutral-900 text-white">
+  <main class="flex-grow">
+    {{- partial "header.html" . -}}
+    <div class="mt-28">
+      {{- block "main" . }}{{- end }}
+    </div>
+  </main>
+  {{- partial "footer.html" . -}}
+</body>
+
+</html>

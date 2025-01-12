@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  
+    .fade-in-item {
+      animation: fadeIn 0.5s ease-in-out forwards;
+      opacity: 0; /* Ensure items are initially hidden */
+    }
+  </style>
+
+
+<div class="mx-auto my-10 w-full">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl text-center mb-4">{{.Title}}</h1>
+        <div class="content py-1">{{.Content}}</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            {{ range .Pages.ByWeight }}
+            <div class="fade-in-item">
+                {{ .Render "summary" }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll('.fade-in-item');
+      items.forEach(item => {
+        const randomDelay = (Math.random() * 1).toFixed(2); // Random delay between 0 and 1.5 seconds
+        item.style.animationDelay = `${randomDelay}s`;
+      });
+    });
+  </script>
+{{ end }}

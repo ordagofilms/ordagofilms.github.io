@@ -1,0 +1,10 @@
+<div class="relative clearfix">
+    <img src="{{ .Get "src" }}" 
+         alt="{{ .Get "alt" }}" 
+         class="float-none w-full md:float-right md:ml-6 mb-4 {{ with .Get "class" }}{{ . }}{{ end }}"
+         {{ with .Get "width" }}style="width: {{ . }};"{{ end }}
+         {{ with .Get "style" }}style="{{ . }}"{{ end }}>
+    <div class="text-justify">
+        {{ .Inner | markdownify }}
+    </div>
+</div> 

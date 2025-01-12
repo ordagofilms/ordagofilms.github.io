@@ -1,0 +1,230 @@
+<div class="custom-slider h-screen relative overflow-hidden">
+    <div class="slides flex h-screen transition-transform duration-1000">
+        <!-- Clone the last slide to the beginning -->
+        {{ with index .Site.Data.slide (sub (len .Site.Data.slide) 1) }}
+        <div class="slide h-screen flex-shrink-0 w-full">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+            <img class="w-full h-full object-cover object-top" src="{{ .image }}" alt="{{ .alt }}">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-6xl font-bold" style="text-transform: uppercase; font-family: Spirits Sharp, 'Times New Roman', Times, serif; color: #39bfb8;">{{ .title }}</h1>
+            </div>
+        </div>
+        {{ end }}
+
+        <!-- Render all slides -->
+        {{ range .Site.Data.slide }}
+        <div class="slide h-screen flex-shrink-0 w-full">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+            <img class="w-full h-full object-cover object-top" src="{{ .image }}" alt="{{ .alt }}">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-6xl font-bold" style="text-transform: uppercase; font-family: Spirits Sharp, 'Times New Roman', Times, serif; color: #39bfb8;">{{ .title }}</h1>
+            </div>
+        </div>
+        {{ end }}
+
+        <!-- Clone the first slide to the end -->
+        {{ with index .Site.Data.slide 0 }}
+        <div class="slide h-screen flex-shrink-0 w-full">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+            <img class="w-full h-full object-cover object-top" src="{{ .image }}" alt="{{ .alt }}">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-6xl font-bold" style="text-transform: uppercase; font-family: Spirits Sharp, 'Times New Roman', Times, serif; color: #39bfb8;">{{ .title }}</h1>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    <!-- Navigation Arrow Icons -->
+    <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-white cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+    </button>
+    <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-white cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+    </button>
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const slidesContainer = document.querySelector(".slides");
+    const slides = document.querySelectorAll(".slide");
+    let totalSlides = slides.length;
+    let slideWidth = slides[0].offsetWidth;
+    const titles = document.querySelectorAll(".slide h1"); // Select all titles
+
+    let currentIndex = 1; // Start at the first actual slide (not the cloned last one)
+    let isTransitioning = false;
+
+    // Function to recalculate slide width on resize
+    function updateSlideWidth() {
+        slideWidth = slides[0].offsetWidth; // Update the width of a slide
+        slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`; // Update the slide position
+    }
+
+    function applyTitleAnimation(index) {
+        // Remove animation from all titles first
+        titles.forEach(title => title.classList.remove("title-flip"));
+        // Apply animation only to the visible slide's title
+        titles[index].classList.add("title-flip");
+    }
+
+    // Set the initial position to the first actual slide
+    slidesContainer.style.transition = "none"; // Disable animation for the initial position
+    slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    // Handle resizing of the window
+    window.addEventListener("resize", function () {
+        updateSlideWidth(); // Recalculate slide width on resize
+    });
+
+    function updateSlidePosition() {
+        slidesContainer.style.transition = "none"; // Disable transition for the jump
+        slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        isTransitioning = false;
+    }
+
+    function showNextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        currentIndex++;
+        slidesContainer.style.transition = "transform 1s ease-in-out"; // Add smooth transition
+        slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+        // Reset to first slide when reaching the cloned last slide
+        if (currentIndex === totalSlides - 1) {
+            setTimeout(() => {
+                currentIndex = 1; // Jump back to the first actual slide
+                updateSlidePosition();
+            }, 1000); // Match transition duration
+        }
+        applyTitleAnimation(currentIndex);
+    }
+
+    function showPrevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        currentIndex--;
+        slidesContainer.style.transition = "transform 1s ease-in-out"; // Add smooth transition
+        slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+        // Reset to last slide when reaching the cloned first slide
+        if (currentIndex === 0) {
+            setTimeout(() => {
+                currentIndex = totalSlides - 2; // Jump to the last actual slide
+                updateSlidePosition();
+            }, 1000); // Match transition duration
+        }
+    }
+
+    // Start auto-slide with a delay
+    let autoSlideInterval;
+
+    setTimeout(() => {
+        autoSlideInterval = setInterval(showNextSlide, 4000); // Start auto-slide after 3 seconds
+
+        // Allow user to navigate manually
+        document.getElementById("nextSlide").addEventListener("click", () => {
+            clearInterval(autoSlideInterval); // Stop auto-sliding on manual interaction
+            showNextSlide();
+        });
+
+        document.getElementById("prevSlide").addEventListener("click", () => {
+            clearInterval(autoSlideInterval); // Stop auto-sliding on manual interaction
+            showPrevSlide();
+        });
+
+        // Disable transition after manual jump
+        slidesContainer.addEventListener("transitionend", () => {
+            isTransitioning = false;
+        });
+    }, 3000); // 3000 milliseconds = 3 seconds delay
+});
+
+
+</script>
+
+  
+<style>
+    /* General Slider Styles */
+.custom-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transition should be here for smooth sliding */
+}
+
+.slide {
+    flex: 1 0 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1; /* Ensure slides are behind the buttons */
+}
+
+/* Arrow Icon Button Styles */
+#prevSlide, #nextSlide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: white;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above everything else */
+}
+
+#prevSlide {
+    left: 1rem;
+}
+
+#nextSlide {
+    right: 1rem;
+}
+
+#prevSlide:hover, #nextSlide:hover {
+    color: #39bfb8; /* Change color on hover */
+}
+
+/* SVG Arrow Styling */
+#prevSlide svg, #nextSlide svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: currentColor; /* Inherits color */
+    transition: color 0.3s ease; /* Smooth transition for color and font size */
+}
+
+@keyframes flipInX {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.title-flip {
+    animation: flipInX 1s;
+    opacity: 1; /* Ensure the title is visible after animation */
+}
+
+
+</style>
+
+

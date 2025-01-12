@@ -1,0 +1,177 @@
+<header>
+    <style>
+        #overlay {
+            position: fixed; /* Ensure it covers the entire viewport */
+            top: 0; /* Start from the top */
+            left: 0; /* Start from the left */
+            width: 100vw; /* Full width of the viewport */
+            height: 100vh; /* Full height of the viewport */
+            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+            z-index: 20; /* Keep it above the header and other elements */
+            display: none; /* Initially hidden */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Horizontally center content */
+            align-items: center; /* Vertically center content */
+        }
+
+        /* Display the overlay when the 'active' class is added */
+        #overlay.active {
+            display: flex; /* Show and use flexbox layout */
+        }
+
+        #overlay ul {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            list-style: none; /* Remove bullet points */
+        }
+
+        #overlay li {
+            padding: 10px; /* Add spacing between list items */
+        }
+
+        #overlay a {
+            color: white; /* Ensure links are visible */
+            font-size: 2rem; /* Adjust the font size for better visibility */
+            text-decoration: none; /* Remove underline */
+        }
+        /* Base styles for the header */
+        header {
+            position: fixed; /* Keeps the header at the top */
+            width: 100%; /* Spans the full width */
+            z-index: 50; /* Ensures it stays on top of other elements */
+        }
+
+        nav {
+            background: transparent;
+            transition: background-color 0.3s ease;
+            position: relative; /* Added position relative */
+            z-index: 99; /* Increased z-index */
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.7); /* Slightly opaque background when scrolled */
+        }
+
+        nav a {
+            color: white; /* Ensure links are visible on a transparent background */
+            text-decoration: none;
+            transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition for color and font size */
+        }
+
+        nav a:hover {
+            color: #39bfb8 !important; /* Change color on hover */
+            font-size: 1.02em !important; /* Increase font size on hover */
+        }
+
+        #overlay-item {
+            cursor: pointer !important;
+        }
+
+        #overlay-item:hover {
+            color: #39bfb8 !important; /* Change color on hover */
+            font-size: 1.02em !important; /* Increase font size on hover */
+        }
+
+        #hamburgerbtn {
+            margin-right: 20px; /* Increase space between the hamburger button and the right edge */
+        }
+        /* Hamburger button styles */
+        #hamburgerbtn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            position: relative;
+            background: white;
+            z-index: 1;
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+        }
+
+        #hamburgerbtn.is-open span {
+            background: white; /* Keep it white when menu is open */
+        }
+
+        #hamburgerbtn.is-open span:first-child {
+            transform: rotate(45deg) translate(3px, 0px); /* Rotate the first line */
+        }
+
+        #hamburgerbtn.is-open span:nth-child(2) {
+            opacity: 0; /* Make the middle line disappear */
+        }
+
+        #hamburgerbtn.is-open span:last-child {
+            transform: rotate(-45deg) translate(3px, 0px); /* Rotate the last line */
+        }
+        header img {
+            margin-left: 20px; /* Adjust this value as needed */
+        }
+
+        
+
+
+    </style>
+
+    <div id="overlay">
+        <ul class="flex flex-col text-center list-none text-white text-3xl">
+            {{ range .Site.Menus.main }}
+            <li class="p-2">
+                <a id="overlay-item" href="{{ .URL | safeURL }}">
+                    <span>{{ .Name }}</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-4">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900">
+            <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}"
+                    class="{{ .Site.Params.logo.size }} mr-3 cursor-pointer hover:scale-105 duration-300" src="{{ .Site.Params.logo.main | relURL }}"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-12 h-8 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL | safeURL }}"
+                    class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8">
+                    {{ .Name }}
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Add scroll event to change navbar background on scroll
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+    </script>
+    <script>
+        function toggleNav() {
+          var hamburger = document.getElementById("hamburgerbtn");
+          var overlay = document.getElementById("overlay");
+          var body = document.body;
+    
+          hamburger.addEventListener("click", function () {
+            overlay.classList.toggle("open");
+            hamburger.classList.toggle("is-open");
+
+          });
+        }
+        toggleNav();
+    
+    </script>
+</header>

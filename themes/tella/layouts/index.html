@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="{{ or .Site.Language.Lang "ja" }}">
+
+<head>
+    {{- partial "head.html" . -}}
+    <meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+    <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+    <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+    <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+    <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+    <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+    <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+    <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+    <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+</head>
+
+<body class="flex flex-col min-h-screen bg-neutral-900">
+    <div class="loadingScreen text-white">
+            <div class="logo-container bg-neutral-900"></div>
+            <div class="logo-container-inner"></div>
+            <img src="img/logo/letter.png" alt="O" class="first-letter">
+            <img src="img/logo/rest.png" alt="rdgao" class="rest-of-letters">
+            <h2 class="subtitle">FILMS</h2>
+    </div>
+    <main class="flex-grow">
+        {{- partial "alert.html" . -}}
+        {{- partial "header.html" . -}}
+        {{- partial "slider.html" . -}}
+        {{ if ne .Site.Params.showBlog false }}
+        <div class="mx-auto my-10 max-w-6xl">
+            <h2 class="text-4xl ml-2 text-white">Blog</h2>
+            {{- partial "recent.html" . -}}
+        </div>
+        {{ end }}
+    </main>
+    
+</body>
+
+</html>
+
+<style>
+    
+
+/* Spin animation and slide for the first letter */
+@keyframes spinAndSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-40%) rotate3d(0, 0, 0, 0deg); /* Centered */
+    }
+    55% {
+        opacity: 1;
+        transform: translateX(-40%) rotate3d(1, -1, 0, 720deg); /* Spin in place */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-40%) translateX(-120%); /* Adjust final position for collision */
+    }
+}
+
+/* Animation for showing the rest of the letters */
+@keyframes showRestOfLetters {
+    0% {
+        opacity: 0;
+        transform: translateX(55%); /* Start offset */
+    }
+    1% {
+        opacity: 0;
+        transform: translateX(9%); /* Start offset */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(9%); /* Move to the center next to the first letter */
+    }
+}
+
+/* Animation for fading in the subtitle */
+@keyframes fadeInSubtitle {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start offset */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-3px); /* Settle into position */
+    }
+}
+
+
+</style>
+
+<script>
+    var loadingScreen = document.querySelector(".loadingScreen");
+window.addEventListener('load', function() {
+    // Set a minimum delay of 3 seconds before starting fade out
+    setTimeout(function() {
+        loadingScreen.classList.add('hidden'); // Add the hidden class to start fade out
+        // After fade out completes, set display to 'none' to remove from the layout
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 1000); // Wait for the fade-out transition to finish (1 second)
+    }, 3000); // 3000 milliseconds = 3 seconds
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const firstLetter = document.querySelector(".first-letter");
+    const restOfLetters = document.querySelector(".rest-of-letters");
+    const subtitle = document.querySelector(".subtitle");
+
+    // Delay the animation until the page is fully loaded
+    setTimeout(() => {
+        // Add classes to start animations for the logo
+        firstLetter.classList.add("spin");
+        restOfLetters.classList.add("show-rest");
+
+        // Delay showing the subtitle to match the end of "rest-of-letters" animation
+        setTimeout(() => {
+            subtitle.style.opacity = "1"; // Make subtitle visible
+            subtitle.style.transform = "translateY(0)"; // Ensure proper position
+        }, 2000); // Adjust this to match the duration of the previous animations
+    }, 500); // Initial delay for the logo animations
+});
+
+</script>

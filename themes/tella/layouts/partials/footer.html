@@ -1,0 +1,36 @@
+<footer class="bg-tlgray-100">
+  {{ if not .IsHome }}
+  <script src='{{ "/js/clipboard.min.js" | relURL }}'></script>
+  <script src='{{ "/js/highlight.min.js" | relURL }}'></script>
+  <script src='{{ "/js/highlightjs-line-numbers.min.js" | relURL }}'></script>
+  <script src='{{ "/js/sweetalert2.min.js" | relURL }}'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  {{ end }}
+  
+  {{ if .Site.Params.googleFonts }}
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  {{ else }}
+  <link href='{{ "css/webfonts.min.css" | relURL }}' rel="stylesheet" />
+  {{ end }}
+  <div class="copy pl-8 py-5 bg-neutral-800 text-md" style="display: flex; justify-content: space-between; align-items: center;">
+    <div>&copy; {{site.Title}} {{ now.Year }} All Rights Reserved.</div>
+    <div>
+      <a href="mailto:info@ordagofilms.com" class="mr-4 text-gray-400">info@ordagofilms.com</a>
+      <a href="https://www.instagram.com/ordago.films/" class="mr-8 text-gray-400">@ordago.films</a> 
+    </div>
+</div>
+
+  
+</footer>

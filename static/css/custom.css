@@ -1,0 +1,140 @@
+/* 
+ This CSS file is used to override the existing styles of the theme.
+ You can change the article headings, fonts, colors, etc.
+*/
+
+/* Default cursor */
+
+.loadingScreen {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1; /* Start with full opacity */
+    transition: opacity 0.5s ease-out; /* Apply fade-out transition */
+    }
+
+    .loadingScreen.hidden {
+        opacity: 0; /* Fade to 0 opacity */
+    }
+    /* Basic setup for the logo container */
+/* Basic setup for the logo container */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure it fills the screen */
+    overflow: hidden;
+}
+
+/* The first letter setup (initially centered) */
+.first-letter {
+    opacity: 0;
+    font-size: 5rem; /* Size of the letter */
+    font-weight: bold;
+    position: absolute;
+    height: 70px;
+    margin-bottom: 26px;
+    animation: spinAndSlide 2s ease forwards;
+    transform: translateX(-50%); /* Start centered */
+}
+
+/* The rest of the letters (initially hidden) */
+.rest-of-letters {
+    font-size: 5rem;
+    font-weight: bold;
+    height: 70px;
+    opacity: 0; /* Start hidden */
+    position: absolute;
+    animation: showRestOfLetters 2s 1s forwards; /* Starts after the spin & slide */
+    transform: translateX(50%); /* Start offset to the right */
+}
+/* Subtitle styling */
+.subtitle {
+    font-size: 2.7rem; /* Adjust as needed */
+    font-family: 'Gotham Light', Arial, sans-serif;
+    color: white;
+    opacity: 0; /* Start hidden */
+    position: absolute;
+    margin-top: 90px;
+    margin-right: 82px;
+    animation: fadeInSubtitle 2s ease forwards; /* Trigger this animation */
+    animation-delay: 1s; /* Delay matches "rest-of-letters" animation */
+    transform: translateY(20px); /* Slight offset for entry effect */
+}
+
+* {
+    cursor: url('/img/cursors/arrow.svg') 12 12, auto !important;
+}
+
+/* Cursor for clickable elements */
+a, button, [role="button"], input[type="submit"], input[type="button"], 
+.cursor-pointer, #hamburgerbtn, .swiper-button-next, .swiper-button-prev {
+    cursor: url('/img/cursors/hand.svg') 12 12, pointer !important;
+}
+
+/* Optional: Cursor for text selection */
+input[type="text"], input[type="email"], textarea, [contenteditable="true"] {
+    cursor: url('/img/cursors/arrow.svg') 12 12, text !important;
+}
+
+/* Font declarations */
+@font-face {
+    font-family: 'Gotham Light';
+    src: url('/fonts/Gotham-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spirits Sharp';
+    src: url('/fonts/SpiritsSharp-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'Gotham Light', Arial, sans-serif;
+}
+
+/* Background Image Styles */
+.background-image {
+    position: fixed;
+    top: -40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Make sure the background stays behind everything */
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    color: #39bfb8;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-bottom: 30px;
+}

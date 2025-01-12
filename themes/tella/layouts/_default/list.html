@@ -1,0 +1,78 @@
+{{ define "meta_tags" }}
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-item {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0; /* Initially hidden */
+  }
+</style>
+
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="{{ .Title }}">
+
+{{ if .Params.image }}
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{ end }}
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
+{{ end }}
+
+{{- if .Description }}
+<meta name="description" content="{{ .Description }}" />
+<meta property="og:description" content="{{ .Description }}" />
+<meta property="twitter:description" content="{{ .Description }}" />
+{{- else if .Summary }}
+<meta name="description" content="{{ .Summary }}" />
+<meta property="og:description" content="{{ .Summary }}" />
+<meta property="twitter:description" content="{{ .Summary }}" />
+{{- else if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="twitter:description" content="{{ .Site.Params.description }}" />
+{{- end }}
+
+{{ end }}
+
+{{ define "main" }}
+<div class="mx-auto my-10 max-w-6xl">
+  <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+    <h1 class="title text-5xl mb-4 text-center">{{.Title}}</h1>
+    <div class="content py-1 text-white">{{.Content}}</div>
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
+    {{ range $paginator.Pages }}
+    <a href="{{ .Permalink }}" class="fade-in-item">
+      <div>{{ partial "summary.html" . }}</div>
+    </a>
+    {{ end }}
+  </div>
+  {{ partial "paginator.html" . }}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll('.fade-in-item');
+    items.forEach((item, index) => {
+      const delay = index * 0.2; // Delay increases by 0.2s for each item
+      item.style.animationDelay = `${delay}s`;
+    });
+  });
+</script>
+{{ end }}
+
+
+

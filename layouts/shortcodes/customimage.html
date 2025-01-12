@@ -1,0 +1,6 @@
+<div class="flex justify-center my-4">
+    <img src="{{ .Get "src" }}" 
+         alt="{{ .Get "alt" }}" 
+         class="{{ with .Get "class" }}{{ . }}{{ end }}"
+         {{ with .Get "width" }}style="width: {{ . }}"{{ end }}>
+</div> 
