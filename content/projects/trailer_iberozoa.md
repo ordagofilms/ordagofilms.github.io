@@ -6,8 +6,18 @@ featured: true
 weight: 8
 image: "/img/projects/mugueta_sonriendo.png"
 description: Corporativo
+credits:
+  - role: "Guion, dirección y producción"
+    people: ["Mario Martín Higuera"]
+
+  - role: "Grabación, realización y montaje"
+    people: ["Andrés Gese"]
+
+  - role: "Rodajes"
+    people: ["Lucas de la Morena, Nerea Moreno, David López-Brea"]
+
 ---
 {{< center >}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan dapibus purus, vel maximus erat facilisis vel. Suspendisse eu ipsum consequat, sodales nulla vel, faucibus velit. Fusce imperdiet lacus nec cursus auctor. In vulputate arcu et nulla 
+Texto??
 {{< /center >}}
-{{< youtube ZJthWmvUzzc >}}
+{{< youtube q_T_a91kaI8 >}}
