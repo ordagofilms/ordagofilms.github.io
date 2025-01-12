@@ -1,30 +1,25 @@
 ---
-title: "Mariposas"
-date: 2020-06-23T12:33:45+10:00
+title: "MUESTREO MARIPOSAS IBEROZOA"
+date: 2025-01-09T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
 image: "/img/projects/mariposas.jpg"
 description: Documental
 credits:
-  - role: "Director"
-    people: ["John Doe, Jane Doe"]
+  - role: "Dirección y guion"
+    people: ["Mario Martín Higuera, Mario Álamo"]
 
-  - role: "Producer"
-    people: ["Jane Smith"]
+  - role: "Cámaras"
+    people: ["Andrés Gese, Nerea Moreno Santiso"]
 
-  - role: "Cinematographer"
-    people: ["Bob Johnson"]
+  - role: "Ayudante cámara y sonido"
+    people: ["Lucas de la Morena"]
 
-  - role: "Editor"
-    people: ["Alice Brown"]
+  - role: "Edición y color"
+    people: ["Andrés Gese"]
 
-  - role: "Productor"
-    people: ["Alice Brown"]
+  - role: "Expertos"
+    people: ["Javi Sánchez, Mario Álamo"]
 ---
-{{< justify >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan dapibus purus, vel maximus erat facilisis vel. Suspendisse eu ipsum consequat, sodales nulla vel, faucibus velit. Fusce imperdiet lacus nec cursus auctor. In vulputate arcu et nulla 
-
-{{< /justify >}}
-{{< youtube ZJthWmvUzzc >}}
+{{< youtube jwZ5Dp98CAM >}}
