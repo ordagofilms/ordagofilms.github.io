@@ -20,17 +20,6 @@ series = ["Documental"]
 Cómo hacer un vídeo corporativo.
 <!--more-->
 
-# Diferentes
-Contenido
-## Tamaños
-Contenido
-### De
-Contenido
-#### Títulos
-Contenido
-##### Y
-Contenido
-
 Poner el ojo aquí. O empezar con texto directamente.
 ![Image](/img/blog/vibora.jpg)
 
