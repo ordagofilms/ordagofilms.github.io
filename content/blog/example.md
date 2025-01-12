@@ -2,7 +2,7 @@
 author = "Mario Martín"
 title = "Artículo de prueba"
 image = "/img/blog/vibora.jpg"
-date = "2025-01-12"
+date = "2299-01-12"
 description = "Primer artículo de Órdago Films"
 tags = [
     "Órdago Films",
