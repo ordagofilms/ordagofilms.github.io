@@ -138,3 +138,13 @@ input[type="text"], input[type="email"], textarea, [contenteditable="true"] {
     font-family: 'Poppins', Arial, sans-serif;
     margin-bottom: 30px;
 }
+
+#overlay-item.highlight {
+    color: #39bfb8 !important; /* Change color on hover and when active */
+    font-size: 1.2em !important; /* Increase font size on hover and when active */
+}
+
+nav a.highlight {
+    color: #39bfb8 !important; /* Change color on hover and when active */
+    font-size: 1.2em !important; /* Increase font size on hover and when active */
+}

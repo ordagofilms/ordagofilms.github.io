@@ -58,18 +58,19 @@
             transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition for color and font size */
         }
 
-        nav a:hover {
-            color: #39bfb8 !important; /* Change color on hover */
-            font-size: 1.02em !important; /* Increase font size on hover */
+        nav a:hover {  /* Added active class styling */
+            color: #39bfb8 !important; /* Change color on hover and when active */
+            font-size: 1.02em !important; /* Increase font size on hover and when active */
         }
-
+        
+        
         #overlay-item {
             cursor: pointer !important;
         }
 
-        #overlay-item:hover {
-            color: #39bfb8 !important; /* Change color on hover */
-            font-size: 1.02em !important; /* Increase font size on hover */
+        #overlay-item:hover {  /* Added active class styling */
+            color: #39bfb8 !important; /* Change color on hover and when active */
+            font-size: 1.02em !important; /* Increase font size on hover and when active */
         }
 
         #hamburgerbtn {
@@ -105,9 +106,6 @@
             margin-left: 20px; /* Adjust this value as needed */
         }
 
-        
-
-
     </style>
 
     <div id="overlay">
@@ -120,6 +118,7 @@
             </li>
             {{ end }}
         </ul>
+        
     </div>
 
     <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-4">
@@ -139,8 +138,7 @@
             </div>
             <div class="text-lg">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL | safeURL }}"
-                    class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8">
+                <a href="{{ .URL | safeURL }}" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8">
                     {{ .Name }}
                 </a>
                 {{ end }}
@@ -149,6 +147,21 @@
     </nav>
 
     <script>
+        // Add active class based on current page URL
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUrl = window.location.pathname;
+
+            // Find all menu links
+            const menuLinks = document.querySelectorAll("nav a, #overlay a");
+
+            menuLinks.forEach(function(link) {
+                // Check if the link's href matches the current URL
+                if (link.getAttribute("href") === currentUrl || (currentUrl === "/" && link.getAttribute("href") === "/index.html")) {
+                    link.classList.add("highlight");
+                }
+            });
+        });
+
         // Add scroll event to change navbar background on scroll
         window.addEventListener("scroll", function () {
             const nav = document.querySelector("nav");
@@ -158,8 +171,7 @@
                 nav.classList.remove("scrolled");
             }
         });
-    </script>
-    <script>
+
         function toggleNav() {
           var hamburger = document.getElementById("hamburgerbtn");
           var overlay = document.getElementById("overlay");
@@ -172,6 +184,8 @@
           });
         }
         toggleNav();
+
+        
     
     </script>
 </header>

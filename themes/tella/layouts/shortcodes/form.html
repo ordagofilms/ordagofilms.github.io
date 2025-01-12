@@ -34,9 +34,9 @@
     <img src="/img/who/camara.jpeg" class="w-full h-screen object-cover" alt="Background Image">
 </div>
 
-<form id="contact-form" name="contact" style="display: flex; flex-wrap: wrap; gap: 20px;" class="bg-neutral-800 p-4 rounded">
+<form id="contact-form" name="contact" style="display: flex; flex-wrap: wrap; gap: 20px;" class="bg-neutral-900 p-2 rounded bg-opacity-50">
     
-    <div class="flex-1 bg-neutral-800 p-2 rounded min-width: 300px;">
+    <div class="flex-1 min-width: 300px;">
         <h3 class="text-2xl font-semibold mb-4 pl-8">Contacto</h3>
         <ul class="space-y-4 text-neutral-300">
             <li class="flex items-center">
@@ -72,7 +72,7 @@
     </div>
 
     <!-- Right column: Contact form -->
-    <div style="flex: 1; min-width: 300px;">
+    <div style="flex: 1; min-width: 300px;" class="p-2">
         <div class="input">
             <input type="text" placeholder="Nombre" id="name" name="from_name" 
                 class="p-4 bg-neutral-800 border border-neutral-400 focus:outline-none focus:bg-neutral-600 focus:border-neutral-500" required>
@@ -130,3 +130,52 @@
         document.getElementById(modalId).classList.add('hidden');
     }
 </script>
+
+<style>
+    /* Animation for fading in form fields */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Slight upward movement for effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to each input and textarea */
+.input {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Delay the animation for each form field */
+.input:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.input:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.input:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.input:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.input:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+/* Optional: Add a smooth fade-in effect for the submit button as well */
+input[type="submit"] {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0; /* Initially hidden */
+        animation-delay: 0.8s; /* Add some delay for the submit button */
+    }
+
+</style>

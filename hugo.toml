@@ -52,7 +52,7 @@ enableRobotsTXT = true
 [menu]
 
   [[menu.main]]
-    identifier = "producciones"
+    identifier = "projects"
     name = "Producciones"
     url = "/projects/"
     weight = 1
