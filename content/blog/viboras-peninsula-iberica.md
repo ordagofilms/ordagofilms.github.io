@@ -2,7 +2,7 @@
 author = "Mario Martín"
 title = "Víboras en la Península Ibérica: Guardianas Silenciosas"
 image = "/img/blog/vibora.jpg"
-date = "2024-03-20"
+date = "2224-03-20"
 description = "Descubre las especies de víboras que habitan en la Península Ibérica, su importancia ecológica y cómo identificarlas"
 tags = [
     "Víboras",
