@@ -39,6 +39,7 @@ Entendiendo los orígenes se pueden explicar los motivos por los que se crea Ibe
 
 {{< justify >}}
 Roger Corman presume de haber aprovechado una misma casa en llamas para muchas de sus películas. Es lógico, ya que es un momento difícil de replicar varias veces. Nosotros hicimos lo propio con las imágenes de víboras, mariposas y otros proyectos. Un mandamiento para las pequeñas - y grandes - productoras.
+{{< /justify >}}
 
 {{< rightimage src="/img/blog/vibora.jpg" alt="especie bla bla bla" 
     class="w-full md:w-1/2"
@@ -48,6 +49,7 @@ Conseguir buenas grabaciones de naturaleza es imposible sin el conocimiento del 
 
 {{< /rightimage >}}
 
+{{< justify >}}
 Son estas imágenes, las que nos da la naturaleza, las que deben ser protagonistas. Porque la labor de quien divulga y conserva es poner el foco en la biodiversidad.
 
 Nos queda una vida de producciones por delante. Grabar con estos biólogos nos anima a seguir creciendo como ellos.
