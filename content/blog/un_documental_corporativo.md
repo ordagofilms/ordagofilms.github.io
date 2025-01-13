@@ -46,7 +46,7 @@ Roger Corman presume de haber aprovechado una misma casa en llamas para muchas d
 {{< /justify >}}
 
 
-{{< rightimage src="/img/blog/lince_comiendo.jpg" alt="especie bla bla bla" 
+{{< rightimage src="/img/blog/lince_comiendo.png" alt="especie bla bla bla" 
     class="w-full md:w-1/2"
 >}}
 
