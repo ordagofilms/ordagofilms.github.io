@@ -6,6 +6,7 @@ featured: true
 weight: 1
 image: "/img/projects/sho-hai.jpg"
 description: Spot
+client: Perfect Skull Tattoo
 credits:
   - role: "Grabación y edición"
     people: ["Andrés Gese"]
