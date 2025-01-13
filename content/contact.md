@@ -2,11 +2,10 @@
 ---
 {{< center >}}
 
-## ¿Listo para crear algo increíble?
+## ¿Quieres crear algo nuevo?
 
 {{< /center >}}
 
-Estamos aquí para darle vida a tus ideas. Cuéntanos lo que necesitas a través de nuestro formulario y nos pondremos en contacto contigo rápidamente para ayudarte a hacer realidad tu proyecto audiovisual.
+Estamos aquí para darle vida a tus ideas. Cuéntanos lo que necesitas y nos pondremos en contacto contigo rápidamente para que puedas hacer realidad tu proyecto audiovisual.
 
-¡Estamos emocionados de trabajar contigo!
 {{< form >}}
