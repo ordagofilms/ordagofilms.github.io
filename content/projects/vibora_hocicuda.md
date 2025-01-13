@@ -6,6 +6,7 @@ featured: true
 weight: 1
 image: "/img/projects/vibora.jpg"
 description: Documental
+client: Iberozoa
 credits:
   - role: "Dirección y guion"
     people: ["Mario Martín Higuera"]
