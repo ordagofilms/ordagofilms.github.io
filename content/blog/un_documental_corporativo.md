@@ -46,13 +46,13 @@ Roger Corman presume de haber aprovechado una misma casa en llamas para muchas d
 {{< /justify >}}
 
 
-{{< rightimage src="/img/blog/lince_comiendo.png" alt="especie bla bla bla" 
+{{< leftimage src="/img/blog/lince_comiendo.png" alt="especie bla bla bla" 
     class="w-full md:w-1/2"
 >}}
 
 Conseguir buenas grabaciones de naturaleza es imposible sin el conocimiento del ecosistema. El equipo de los documentales dirigidos por Joaquín Gutiérrez Acha se pasa meses y años en el campo para lograr esos momentos. Incluso otros, como Timothy Treadwell (Grizzly Man, 2005, de Werner Herzog), se dejan la vida en ello. Por eso recurrimos al archivo que ellos tienen grabado, porque solo así podríamos ver linces, osos o imágenes submarinas.
 
-{{< /rightimage >}}
+{{< /leftimage >}}
 
 {{< justify >}}
 Son estas imágenes, las que nos da la naturaleza, las que deben ser protagonistas. Porque la labor de quien divulga y conserva es poner el foco en la biodiversidad.
