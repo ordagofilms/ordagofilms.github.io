@@ -14,7 +14,7 @@ credits:
     people: ["Andrés Gese"]
 
   - role: "Rodajes"
-    people: ["Lucas de la Morena, Nerea Moreno, David López-Brea"]
+    people: ["Lucas de la Morena, Nerea Moreno Santiso, David López-Brea"]
 
 ---
 {{< youtube q_T_a91kaI8 >}}
