@@ -41,6 +41,7 @@ Entendiendo los orígenes se pueden explicar los motivos por los que se crea Ibe
 Roger Corman presume de haber aprovechado una misma casa en llamas para muchas de sus películas. Es lógico, ya que es un momento difícil de replicar varias veces. Nosotros hicimos lo propio con las imágenes de víboras, mariposas y otros proyectos. Un mandamiento para las pequeñas - y grandes - productoras.
 {{< /justify >}}
 
+
 {{< rightimage src="/img/blog/vibora.jpg" alt="especie bla bla bla" 
     class="w-full md:w-1/2"
 >}}
