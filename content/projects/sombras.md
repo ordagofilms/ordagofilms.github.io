@@ -1,5 +1,5 @@
 ---
-title: "Sombras"
+title: "SOMBRAS"
 date: 2025-01-10T12:33:45+10:00
 draft: false
 featured: true
