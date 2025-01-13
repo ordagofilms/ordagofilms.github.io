@@ -25,7 +25,7 @@ Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociaci
 Todos hemos visto ese vídeo corporativo en el que un montón de ejecutivos dicen frases insulsas en sus espectaculares oficinas. Seguro que detrás de esa fachada hay una labor mucho más interesante que contar. Hay un montón de piezas geniales, pero hay muchas marcas que no se toman en serio el formato. Iberozoa nos dio la oportunidad de adentrarnos en el vídeo corporativo. Manos a la obra.
 {{< /justify >}}
 
-![Image](/img/blog/vibora.jpg)
+![Image](/img/blog/ojo_reptil.png)
 
 {{< justify >}}
 Enfocamos la producción de este proyecto como la de un cortometraje documental: documentación, escritura de guion, diseño de entrevistas, grabación de recursos y búsqueda de material de archivo.
@@ -33,7 +33,7 @@ Enfocamos la producción de este proyecto como la de un cortometraje documental:
 
 
 <!--(w: 1/2, 1/3, 1/4, 1/5)-->
-{{< rightimage src="/img/blog/vibora.jpg" alt="pensar qué imagen pongo" 
+{{< rightimage src="/img/blog/medusa.png" alt="pensar qué imagen pongo" 
     class="w-full md:w-1/2"
 >}}
 <!--Acompaño este párrafo con foto de origen o foto de bichos?? -->
@@ -46,7 +46,7 @@ Roger Corman presume de haber aprovechado una misma casa en llamas para muchas d
 {{< /justify >}}
 
 
-{{< rightimage src="/img/blog/vibora.jpg" alt="especie bla bla bla" 
+{{< rightimage src="/img/blog/lince_comiendo.jpg" alt="especie bla bla bla" 
     class="w-full md:w-1/2"
 >}}
 
