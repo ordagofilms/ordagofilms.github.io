@@ -4,7 +4,7 @@ date: 2025-01-07T12:33:45+10:00
 draft: false
 featured: true
 weight: 2
-image: "/img/projects/eqee.png"
+image: "/img/projects/eqee.jpeg"
 description: Videoclip
 client: Hada
 credits:
