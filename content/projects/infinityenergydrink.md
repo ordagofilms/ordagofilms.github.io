@@ -10,9 +10,3 @@ credits:
   - role: "Realizado por"
     people: ["Mario Martín Higuera, Diego López, Andrés Gese"]
 ---
-{{< justify >}}
-
-Aquí pondremos un enlace a Instagram en lugar a este de YouTube.
-
-{{< /justify >}}
-{{< youtube ZJthWmvUzzc >}}
