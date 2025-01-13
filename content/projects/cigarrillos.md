@@ -6,6 +6,7 @@ featured: true
 weight: 1
 image: "/img/projects/cigarrillos_ducha.jpg"
 description: Ficción
+client: Cortometraje
 credits:
   - role: "Dirección y guion"
     people: ["Mario Martín Higuera"]
