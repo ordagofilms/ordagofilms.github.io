@@ -17,14 +17,10 @@ categories = [
 series = ["Documental"]
 +++
 
-Cómo hacer un vídeo corporativo.
-<!--more-->
+Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa.
 
-Poner el ojo aquí. O empezar con texto directamente.
 ![Image](/img/blog/vibora.jpg)
 
-<!-- With optional width -->
-{{< customimage src="/img/blog/vibora.jpg" alt="A beautiful snake" width="50%" >}}
 {{< justify >}}
 Todos hemos visto ese vídeo corporativo en el que un montón de ejecutivos dicen frases insulsas en sus espectaculares oficinas. Seguro que detrás de esa fachada hay una labor mucho más interesante que contar. Hay un montón de piezas geniales, pero hay muchas marcas que no se toman en serio el formato. Iberozoa nos dio la oportunidad de adentrarnos en el vídeo corporativo. Manos a la obra.
 
@@ -41,6 +37,7 @@ Entendiendo los orígenes se pueden explicar los motivos por los que se crea Ibe
 
 {{< /rightimage >}}
 
+{{< justify >}}
 Roger Corman presume de haber aprovechado una misma casa en llamas para muchas de sus películas. Es lógico, ya que es un momento difícil de replicar varias veces. Nosotros hicimos lo propio con las imágenes de víboras, mariposas y otros proyectos. Un mandamiento para las pequeñas - y grandes - productoras.
 
 {{< rightimage src="/img/blog/vibora.jpg" alt="especie bla bla bla" 
@@ -54,14 +51,5 @@ Conseguir buenas grabaciones de naturaleza es imposible sin el conocimiento del 
 Son estas imágenes, las que nos da la naturaleza, las que deben ser protagonistas. Porque la labor de quien divulga y conserva es poner el foco en la biodiversidad.
 
 Nos queda una vida de producciones por delante. Grabar con estos biólogos nos anima a seguir creciendo como ellos.
-
+{{< /justify >}}
 {{< youtube q_T_a91kaI8 >}}
-
-> Conseguir buenas grabaciones de naturaleza es imposible sin el conocimiento del ecosistema.
-
-#### Citar con atribución
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
