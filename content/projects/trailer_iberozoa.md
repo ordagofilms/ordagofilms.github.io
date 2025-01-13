@@ -6,6 +6,7 @@ featured: true
 weight: 1
 image: "/img/projects/mugueta_sonriendo.png"
 description: Corporativo
+client: Iberozoa
 credits:
   - role: "Guion, dirección y producción"
     people: ["Mario Martín Higuera"]
