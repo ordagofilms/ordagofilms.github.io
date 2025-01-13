@@ -40,8 +40,12 @@
     <!-- Credits Section -->
     {{ with .Params.credits }}
     <div class="credits mt-2 container mx-auto px-4">
-      <!-- Grid layout for credits -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <!-- Conditional grid layout for credits -->
+      {{ $creditsCount := len . }}
+      <div class="grid gap-6 max-w-4xl mx-auto
+                  {{ if eq $creditsCount 1 }}grid-cols-1
+                  {{ else if eq $creditsCount 2 }}grid-cols-2
+                  {{ else }}grid-cols-3{{ end }}">
         {{ range . }}
         <div class="credit-item text-center p-4">
           <p class="font-bold text-lg text-white">{{ .role }}</p>
@@ -54,5 +58,7 @@
   </div>
 </div>
 {{ end }}
+
+
 
 

@@ -13,13 +13,13 @@
     <!-- Don't show on 1st and 2nd page -->
     {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
     <li><a href="{{ $pag.First.URL }}" rel="first"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">Primera</a>
+        class="mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">Primera</a>
     </li>
     {{ end }}
 
     {{ if $pag.HasPrev }}
     <li><a href="{{ $pag.Prev.URL }}" rel="prev"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">Anterior</a>
+        class="mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">Anterior</a>
     </li>
     {{ end }}
 
@@ -27,18 +27,18 @@
     {{ if eq . $pag }}
     <!-- Current Page -->
     <li><a href="{{ .URL }}"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block duration-100 bg-[#39bfb8] text-white">{{
+        class="mx-2 py-3 px-5 rounded-full relative block duration-100 bg-[#39bfb8] text-white">{{
         .PageNumber }}</a></li>
     {{ else if and (ge .PageNumber (sub $pag.PageNumber 2)) (le .PageNumber (add $pag.PageNumber 2)) }}
     {{ $.Scratch.Set "dot_rendered" false }}
     <!-- Render prev 2 page and next 2 pages -->
     <li><a href="{{ .URL }}"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">{{
+        class="mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">{{
         .PageNumber }}</a></li>
     {{ else if eq ($.Scratch.Get "dot_rendered") false }}
     <!-- render skip pages -->
     {{ $.Scratch.Set "dot_rendered" true }}
-    <li><a class="shadow-md mx-2 py-3 px-5 rounded-full relative block cursor-auto Class
+    <li><a class="mx-2 py-3 px-5 rounded-full relative block cursor-auto Class
                 Properties
                 pointer-events-none">...</a></li>
     {{ end }}
@@ -46,14 +46,14 @@
 
     {{ if $pag.HasNext }}
     <li><a href="{{ $pag.Next.URL }}" rel="next"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block duration-100  bg-neutral-500 text-white">Siguiente</a>
+        class="mx-2 py-3 px-5 rounded-full relative block duration-100  bg-neutral-500 text-white">Siguiente</a>
     </li>
     {{ end }}
 
     <!-- Don't show on last and 2nd last page -->
     {{ if and (ne $pag.PageNumber $pag.TotalPages) ((ne $pag.PageNumber (sub $pag.TotalPages 1))) }}
     <li class="page-item"><a href="{{ $pag.Last.URL }}" rel="last"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">Última</a>
+        class="mx-2 py-3 px-5 rounded-full relative block duration-100 bg-neutral-500 text-white">Última</a>
     </li>
     {{ end }}
   </ul>

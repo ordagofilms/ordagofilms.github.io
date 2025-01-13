@@ -13,9 +13,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     opacity: 1; /* Start with full opacity */
     transition: opacity 0.5s ease-out; /* Apply fade-out transition */
     }
+
+    .loader {
+        position: absolute;
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: 
+            radial-gradient(farthest-side, #39bfb8 94%, #0000) top/8px 8px no-repeat,
+            conic-gradient(#0000 30%, #39bfb8);
+        -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+        animation: l13 1s infinite linear;
+        top: 62%;
+    }
+
+    .loader:not(.hidden) {
+        animation: l13 1s infinite linear, fadeIn 0.5s ease-in forwards;
+    }
+    
 
     .loadingScreen.hidden {
         opacity: 0; /* Fade to 0 opacity */
@@ -62,7 +81,7 @@
     opacity: 0; /* Start hidden */
     position: absolute;
     margin-top: 90px;
-    margin-right: 82px;
+    margin-right: 38px;
     animation: fadeInSubtitle 2s ease forwards; /* Trigger this animation */
     animation-delay: 1s; /* Delay matches "rest-of-letters" animation */
     transform: translateY(20px); /* Slight offset for entry effect */
@@ -144,7 +163,7 @@ input[type="text"], input[type="email"], textarea, [contenteditable="true"] {
     font-size: 1.2em !important; /* Increase font size on hover and when active */
 }
 
-nav a.highlight {
+#nav-header.highlight {
     color: #39bfb8 !important; /* Change color on hover and when active */
     font-size: 1.2em !important; /* Increase font size on hover and when active */
 }

@@ -3,9 +3,10 @@ title: "¿EN QUÉ ESTRELLA ESTARÁ?"
 date: 2025-01-07T12:33:45+10:00
 draft: false
 featured: true
-weight: 1
+weight: 2
 image: "/img/projects/eqee.png"
 description: Videoclip
+client: Hada
 credits:
   - role: "Dirección y grabación"
     people: ["Andrés Gese, Nerea Moreno Santiso"]

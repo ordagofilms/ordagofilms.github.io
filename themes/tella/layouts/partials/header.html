@@ -138,7 +138,7 @@
             </div>
             <div class="text-lg">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL | safeURL }}" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8">
+                <a id="nav-header" href="{{ .URL | safeURL }}" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8">
                     {{ .Name }}
                 </a>
                 {{ end }}
@@ -152,7 +152,7 @@
             const currentUrl = window.location.pathname;
 
             // Find all menu links
-            const menuLinks = document.querySelectorAll("nav a, #overlay a");
+            const menuLinks = document.querySelectorAll("#nav-header, #overlay a");
 
             menuLinks.forEach(function(link) {
                 // Check if the link's href matches the current URL

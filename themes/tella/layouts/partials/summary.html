@@ -7,7 +7,7 @@
   <div
     class="relative pl-4 p-6 justify-between leading-normal max-w-full w-full bg-neutral-800 cursor-pointer">
     <div class="text-white font-bold text-2xl mb-2 cursor-pointer">{{ .Title }}</div>
-    <p class="text-white text-base pb-5 cursor-pointer">{{ substr .Summary 0 130 | plainify | htmlUnescape }}...</p>
+    <p class="text-white text-base pb-5 cursor-pointer">{{ substr .Description 0 130 | plainify | htmlUnescape }}</p>
     <div class="absolute top-0 right-0 p-6 text-sm text-gray-400">
       <time class="cursor-pointer">{{ .Date.Format "2006/01/02" }}</time>
     </div>

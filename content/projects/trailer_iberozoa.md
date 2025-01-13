@@ -3,7 +3,7 @@ title: "TRÁILER ASOCIACIÓN IBEROZOA"
 date: 2025-01-12T12:33:45+10:00
 draft: false
 featured: true
-weight: 8
+weight: 1
 image: "/img/projects/mugueta_sonriendo.png"
 description: Corporativo
 credits:
@@ -18,3 +18,9 @@ credits:
 
 ---
 {{< youtube q_T_a91kaI8 >}}
+
+<br>
+<div style="display: flex; justify-content: center;">
+{{< instagram CxOWiQNP2MO >}}
+</div>
+<br>

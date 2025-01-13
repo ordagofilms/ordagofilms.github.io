@@ -17,9 +17,8 @@ categories = [
 series = ["Documental"]
 +++
 
-Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa.
-
-
+#### Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa.
+---
 
 {{< justify >}}
 Todos hemos visto ese vídeo corporativo en el que un montón de ejecutivos dicen frases insulsas en sus espectaculares oficinas. Seguro que detrás de esa fachada hay una labor mucho más interesante que contar. Hay un montón de piezas geniales, pero hay muchas marcas que no se toman en serio el formato. Iberozoa nos dio la oportunidad de adentrarnos en el vídeo corporativo. Manos a la obra.

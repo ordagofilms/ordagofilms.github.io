@@ -16,6 +16,11 @@ enableRobotsTXT = true
 # Disqus Comment System
 #disqusShortname = ""
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
 
   showBlog = false
