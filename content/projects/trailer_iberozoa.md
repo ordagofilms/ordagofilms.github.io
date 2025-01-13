@@ -17,7 +17,4 @@ credits:
     people: ["Lucas de la Morena, Nerea Moreno, David López-Brea"]
 
 ---
-{{< center >}}
-Texto??
-{{< /center >}}
 {{< youtube q_T_a91kaI8 >}}
