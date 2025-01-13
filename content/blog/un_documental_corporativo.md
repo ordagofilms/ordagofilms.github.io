@@ -19,11 +19,15 @@ series = ["Documental"]
 
 Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa.
 
-![Image](/img/blog/vibora.jpg)
+
 
 {{< justify >}}
 Todos hemos visto ese vídeo corporativo en el que un montón de ejecutivos dicen frases insulsas en sus espectaculares oficinas. Seguro que detrás de esa fachada hay una labor mucho más interesante que contar. Hay un montón de piezas geniales, pero hay muchas marcas que no se toman en serio el formato. Iberozoa nos dio la oportunidad de adentrarnos en el vídeo corporativo. Manos a la obra.
+{{< /justify >}}
 
+![Image](/img/blog/vibora.jpg)
+
+{{< justify >}}
 Enfocamos la producción de este proyecto como la de un cortometraje documental: documentación, escritura de guion, diseño de entrevistas, grabación de recursos y búsqueda de material de archivo.
 {{< /justify >}}
 
