@@ -18,9 +18,3 @@ credits:
 
 ---
 {{< youtube q_T_a91kaI8 >}}
-
-<br>
-<div style="display: flex; justify-content: center;">
-{{< instagram CxOWiQNP2MO >}}
-</div>
-<br>
