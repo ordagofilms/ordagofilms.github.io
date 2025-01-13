@@ -1,5 +1,5 @@
 ---
-title: "Infinity Energy Drink"
+title: "INFINITY ENERGY DRINK"
 date: 2025-01-11T12:33:45+10:00
 draft: false
 featured: true
