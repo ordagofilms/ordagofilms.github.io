@@ -6,6 +6,7 @@ featured: true
 weight: 1
 image: "/img/projects/sombras_espejo.jpg"
 description: Ficción
+client: Cortometraje
 ---
 {{< justify >}}
 En post-producción.
