@@ -9,15 +9,21 @@ description: Videoclip
 client: Hada
 credits:
   - role: "Dirección y grabación"
-    people: ["Andrés Gese, Nerea Moreno Santiso"]
+    people: 
+      - "Andrés Gese"
+      - "Nerea Moreno Santiso"
 
   - role: "Producción"
-    people: ["Mario Martín Higuera"]
+    people: 
+      - "Mario Martín Higuera"
 
   - role: "Ayudante cámara y foto fija"
-    people: ["Lucas de la Morena"]
+    people: 
+      - "Lucas de la Morena"
 
   - role: "Edición y color"
-    people: ["Andrés Gese, Nerea Moreno Santiso"]
+    people: 
+      - "Andrés Gese"
+      - "Nerea Moreno Santiso"
 ---
 {{< youtube y74cbfAmVtY >}}

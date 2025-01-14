@@ -9,10 +9,12 @@ description: Spot
 client: Perfect Skull Tattoo
 credits:
   - role: "Grabación y edición"
-    people: ["Andrés Gese"]
+    people: 
+      - "Andrés Gese"
 ---
 <br>
 <div style="display: flex; justify-content: center;">
 {{< instagram DAQr8WpoYxO >}}
 </div>
 <br>
+

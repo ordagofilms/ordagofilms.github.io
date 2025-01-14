@@ -9,18 +9,26 @@ description: Documental
 client: Iberozoa
 credits:
   - role: "Dirección y guion"
-    people: ["Mario Martín Higuera, Mario Álamo"]
+    people: 
+      - "Mario Martín Higuera"
+      - "Mario Álamo"
 
   - role: "Cámaras"
-    people: ["Andrés Gese, Nerea Moreno Santiso"]
+    people: 
+      - "Andrés Gese"
+      - "Nerea Moreno Santiso"
 
   - role: "Ayudante cámara y sonido"
-    people: ["Lucas de la Morena"]
+    people: 
+      - "Lucas de la Morena"
 
   - role: "Edición y color"
-    people: ["Andrés Gese"]
+    people: 
+      - "Andrés Gese"
 
   - role: "Expertos"
-    people: ["Javi Sánchez, Mario Álamo"]
+    people: 
+      - "Javi Sánchez"
+      - "Mario Álamo"
 ---
 {{< youtube jwZ5Dp98CAM >}}

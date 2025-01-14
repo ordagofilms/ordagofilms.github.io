@@ -49,7 +49,11 @@
         {{ range . }}
         <div class="credit-item text-center p-4">
           <p class="font-bold text-lg text-white">{{ .role }}</p>
-          <p class="text-sm text-gray-300">{{ delimit .people ", " }}</p>
+          <p class="text-sm text-gray-300">
+            {{ range .people }}
+              {{ . }}<br>
+            {{ end }}
+          </p>
         </div>
         {{ end }}
       </div>

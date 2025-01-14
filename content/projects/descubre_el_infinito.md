@@ -9,7 +9,10 @@ description: Spot
 client: Infinity Energy Drink
 credits:
   - role: "Realizado por"
-    people: ["Mario Martín Higuera, Diego López, Andrés Gese"]
+    people: 
+      - "Mario Martín Higuera"
+      - "Diego López"
+      - "Andrés Gese"
 ---
 <br>
 <div style="display: flex; justify-content: center;">

@@ -9,27 +9,37 @@ description: Ficción
 client: Cortometraje
 credits:
   - role: "Dirección y guion"
-    people: ["Mario Martín Higuera"]
+    people: 
+      - "Mario Martín Higuera"
 
   - role: "Actores"
-    people: ["Ángel Flores, Judi Gala, Manuel Samper"]
+    people: 
+      - "Ángel Flores"
+      - "Judi Gala"
+      - "Manuel Samper"
 
   - role: "DOP y etalonaje"
-    people: ["Nerea Moreno Santiso"]
+    people: 
+      - "Nerea Moreno Santiso"
 
   - role: "Sonido y montaje"
-    people: ["Andrés Gese"]
+    people: 
+      - "Andrés Gese"
 
   - role: "Producción, arte y vestuario"
-    people: ["Maite Jiménez"]
+    people: 
+      - "Maite Jiménez"
 
   - role: "Maquillaje y peluquería"
-    people: ["Delfina Luna"]
+    people: 
+      - "Delfina Luna"
 
   - role: "Sonorización y mezcla"
-    people: ["Mario Martín Higuera"]
+    people: 
+      - "Mario Martín Higuera"
 
   - role: "Ayudante y foto fija"
-    people: ["Lucas de la Morena"]
+    people: 
+      - "Lucas de la Morena"
 ---
 {{< youtube 41mBjR_nAdQ >}}

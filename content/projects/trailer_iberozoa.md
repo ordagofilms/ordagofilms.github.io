@@ -9,13 +9,18 @@ description: Corporativo
 client: Iberozoa
 credits:
   - role: "Guion, dirección y producción"
-    people: ["Mario Martín Higuera"]
+    people: 
+      - "Mario Martín Higuera"
 
   - role: "Grabación, realización y montaje"
-    people: ["Andrés Gese"]
+    people:
+      - "Andrés Gese"
 
   - role: "Rodajes"
-    people: ["Lucas de la Morena, Nerea Moreno Santiso, David López-Brea"]
+    people: 
+      - "Lucas de la Morena"
+      - "Nerea Moreno Santiso"
+      - "David López-Brea"
 
 ---
 {{< youtube q_T_a91kaI8 >}}

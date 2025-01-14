@@ -9,12 +9,16 @@ description: Documental
 client: Iberozoa
 credits:
   - role: "Dirección y guion"
-    people: ["Mario Martín Higuera"]
+    people: 
+      - "Mario Martín Higuera"
 
   - role: "Cámara y edición"
-    people: ["Andrés Gese"]
+    people: 
+      - "Andrés Gese"
 
   - role: "Expertos"
-    people: ["Antonio Martín Higuera, Jorge Chorro"]
+    people: 
+      - "Antonio Martín Higuera"
+      - "Jorge Chorro"
 ---
 {{< youtube lrw9YyRyxfs >}}
