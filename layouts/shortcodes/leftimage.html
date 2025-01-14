@@ -1,10 +1,33 @@
-<div class="relative clearfix">
+<div class="image-wrap clearfix">
     <img src="{{ .Get "src" }}" 
          alt="{{ .Get "alt" }}" 
-         class="float-none w-full md:float-left md:mr-6 mb-4 {{ with .Get "class" }}{{ . }}{{ end }}"
+         class="image-float float-none w-full md:float-left md:mr-8 {{ with .Get "class" }}{{ . }}{{ end }}"
          {{ with .Get "width" }}style="width: {{ . }};"{{ end }}
          {{ with .Get "style" }}style="{{ . }}"{{ end }}>
-    <div class="text-justify">
+    <div class="text-wrap">
         {{ .Inner | markdownify }}
     </div>
-</div> 
+</div>
+
+
+<style>
+    .image-wrap {
+        display: block;
+        overflow: auto;
+    }
+
+    .image-float {
+        margin-bottom: 0px;
+    }
+
+    .text-wrap {
+        text-align: justify;
+    }
+
+    /* Responsive behavior: remove float on small screens */
+    @media (max-width: 768px) {
+        .image-float {
+            margin-bottom: 0px;
+                   }
+    }
+</style>

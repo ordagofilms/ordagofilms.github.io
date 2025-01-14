@@ -1,35 +1,44 @@
 [
   {
     "title": "Documental",
-    "image": "img/slide/sapo_corredor.jpg"
+    "image": "img/slide/sapo_corredor.jpg",
+    "mobile_image": "/img/slide/sapo_corredor_vert.jpg"
+
   },
   {
     "title": "Cine",
-    "image": "img/slide/sombras_espejo.jpg"
+    "image": "img/slide/sombras_espejo.jpg",
+    "mobile_image": "/img/slide/sombras_vert.jpg"
   },
   {
     "title": "Videoclip",
-    "image": "img/slide/eqee.jpeg"
+    "image": "img/slide/eqee.jpeg",
+    "mobile_image": "/img/slide/eqee_vert.jpeg"
   },
   {
     "title": "Spot",
-    "image": "img/slide/sho-hai.jpg"
+    "image": "img/slide/sho-hai.jpg",
+      "mobile_image": "/img/slide/sho-hai_vert.jpg"
   },
   {
     "title": "Documental",
-    "image": "img/slide/vibora.jpg"
+    "image": "img/slide/vibora.jpg",
+      "mobile_image": "/img/slide/vibora_vert.jpg"
   },
   {
     "title": "Cine",
-    "image": "img/slide/ltdsf.jpg"
+    "image": "img/slide/ltdsf.jpg",
+    "mobile_image": "/img/slide/ltdsf_vert.jpg"
   },
   {
     "title": "Videoclip",
-    "image": "img/slide/tequedas.jpg"
+    "image": "img/slide/tequedas.jpg",
+    "mobile_image": "/img/slide/tequedas_vert.jpg"
   },
   {
     "title": "Spot",
-    "image": "img/slide/infinity_wet_hor.jpg"
+    "image": "img/slide/infinity_wet_hor.jpg",
+    "mobile_image": "/img/slide/infinity_wet_vert.jpg"
   }
 
 ]

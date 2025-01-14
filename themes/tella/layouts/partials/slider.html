@@ -4,8 +4,8 @@
         {{ with index .Site.Data.slide (sub (len .Site.Data.slide) 1) }}
         <div class="slide h-screen flex-shrink-0 w-full">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-            <img class="w-full h-full object-cover object-top" src="{{ .image }}" alt="{{ .alt }}">
+            <img class="w-full h-full object-cover object-top hidden md:block" src="{{ .image }}" alt="{{ .alt }}">
+            <img class="w-full h-full object-cover object-top md:hidden" src="{{ .mobile_image }}" alt="{{ .alt }}">
             <div class="absolute inset-0 flex items-center justify-center">
                 <h1 class="text-4xl md:text-6xl font-bold" style="text-transform: uppercase; font-family: Spirits Sharp, 'Times New Roman', Times, serif; color: #39bfb8;">{{ .title }}</h1>
             </div>
@@ -16,8 +16,8 @@
         {{ range .Site.Data.slide }}
         <div class="slide h-screen flex-shrink-0 w-full">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-            <img class="w-full h-full object-cover object-top" src="{{ .image }}" alt="{{ .alt }}">
+            <img class="w-full h-full object-cover object-top hidden md:block" src="{{ .image }}" alt="{{ .alt }}">
+            <img class="w-full h-full object-cover object-top md:hidden" src="{{ .mobile_image }}" alt="{{ .alt }}">
             <div class="absolute inset-0 flex items-center justify-center">
                 <h1 class="text-4xl md:text-6xl font-bold" style="text-transform: uppercase; font-family: Spirits Sharp, 'Times New Roman', Times, serif; color: #39bfb8;">{{ .title }}</h1>
             </div>
@@ -28,8 +28,8 @@
         {{ with index .Site.Data.slide 0 }}
         <div class="slide h-screen flex-shrink-0 w-full">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-            <img class="w-full h-full object-cover object-top" src="{{ .image }}" alt="{{ .alt }}">
+            <img class="w-full h-full object-cover object-top hidden md:block" src="{{ .image }}" alt="{{ .alt }}">
+            <img class="w-full h-full object-cover object-top md:hidden" src="{{ .mobile_image }}" alt="{{ .alt }}">
             <div class="absolute inset-0 flex items-center justify-center">
                 <h1 class="text-4xl md:text-6xl font-bold" style="text-transform: uppercase; font-family: Spirits Sharp, 'Times New Roman', Times, serif; color: #39bfb8;">{{ .title }}</h1>
             </div>

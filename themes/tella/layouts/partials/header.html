@@ -14,6 +14,13 @@
             align-items: center; /* Vertically center content */
         }
 
+        /* Hide overlay on large screens regardless of its state */
+        @media (min-width: 1024px) {
+            #overlay {
+                display: none !important;
+            }
+        }
+
         /* Display the overlay when the 'active' class is added */
         #overlay.active {
             display: flex; /* Show and use flexbox layout */
