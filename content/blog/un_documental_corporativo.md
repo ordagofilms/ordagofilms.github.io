@@ -3,7 +3,7 @@ author = "Órdago Films"
 title = "UN DOCUMENTAL CORPORATIVO"
 image = "/img/projects/mugueta_sonriendo.png"
 date = "2025-01-12"
-description = "Inserte tres líneas descriptivas con algo de gancho. Este sale en la lista en artículos."
+description = "Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa."
 tags = [
     "Órdago Films",
     "Documental",
