@@ -30,7 +30,7 @@ enableRobotsTXT = true
 
   [params.logo]
     main = "img/logo/logo.svg"
-    alt = "Tella Logo"
+    alt = "Órdago Films Logo"
 
     # The size parameter is the class name of tailwindcss
     # https://tailwindcss.com/
@@ -44,16 +44,21 @@ enableRobotsTXT = true
     fontawesome = true
 
   [params.homepage_meta_tags]
-    meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_description = "Órdago Films es una productora audiovisual independiente que se especializa en la realización de cortometrajes y documentales."
     meta_og_title = "Órdago Films"
     meta_og_type = "website"
     meta_og_url = "https://ordagofilms.com"
-    meta_og_image = "https://raw.githubusercontent.com/opera7133/tella/master/images/tn.png"
+    meta_og_image = "https://ordagofilms.com/img/who/camara.jpeg"
     meta_og_description = "Órdago Films"
     meta_twitter_card = "summary_large_image"
-    meta_twitter_site = "@username"
-    meta_twitter_creator = "@username"
 
+  [params.seo]
+    description = "Órdago Films - Productora audiovisual en Madrid. Especializada en vídeos corporativos, documentales y contenido digital."
+    site_name = "Órdago Films"
+    type = "website"
+    locale = "es_ES"
+    twitter_card = "summary_large_image"
+    canonical = "https://ordagofilms.com"
 [menu]
 
   [[menu.main]]
