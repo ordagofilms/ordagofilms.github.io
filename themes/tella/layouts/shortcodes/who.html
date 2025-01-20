@@ -5,17 +5,17 @@
     <img src="/img/who/camara.jpeg" class="w-full h-screen object-cover" alt="Background Image">
 </div>
 
-<div class="about-us-container grid grid-cols-1 md:grid-cols-2 p-2 mb-8">
+<div class="about-us-container grid grid-cols-1 md:grid-cols-2 p-0 md:p-2 mb-8">
     <!-- Team Member 1 -->
     <div class="team-member text-center">
-        <img src="/img/who/andres.jpg" alt="Team Member 1" class="mx-auto w-40 h-40 rounded-full object-cover shadow-lg">
+        <img src="/img/who/andres.jpg" alt="Team Member 1" class="team-image mx-auto rounded-full object-cover shadow-lg">
         <h3 class="text-lg font-bold">Andrés Gese</h3>
         <p class="text-gray-400">Co-Fundador y Realizador</p>
     </div>
 
     <!-- Team Member 2 -->
     <div class="team-member text-center">
-        <img src="/img/who/mario.jpg" alt="Team Member 2" class="mx-auto w-40 h-40 rounded-full object-cover shadow-lg">
+        <img src="/img/who/mario.jpg" alt="Team Member 2" class="team-image mx-auto rounded-full object-cover shadow-lg">
         <h3 class="text-lg font-bold">Mario Martín</h3>
         <p class="text-gray-400">Co-Fundador y Productor</p>
         
@@ -41,5 +41,33 @@
         align-items: center;
         text-align: center !important;
         font-weight: 900;
+    }
+
+    /* Team member styles */
+    .team-image {
+        width: 200px;
+        height: 200px;
+        transition: all 0.3s ease;
+    }
+
+    /* Make the negative margin responsive */
+    .about-us-container {
+        margin-top: 0rem; /* Move up on desktop */
+    }
+
+    @media (max-width: 768px) {
+        .team-image {
+            width: 140px;
+            height: 140px;
+        }
+        
+        .about-us-container {
+            margin-top: -4rem; /* Less movement up on mobile */
+        }
+    }
+
+    .team-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 </style>
