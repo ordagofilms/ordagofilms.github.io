@@ -4,7 +4,7 @@ date: 2025-02-18T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/noduermona.jpeg"
+image: "/img/projects/noduermona.jpg"
 description: Videoclip
 client: Hada
 credits:
