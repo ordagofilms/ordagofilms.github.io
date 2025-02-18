@@ -1,10 +1,10 @@
 ---
-title: "¿EN QUÉ ESTRELLA ESTARÁ?"
-date: 2025-01-07T12:33:45+10:00
+title: "NO DUERMO NA"
+date: 2025-02-18T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/eqee.jpeg"
+image: "/img/projects/noduermona.jpeg"
 description: Videoclip
 client: Hada
 credits:
@@ -26,4 +26,4 @@ credits:
       - "Andrés Gese"
       - "Nerea Moreno Santiso"
 ---
-{{< youtube y74cbfAmVtY >}}
+{{< youtube IvYw1H22d3M >}}
