@@ -1,12 +1,12 @@
 ---
-title: "DESCUBRE EL INFINITO"
-date: 2025-01-11T12:33:45+10:00
+title: "VIDEOBOOK MANU SAMPER"
+date: 2025-03-27T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/infinity_wet_hor.jpg"
-description: Spot
-client: Infinity Energy Drink
+image: "/img/projects/vb_manu_samper.jpg"
+description: Videobook
+client: Manu Samper
 credits:
   - role: "Realizado por"
     people: 
@@ -16,6 +16,6 @@ credits:
 ---
 <br>
 <div style="display: flex; justify-content: center;">
-{{< instagram DEkP6ZsNTCK >}}
+{{< instagram DHdn8kaISGH >}}
 </div>
 <br>
