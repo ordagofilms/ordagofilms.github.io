@@ -1,5 +1,5 @@
 +++
-author = "Órdago Films"
+author = "Mario Martín Higuera"
 title = "UN DOCUMENTAL CORPORATIVO"
 image = "/img/projects/mugueta_sonriendo.png"
 date = "2025-01-12"
