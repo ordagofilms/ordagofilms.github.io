@@ -1,9 +1,9 @@
 +++
 author = "Andrés Gese"
 title = "VIDEOBOOKS"
-image = "/img/projects/vb_manu_samper.jpg"
+image = "/img/blog/vb_manu_samper.jpg"
 date = "2025-03-27"
-description = "Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa."
+description = "Nuestra visión sobre el negocio de los videobooks."
 tags = [
     "Órdago Films",
     "Videobooks",
@@ -17,7 +17,7 @@ categories = [
 series = ["Videobooks"]
 +++
 
-#### Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa.
+#### Nuestra visión sobre el negocio de los videobooks.
 ---
 
 {{< justify >}}
