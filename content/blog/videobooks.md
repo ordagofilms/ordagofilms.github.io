@@ -1,33 +1,33 @@
 +++
-author = "Órdago Films"
-title = "UN DOCUMENTAL CORPORATIVO"
+author = "Andrés Gese"
+title = "VIDEOBOOKS"
 image = "/img/projects/mugueta_sonriendo.png"
 date = "2025-01-12"
 description = "Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa."
 tags = [
     "Órdago Films",
-    "Documental",
-    "Corporativo",
+    "Videobooks",
+    "Actores",
 ]
 categories = [
     "Producción",
-    "Documental",
+    "Videobooks",
     "Proceso creativo"
 ]
-series = ["Documental"]
+series = ["Videobooks"]
 +++
 
 #### Algunos aprendizajes de nuestra experiencia creando el tráiler para la Asociación Iberozoa.
 ---
 
 {{< justify >}}
-Todos hemos visto ese vídeo corporativo en el que un montón de ejecutivos dicen frases insulsas en sus espectaculares oficinas. Seguro que detrás de esa fachada hay una labor mucho más interesante que contar. Hay un montón de piezas geniales, pero hay muchas marcas que no se toman en serio el formato. Iberozoa nos dio la oportunidad de adentrarnos en el vídeo corporativo. Manos a la obra.
+Antes de la creación de Órdago Films, ya había trabajado previamente en la producción de algún que otro cortometraje de bajo presupuesto. En el proceso de la gran mayoría de proyectos de ficción hay una parte fundamental que marca completamente el devenir del metraje. El proceso de casting. ¿Qué actores darán vida a los personajes?
 {{< /justify >}}
 
 ![Image](/img/blog/ojo_reptil.png)
 
 {{< justify >}}
-Enfocamos la producción de este proyecto como la de un cortometraje documental: documentación, escritura de guion, diseño de entrevistas, grabación de recursos y búsqueda de material de archivo.
+Como director he visionado una cantidad ingente de videobooks de diferentes actores y me di cuenta de la importancia que tiene que un actor tenga un material de calidad para mostrar al mundo. En muchas ocasiones es inevitable pasar por alto las capacidades y los recursos que puede trabajar un actor cuando su videobook se ve, se escucha y se siente poco trabajado.
 {{< /justify >}}
 
 
@@ -36,12 +36,12 @@ Enfocamos la producción de este proyecto como la de un cortometraje documental:
     class="w-full md:w-1/2"
 >}}
 <!--Acompaño este párrafo con foto de origen o foto de bichos?? -->
-Entendiendo los orígenes se pueden explicar los motivos por los que se crea Iberozoa y para entender su misión hay que escuchar a los especialistas hablar de su trabajo. Las experiencias personales nos permiten imaginar su día a día y la repercusión del proyecto. De forma natural se crean los tres bloques del vídeo: origen y motivos, misión y experiencias, reflexiones y futuro.
+Muchas veces tendemos a fijarnos más en los que ya han actuado en producciones que aparentan ser más serias y trabajadas, dado que entendemos que saben moverse y estar cómodos en un escenario de rodaje profesional. Obviamente cada caso es un mundo, y ya sabemos que no hay que juzgar un libro por su portada, pero es algo que a muchos directores y directores de casting suelen hacer de manera inconsciente.
 
 {{< /rightimage >}}
 
 {{< justify >}}
-Roger Corman presume de haber aprovechado una misma casa en llamas para muchas de sus películas. Es lógico, ya que es un momento difícil de replicar varias veces. Nosotros hicimos lo propio con las imágenes de víboras, mariposas y otros proyectos. Un mandamiento para las pequeñas - y grandes - productoras.
+En el mundo del cine o del espectáculo hay mucha competencia y condiciones precarias. No todos los actores tienen la suerte de poder participar en producciones profesionales al principio y de que muchos no cuentan con los medios para poder mostrar un videobook de calidad al mundo.
 {{< /justify >}}
 
 
@@ -49,12 +49,10 @@ Roger Corman presume de haber aprovechado una misma casa en llamas para muchas d
     class="w-full md:w-1/2"
 >}}
 <!---->
-Conseguir buenas grabaciones de naturaleza es imposible sin el conocimiento del ecosistema. El equipo de los documentales dirigidos por Joaquín Gutiérrez Acha se pasa meses y años en el campo para lograr esos momentos. Incluso otros, como Timothy Treadwell (Grizzly Man, 2005, de Werner Herzog), se dejan la vida en ello. Por eso recurrimos al archivo que ellos tienen grabado, porque solo así podríamos ver linces, osos o imágenes submarinas.
+Desde Órdago Films queremos brindar la oportunidad de poder dotar de escenas de calidad por un precio amigable para los bolsillos de todos aquellos que quieran empezar a trabajar en su carta de presentación al mundo. Contamos con equipo de cámara y sonido profesional, además de un equipo humano formado por profesionales del sector llenos de ganas para dar vida al texto que está escrito en el guion.
 {{< /leftimage >}}
 
 {{< justify >}}
-Son estas imágenes, las que nos da la naturaleza, las que deben ser protagonistas. Porque la labor de quien divulga y conserva es poner el foco en la biodiversidad.
-
-Nos queda una vida de producciones por delante. Grabar con estos biólogos nos anima a seguir creciendo como ellos.
+¿Quieres mostrar al mundo lo que eres capaz de hacer?
 {{< /justify >}}
 {{< youtube q_T_a91kaI8 >}}
