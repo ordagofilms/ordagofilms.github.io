@@ -54,5 +54,7 @@ Desde Órdago Films queremos brindar la oportunidad de poder dotar de escenas de
 
 {{< center >}}
 ¿Quieres mostrar al mundo lo que eres capaz de hacer?
-{{< /center >}}
+
 {{< instagram DHdn8kaISGH >}}
+
+{{< /center >}}
