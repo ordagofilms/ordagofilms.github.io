@@ -1,5 +1,5 @@
 ---
-title: "VIDEOBOOK MANU SAMPER"
+title: "MISTER"
 date: 2025-03-27T12:33:45+10:00
 draft: false
 featured: true
