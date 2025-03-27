@@ -52,7 +52,7 @@ En el mundo del cine o del espectáculo hay mucha competencia y condiciones prec
 Desde Órdago Films queremos brindar la oportunidad de poder dotar de escenas de calidad por un precio amigable para los bolsillos de todos aquellos que quieran empezar a trabajar en su carta de presentación al mundo. Contamos con equipo de cámara y sonido profesional, además de un equipo humano formado por profesionales del sector llenos de ganas para dar vida al texto que está escrito en el guion.
 {{< /leftimage >}}
 
-{{< justify >}}
+{{< center >}}
 ¿Quieres mostrar al mundo lo que eres capaz de hacer?
-{{< /justify >}}
+{{< /center >}}
 {{< instagram DHdn8kaISGH >}}
