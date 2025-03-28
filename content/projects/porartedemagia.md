@@ -1,0 +1,29 @@
+---
+title: "NO DUERMO NA"
+date: 2025-02-18T12:33:45+10:00
+draft: false
+featured: true
+weight: 1
+image: "/img/projects/noduermona.jpg"
+description: Videoclip
+client: Hada
+credits:
+  - role: "Dirección y grabación"
+    people: 
+      - "Andrés Gese"
+      - "Nerea Moreno Santiso"
+
+  - role: "Producción"
+    people: 
+      - "Mario Martín Higuera"
+
+  - role: "Ayudante cámara y foto fija"
+    people: 
+      - "Lucas de la Morena"
+
+  - role: "Edición y color"
+    people: 
+      - "Andrés Gese"
+      - "Nerea Moreno Santiso"
+---
+{{< youtube IvYw1H22d3M >}}
