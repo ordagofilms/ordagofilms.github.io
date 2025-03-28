@@ -1,10 +1,10 @@
 ---
 title: "NO DUERMO NA"
-date: 2025-02-18T12:33:45+10:00
+date: 2025-02-19T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/noduermona.jpg"
+image: "/img/projects/padm.jpg"
 description: Videoclip
 client: Hada
 credits:
@@ -25,5 +25,9 @@ credits:
     people: 
       - "Andrés Gese"
       - "Nerea Moreno Santiso"
+   
+  - role: "Música"
+    people: 
+      - "Hada"
 ---
-{{< youtube IvYw1H22d3M >}}
+{{< youtube pcFCWQ_13FY >}}
