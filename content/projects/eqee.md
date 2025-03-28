@@ -25,5 +25,9 @@ credits:
     people: 
       - "Andrés Gese"
       - "Nerea Moreno Santiso"
+   
+  - role: "Música"
+    people:
+      - "Hada"
 ---
 {{< youtube y74cbfAmVtY >}}
