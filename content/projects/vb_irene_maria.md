@@ -1,13 +1,16 @@
 ---
-title: "CONTENT CREATOR"
-date: 2025-03-27T12:33:45+10:00
+title: "MÁS ALLÁ"
+date: 2025-04-07T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/vb_judi_angel.jpg"
+image: "/img/projects/vb_irene_maria.jpg"
 description: Videobook
-client: Judi Gala y Ángel Flores
+client: Irene Zulaica y María de Villalta
 credits:
+- role: "Escrita por"
+    people: 
+      - "Nacho Sánchez"
   - role: "Realizado por"
     people: 
       - "Andrés Gese"
@@ -17,6 +20,6 @@ credits:
 ---
 <br>
 <div style="display: flex; justify-content: center;">
-{{< instagram DHmIS8GIshk >}}
+{{< instagram DIJU1XKInzy >}}
 </div>
 <br>
