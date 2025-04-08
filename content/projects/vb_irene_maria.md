@@ -8,9 +8,10 @@ image: "/img/projects/vb_irene_maria.jpg"
 description: Videobook
 client: Irene Zulaica y María de Villalta
 credits:
-- role: "Escrito por"
+  - role: "Escrito por"
     people: 
       - "Nacho Sánchez"
+  
   - role: "Realizado por"
     people: 
       - "Andrés Gese"
