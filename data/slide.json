@@ -16,6 +16,11 @@
     "mobile_image": "/img/slide/eqee_vert.jpeg"
   },
   {
+    "title": "Ficción",
+    "image": "img/slide/ana_piazza.jpg",
+    "mobile_image": "/img/slide/vb_judi_angel.jpg"
+  },
+  {
     "title": "Spot",
     "image": "img/slide/sho-hai.jpg",
       "mobile_image": "/img/slide/sho-hai_vert.jpg"
@@ -24,11 +29,6 @@
     "title": "Documental",
     "image": "img/slide/vibora.jpg",
       "mobile_image": "/img/slide/vibora_vert.jpg"
-  },
-  {
-    "title": "Ficción",
-    "image": "img/slide/ana_piazza.jpg",
-    "mobile_image": "/img/slide/vb_judi_angel.jpg"
   },
   {
     "title": "Videoclip",
