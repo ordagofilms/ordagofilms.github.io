@@ -2,7 +2,7 @@
 author = "Mario Martín Higuera"
 title = "ANA"
 image = "/img/projects/ana.jpg"
-date = "2025-01-12"
+date = "2025-05-12"
 description = "Una manera diferente de levantar producción propia."
 tags = [
     "Órdago Films",
