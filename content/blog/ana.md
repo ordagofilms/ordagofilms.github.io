@@ -1,13 +1,13 @@
 +++
 author = "Mario Martín Higuera"
-title = "UN DOCUMENTAL CORPORATIVO"
-image = "/img/projects/mugueta_sonriendo.png"
+title = "ANA"
+image = "/img/projects/ana.jpg"
 date = "2025-01-12"
 description = "Una manera diferente de levantar producción propia."
 tags = [
     "Órdago Films",
     "Documental",
-    "Corporativo",
+    "Cortometraje",
 ]
 categories = [
     "Producción",
