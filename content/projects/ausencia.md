@@ -1,5 +1,5 @@
 ---
-title: "ANA"
+title: "Ausencia"
 date: 2025-07-29T12:33:45+10:00
 draft: false
 featured: true
