@@ -11,6 +11,8 @@ client: Cortometraje
 {{< justify >}}
 Felisa acaba de enviudar y lo único que quiere es recuperar, poco a poco, su espacio y su calma.
 Un día sin previo aviso llega a su casa un robot idéntico a su difunto marido: su hija lo ha contratado para ayudarla con el duelo.
+
+Cortometraje dirigido por Bruno Rodríguez Orden.
 {{< /justify >}}
 ![Image](/img/projects/ausencia_2.jpg)
 ![Image](/img/projects/ausencia_3.jpg)
