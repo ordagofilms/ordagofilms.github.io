@@ -12,7 +12,7 @@ client: Cortometraje
 Felisa acaba de enviudar y lo único que quiere es recuperar, poco a poco, su espacio y su calma.
 Un día sin previo aviso llega a su casa un robot idéntico a su difunto marido: su hija lo ha contratado para ayudarla con el duelo.
 
-Cortometraje dirigido por Bruno Rodríguez Orden.
+Cortometraje dirigido por Bruno Rodríguez Orden. Grabado en julio de 2025 en San Román de Cameros, La Rioja. Actualmente en fase de distribución.
 {{< /justify >}}
 ![Image](/img/projects/ausencia_2.jpg)
 ![Image](/img/projects/ausencia_3.jpg)
