@@ -3328,10 +3328,6 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9;
-}
-
 .bg-none {
   background-image: none;
 }
