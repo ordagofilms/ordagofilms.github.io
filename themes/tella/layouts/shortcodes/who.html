@@ -2,37 +2,59 @@
 
 <!-- Background Image (Set to very back using z-[-1]) -->
 <div class="background-image">
-    <img src="/img/who/camara.jpeg" class="w-full h-screen object-cover" alt="Background Image">
+    <img src="/img/bg.webp" class="w-full h-screen object-cover" alt="Background Image">
 </div>
 
-<div class="about-us-container grid grid-cols-1 md:grid-cols-2 p-0 md:p-2 mb-8">
-    <!-- Team Member 1 -->
-    <div class="team-member text-center">
-        <img src="/img/who/andres.jpg" alt="Team Member 1" class="team-image mx-auto rounded-full object-cover shadow-lg">
-        <h3 class="text-lg font-bold">Andrés Gese</h3>
-        <p class="text-gray-400">Co-Fundador y Realizador</p>
+    <div class="about-us-container text-center p-0 md:p-2 mb-8">
+    <!-- Team Photo -->
+    <div class="team-member">
+        <img src="/img/who/Both.webp" alt="Andrés Gese y Mario Martín" class="team-image mx-auto rounded-lg object-cover mb-0 pb-0">
+        <div class="mt-0 pt-0 flex flex-row justify-center items-center gap-6 md:gap-8">
+            <div>
+                <h3 class="text-sm md:text-base font-bold m-0">Andrés Gese</h3>
+                <p class="text-gray-400 text-xs md:text-sm m-0">Co-Fundador y Realizador</p>
+            </div>
+            <div>
+                <h3 class="text-sm md:text-base font-bold m-0">Mario Martín</h3>
+                <p class="text-gray-400 text-xs md:text-sm m-0">Co-Fundador y Productor</p>
+            </div>
+        </div>
     </div>
-
-    <!-- Team Member 2 -->
-    <div class="team-member text-center">
-        <img src="/img/who/mario.jpg" alt="Team Member 2" class="team-image mx-auto rounded-full object-cover shadow-lg">
-        <h3 class="text-lg font-bold">Mario Martín</h3>
-        <p class="text-gray-400">Co-Fundador y Productor</p>
-        
-    </div>
 </div>
 
-<div class="text-justify">
+<div class="text-justify space-y-4">
+    <p class="text-lg text-center">
+        En el mus, lanzar un órdago es jugárselo todo.<br>
+        En el audiovisual, también.
+    </p>
 
-    <b class="font-extrabold">Órdago Films</b> nace de la mano de Andrés Gese y Mario Martín, dos amigos con un proyecto en común.
-    Apostamos por <b class="font-extrabold">respetar la visión del cliente</b>, por analizar referencias, por <b class="font-extrabold">innovar</b>, por la <b class="font-extrabold">artesanía</b>, por la <b class="font-extrabold">cercanía</b>.<br>
+    <p>
+        <b class="font-extrabold">Órdago Films</b> es una productora audiovisual con base en Madrid que apuesta fuerte por cada historia. Creamos spots publicitarios, videoclips, corporativos, documentales y contenido de marca con un estilo cinematográfico y una producción cuidada al detalle.
+    </p>
 
-    Trabajamos de forma independiente y con otros profesionales del sector audiovisual para <b class="font-extrabold">adaptarnos a las necesidades de cada proyecto</b>.
+    <p>
+        Nuestro enfoque une creatividad, estrategia y artesanía para ofrecer resultados que emocionan y comunican.
+    </p>
 
-</div>
+    <p class="italic text-center my-6">
+        <em>Cada pieza es una apuesta: por la estética, por la narrativa y por la verdad de cada historia.</em>
+    </p>
 
-<div class="text-center mt-4">
-    <b class="custom-text">Apostamos por hacer cine.</b>
+    <p>
+        Trabajamos con empresas, marcas, agencias y artistas que buscan algo más que un vídeo. Buscan impacto, coherencia y una identidad visual con alma.
+    </p>
+
+    <p class="font-semibold text-lg mt-6">
+        ¿Por qué nosotros?
+    </p>
+
+    <p>
+        Ofrecemos calidad cinematográfica con la cercanía de un estudio artesanal. Lo hacemos gracias a la optimización de recursos de producción, usando nuestra experiencia en diferentes medios y formatos.
+    </p>
+
+    <p class="text-center mt-6">
+        <b class="custom-text">Cada plano es una apuesta. Cada historia es una pieza hecha a mano.</b>
+    </p>
 </div>
 
 <style>
@@ -45,9 +67,25 @@
 
     /* Team member styles */
     .team-image {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        max-height: 400px;
         transition: all 0.3s ease;
+        object-fit: cover;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        display: block;
+    }
+    
+    .team-member {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .team-member > div {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 
     /* Make the negative margin responsive */
@@ -57,8 +95,8 @@
 
     @media (max-width: 768px) {
         .team-image {
-            width: 140px;
-            height: 140px;
+            max-width: 100%;
+            max-height: 300px;
         }
         
         .about-us-container {
@@ -66,8 +104,4 @@
         }
     }
 
-    .team-image:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
 </style>

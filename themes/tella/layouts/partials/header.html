@@ -70,7 +70,6 @@
             font-size: 1.02em !important; /* Increase font size on hover and when active */
         }
         
-        
         #overlay-item {
             cursor: pointer !important;
         }
@@ -117,6 +116,12 @@
 
     <div id="overlay">
         <ul class="flex flex-col text-center list-none text-white text-3xl">
+            <!-- Services link - First item -->
+            <li class="p-2">
+                <a id="overlay-item" href="/#services" class="services-link">
+                    <span>Servicios</span>
+                </a>
+            </li>
             {{ range .Site.Menus.main }}
             <li class="p-2">
                 <a id="overlay-item" href="{{ .URL | safeURL }}">
@@ -143,7 +148,11 @@
         <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
             <div class="text-lg lg:flex-grow">
             </div>
-            <div class="text-lg">
+            <div class="text-lg flex items-center">
+                <!-- Services link with smooth scroll - First item -->
+                <a id="nav-header" href="/#services" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8 services-link">
+                    Servicios
+                </a>
                 {{ range .Site.Menus.main }}
                 <a id="nav-header" href="{{ .URL | safeURL }}" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8">
                     {{ .Name }}
@@ -166,6 +175,69 @@
                 if (link.getAttribute("href") === currentUrl || (currentUrl === "/" && link.getAttribute("href") === "/index.html")) {
                     link.classList.add("highlight");
                 }
+            });
+            
+            // Handle smooth scroll for services links
+            const servicesLinks = document.querySelectorAll(".services-link");
+            servicesLinks.forEach(function(link) {
+                link.addEventListener("click", function(e) {
+                    const currentPath = window.location.pathname;
+                    const isHomepage = currentPath === "/" || currentPath === "/index.html" || currentPath === "" || (currentPath.endsWith("/") && currentPath.length <= 1);
+                    
+                    if (isHomepage && window.location.hash === "#services") {
+                        // If already on homepage with services hash, prevent default and scroll smoothly
+                        e.preventDefault();
+                        const servicesSection = document.getElementById("services");
+                        if (servicesSection) {
+                            const headerOffset = 90;
+                            const elementPosition = servicesSection.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth"
+                            });
+                        }
+                    } else if (isHomepage) {
+                        // If on homepage but no hash, prevent reload and scroll
+                        e.preventDefault();
+                        window.location.hash = "#services";
+                        const servicesSection = document.getElementById("services");
+                        if (servicesSection) {
+                            const headerOffset = 90;
+                            const elementPosition = servicesSection.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth"
+                            });
+                        }
+                    }
+                    // If on another page, let the browser navigate naturally to /#services
+                    // The index page will handle the scroll on load
+                    
+                    // Close mobile menu if open
+                    const overlay = document.getElementById("overlay");
+                    const hamburger = document.getElementById("hamburgerbtn");
+                    if (overlay && overlay.classList.contains("open")) {
+                        overlay.classList.remove("open");
+                        hamburger.classList.remove("is-open");
+                    }
+                });
+            });
+            
+            // Close mobile menu when clicking on any overlay link
+            const overlayLinks = document.querySelectorAll("#overlay a");
+            overlayLinks.forEach(function(link) {
+                link.addEventListener("click", function() {
+                    const overlay = document.getElementById("overlay");
+                    const hamburger = document.getElementById("hamburgerbtn");
+                    if (overlay && overlay.classList.contains("open")) {
+                        overlay.classList.remove("open");
+                        hamburger.classList.remove("is-open");
+                    }
+                });
             });
         });
 
