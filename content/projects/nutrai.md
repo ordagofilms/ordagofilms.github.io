@@ -4,7 +4,7 @@ date: 2025-10-12T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/nutrai.jpg"
+image: "/img/projects/nutrai2.jpg"
 description: Spot
 client: NUTRAI
 ---
