@@ -4,7 +4,7 @@ date: 2025-11-10T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/vamos_tirando1.jpg"
+image: "/img/projects/vamos_tirando.jpg"
 description: Ficción
 client: Webserie
 ---
@@ -13,9 +13,9 @@ Piloto de la webserie dirigido por Andrés Gese. Actualmente está en fase de po
 
 Rodaje de 5 jornadas en el que contamos con cameos de la talla del actor Pepe Viyuela, el youtuber Thous y el rapero Señor Rojo; además de actores emergentes como Héctor Vidondo, Jaime Rodrigo, Weri Boukachour, Álvaro Díaz, Álex Viciano, Manu Samper, Ángel Flores, Carlos San Jorge y Nadal Bin.
 {{< /justify >}}
-![Image](/img/projects/ausencia_2.jpg)
-![Image](/img/projects/ausencia_3.jpg)
-![Image](/img/projects/ausencia_4.jpg)
+![Image](/img/projects/vt1.jpg)
+![Image](/img/projects/vt2.jpg)
+![Image](/img/projects/vt3.jpg)
 {{< justify >}}
 Tras acabar sus estudios universitarios, Andrés, David, Rómulo y Alex se enfrentan a un paisaje laboral desolador, emocionalmente inestable y lleno de puertas giratorias.
 
