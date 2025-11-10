@@ -15,5 +15,5 @@ Vídeo explicativo de la app Nutrai. Montaje, motion graphics, versiones en cast
 {{< youtube 3EfA2APt44U >}}
 
 {{< justify >}}
-Anuncio que condensa en 30 segundos las principales funcionalidades de la aplicación, utilizando el lenguaje que es habitual en el formato: rótulos llamativos, movimiento, eslóganes directos y descriptivos; además de añadirle un estilo personal y alineado con la marca.
+Anuncio que condensa en 30 segundos las principales funcionalidades de la aplicación, utilizando el lenguaje que es habitual en el formato: rótulos llamativos, movimiento, eslóganes directos y descriptivos; además de añadirle un estilo personal y alineado con la start-up informática.
 {{< /justify >}}
