@@ -1,6 +1,6 @@
 ---
 title: "Nutrai"
-date: 2025-10-15T12:33:45+10:00
+date: 2025-10-12T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
