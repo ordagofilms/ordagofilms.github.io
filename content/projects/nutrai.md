@@ -1,19 +1,19 @@
 ---
-title: "A Study in Timeless Elegance"
+title: "Nutrai"
 date: 2025-10-15T12:33:45+10:00
 draft: false
 featured: true
 weight: 1
-image: "/img/projects/vidano_madrid.jpg"
-description: Moda
-client: vidano.
+image: "/img/projects/nutrai.jpg"
+description: Spot
+client: NUTRAI
 ---
 {{< justify >}}
-Fashion film para la marca de ropa vidano. Desarrollo de la idea, grabación, edición, post-producción de color y sonido.
+Vídeo explicativo de la app Nutrai. Montaje, motion graphics, versiones en castellano e inglés, en horizontal y vertical.
 {{< /justify >}}
 
-{{< youtube 9Ovr8mAZ5Qs >}}
+{{< youtube 3EfA2APt44U >}}
 
 {{< justify >}}
-Para promocionar sus camisetas de algodón Pima y la llegada de su ropa a Madrid, producimos esta pieza cinematográfica que refleja el lujo discreto, la autenticidad y la comodidad de las prendas que llevan los modelos. Grabada en localizaciones reconocibles de la capital como el Parque del Retiro o el Cerro del Tío Pío.
+Pieza que condensa en 30 segundos las principales funcionalidades de la aplicación, utilizando el lenguaje que es habitual en el formato: rótulos llamativos, movimiento, eslóganes directos y descriptivos; además de añadirle un estilo personal y alineado con la marca.
 {{< /justify >}}
