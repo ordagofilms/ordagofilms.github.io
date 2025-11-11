@@ -7,20 +7,12 @@ weight: 1
 image: "/img/projects/mugueta_sonriendo.png"
 description: Corporativo
 client: Iberozoa
-credits:
-  - role: "Guion, dirección y producción"
-    people: 
-      - "Mario Martín Higuera"
-
-  - role: "Grabación, realización y montaje"
-    people:
-      - "Andrés Gese"
-
-  - role: "Rodajes"
-    people: 
-      - "Lucas de la Morena"
-      - "Nerea Moreno Santiso"
-      - "David López-Brea"
-
 ---
+{{< justify >}}
+Vídeo corporativo y tráiler de la Asociación Iberozoa destinado a la captación de socios y presentación de su entidad en congresos o eventos.
+{{< /justify >}}
 {{< youtube q_T_a91kaI8 >}}
+
+{{< justify >}}
+Un pequeño documental sobre su proyecto, su misión y su potencial para celebrar sus 4 años. Utilizamos archivo grabado por los biólogos para disponer de todas las especies posibles e hicimos entrevistas a 20 miembros para recoger distintas perspectivas de unos objetivos comunes: conservación, divulgación y desarrollo laboral en la biología.
+{{< /justify >}}
