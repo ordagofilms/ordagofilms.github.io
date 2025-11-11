@@ -7,27 +7,14 @@ weight: 1
 image: "/img/projects/padm.jpg"
 description: Videoclip
 client: Hada
-credits:
-  - role: "Dirección y grabación"
-    people: 
-      - "Andrés Gese"
-      - "Nerea Moreno Santiso"
-
-  - role: "Producción"
-    people: 
-      - "Mario Martín Higuera"
-
-  - role: "Ayudante cámara y foto fija"
-    people: 
-      - "Lucas de la Morena"
-
-  - role: "Edición y color"
-    people: 
-      - "Andrés Gese"
-      - "Nerea Moreno Santiso"
-   
-  - role: "Música"
-    people: 
-      - "Hada"
 ---
+{{< justify >}}
+Visualizer para la canción "Por arte de magia" del grupo musical emergente Hada.
+{{< /justify >}}
 {{< youtube pcFCWQ_13FY >}}
+{{< justify >}}
+Creación del concepto que hila el EP "Debajo del polvo", en torno a los recuerdos de la adolescencia. Producción, grabación y post-producción de 5 vídeos cortos diseñados para su reproducción en bucle. Con versiones para YouTube y Spotify. El trabajo incluye un sexto vídeo a modo de teaser que sirve para el anuncio previo al lanzamiento.
+
+El concepto del vídeo para el primer tema original del grupo se basa en su propia imagen de marca, en un lugar y momento mágico, surrealista, en línea con la creatividad en la composición y producción musical.
+{{< /justify >}}
+
