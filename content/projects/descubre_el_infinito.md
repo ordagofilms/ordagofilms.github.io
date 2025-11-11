@@ -7,15 +7,17 @@ weight: 1
 image: "/img/projects/infinity_wet_hor.jpg"
 description: Spot
 client: Infinity Energy Drink
-credits:
-  - role: "Realizado por"
-    people: 
-      - "Mario Martín Higuera"
-      - "Diego López"
-      - "Andrés Gese"
 ---
+{{< justify >}}
+Anuncio publicitario realizado para la marca de bebida energética Infinity Energy Drink.
+{{< /justify >}}
+
 <br>
 <div style="display: flex; justify-content: center;">
 {{< instagram DEkP6ZsNTCK >}}
 </div>
 <br>
+  
+{{< justify >}}
+En el spot exploramos el concepto del cambio y el contraste a través de un montaje dinámico que mezcla stock footage con planos grabados para completar el mensaje ligado al eslogan de la bebida: descubre el infinito.
+{{< /justify >}}
