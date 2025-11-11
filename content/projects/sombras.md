@@ -16,5 +16,5 @@ Cortometraje de ficción dirigido por Andrés Gese. Grabado en noviembre de 2024
 ![Image](/img/projects/sombras3.jpg)
 
 {{< justify >}}
-El corto habla sobre el duelo interno mental que sufre un chico tras la pérdida de sus seres queridos. Mientras está atrapado en la espiral constante de melancolía una visita inesperada toca el timbre de su casa. Un antiguo amigo de la infancia que tratará de ayudarle para salir de las sombras.
+El corto habla sobre el duelo interno mental que sufre un chico tras la pérdida de sus seres queridos. Mientras el protagonista (Manuel Samper) está atrapado en la espiral constante de melancolía una visita inesperada toca el timbre de su casa. Un antiguo amigo de la infancia (Javier Uceda) que tratará de ayudarle para salir de las sombras.
 {{< /justify >}}
