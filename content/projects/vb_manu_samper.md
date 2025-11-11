@@ -7,21 +7,13 @@ weight: 1
 image: "/img/projects/vb_manu_samper.jpg"
 description: Videobook
 client: Manu Samper
-credits:
-  - role: "Escrito por"
-    people: 
-      - "Nacho Sánchez"
-      - "Manu Samper"
-
-  - role: "Realizado por"
-    people: 
-      - "Andrés Gese"
-      - "Mario Martín Higuera"
-      - "Agustín Rezza"
-  
 ---
-<br>
-<div style="display: flex; justify-content: center;">
-{{< instagram DHdn8kaISGH >}}
-</div>
-<br>
+{{< justify >}}
+Escena de comedia para el videobook del actor Manu Samper.
+{{< /justify >}}
+
+{{< youtube BhDZIWSIPnU >}}
+
+{{< justify >}}
+De la idea impulsada por el propio actor - que es gaditano, no argentino - desarrollamos el guion y grabamos una escena llena de referencias a entrenadores célebres, mostrando su capacidad para la imitación y para fingir acentos distintos. Al grabar escenas de videobooks, también nos encargamos de la postproducción completa.
+{{< /justify >}}
