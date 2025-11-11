@@ -7,20 +7,13 @@ weight: 1
 image: "/img/projects/vb_irene_maria.jpg"
 description: Videobook
 client: Irene Zulaica y María de Villalta
-credits:
-  - role: "Escrito por"
-    people: 
-      - "Nacho Sánchez"
-  
-  - role: "Realizado por"
-    people: 
-      - "Andrés Gese"
-      - "Mario Martín Higuera"
-      - "Agustín Rezza"
-  
 ---
-<br>
-<div style="display: flex; justify-content: center;">
-{{< instagram DIJU1XKInzy >}}
-</div>
-<br>
+{{< justify >}}
+Escena de thriller para el videobook de las actrices Irene Zulaica y María de Villalta.
+{{< /justify >}}
+
+{{< youtube xw4Hv5WkRhQ >}}
+
+{{< justify >}}
+El objetivo de la escena es mostrar su capacidad de actuar más allá de recitar texto, creando una situación de tensión a través del breve guion escrito por Nacho Sánchez.
+{{< /justify >}}
