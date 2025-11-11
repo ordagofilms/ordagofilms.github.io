@@ -7,28 +7,13 @@ weight: 1
 image: "/img/projects/mariposas.jpg"
 description: Documental
 client: Iberozoa
-credits:
-  - role: "Dirección y guion"
-    people: 
-      - "Mario Martín Higuera"
-      - "Mario Álamo"
-
-  - role: "Cámaras"
-    people: 
-      - "Andrés Gese"
-      - "Nerea Moreno Santiso"
-
-  - role: "Ayudante cámara y sonido"
-    people: 
-      - "Lucas de la Morena"
-
-  - role: "Edición y color"
-    people: 
-      - "Andrés Gese"
-
-  - role: "Expertos"
-    people: 
-      - "Javi Sánchez"
-      - "Mario Álamo"
 ---
+{{< justify >}}
+Vídeo divulgativo del proyecto de muestreo de mariposas que lleva a cabo la Asociación Iberozoa.
+{{< /justify >}}
+
 {{< youtube jwZ5Dp98CAM >}}
+
+{{< justify >}}
+Para grabar este breve documental contamos con Mario Álamo y Javier Sánchez, entomólogos de Iberozoa. Es de especial vigencia por el reciente incendio en la Dehesa Boyal, en San Sebastián de los Reyes. En la pieza se informa de las características de las mariposas y de su relación con los ecosistemas.
+{{< /justify >}}
