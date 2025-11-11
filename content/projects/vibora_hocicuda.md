@@ -7,18 +7,13 @@ weight: 1
 image: "/img/projects/vibora.jpg"
 description: Documental
 client: Iberozoa
-credits:
-  - role: "Dirección y guion"
-    people: 
-      - "Mario Martín Higuera"
-
-  - role: "Cámara y edición"
-    people: 
-      - "Andrés Gese"
-
-  - role: "Expertos"
-    people: 
-      - "Antonio Martín Higuera"
-      - "Jorge Chorro"
 ---
+{{< justify >}}
+Vídeo divulgativo del proyecto de seguimiento de víbora hocicuda que lleva a cabo la Asociación Iberozoa.
+{{< /justify >}}
+
 {{< youtube lrw9YyRyxfs >}}
+
+{{< justify >}}
+Para grabar este breve documental contamos con Antonio Martín y Jorge Chorro, del área de herpetología de Iberozoa. Con ellos descubrimos muchas características de la víbora hocicuda y sus amenazas, en un tono divulgativo y riguroso a la vez que accesible para quienes no son especialistas en la materia.
+{{< /justify >}}
