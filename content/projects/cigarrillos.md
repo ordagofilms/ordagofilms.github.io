@@ -7,39 +7,12 @@ weight: 1
 image: "/img/projects/cigarrillos_ducha.jpg"
 description: Ficción
 client: Cortometraje
-credits:
-  - role: "Dirección y guion"
-    people: 
-      - "Mario Martín Higuera"
-
-  - role: "Actores"
-    people: 
-      - "Ángel Flores"
-      - "Judi Gala"
-      - "Manuel Samper"
-
-  - role: "DOP y etalonaje"
-    people: 
-      - "Nerea Moreno Santiso"
-
-  - role: "Sonido y montaje"
-    people: 
-      - "Andrés Gese"
-
-  - role: "Producción, arte y vestuario"
-    people: 
-      - "Maite Jiménez"
-
-  - role: "Maquillaje y peluquería"
-    people: 
-      - "Delfina Luna"
-
-  - role: "Sonorización y mezcla"
-    people: 
-      - "Mario Martín Higuera"
-
-  - role: "Ayudante y foto fija"
-    people: 
-      - "Lucas de la Morena"
 ---
+{{< justify >}}
+Cortometraje de ficción para el Notodofilmfest 2024 en la categoría de 30 segundos. Dirigido por Mario Martín Higuera.
+{{< /justify >}}
 {{< youtube 41mBjR_nAdQ >}}
+
+{{< justify >}}
+Protagonizado por Ángel Flores, con Manu Samper y Judi Gala completando el reparto, Cigarrillos habla del autoengaño, en este caso reflejado en un hábito muy común: fumar tabaco. En cuanto Ángel escucha la palabra, su cuerpo reacciona al estímulo.
+{{< /justify >}}
