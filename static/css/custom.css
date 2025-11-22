@@ -6,14 +6,17 @@
 /* Default cursor */
 
 .loadingScreen {
-    position: absolute;
-    z-index: 100;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #171717; /* bg-neutral-900 */
     opacity: 1; /* Start with full opacity */
     transition: opacity 0.5s ease-out; /* Apply fade-out transition */
     }
@@ -42,49 +45,98 @@
     /* Basic setup for the logo container */
 /* Basic setup for the logo container */
 .logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #171717; /* bg-neutral-900 */
+    z-index: -1;
+}
+
+.logo-container-inner {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
-    height: 100vh; /* Ensure it fills the screen */
-    overflow: hidden;
+    height: 100%;
+    z-index: 1;
 }
 
-/* The first letter setup (initially centered) */
-.first-letter {
-    opacity: 0;
-    font-size: 5rem; /* Size of the letter */
-    font-weight: bold;
-    position: absolute;
-    height: 70px;
-    margin-bottom: 26px;
-    animation: spinAndSlide 2s ease forwards;
-    transform: translateX(-50%); /* Start centered */
+.logo-stack {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 200px;
 }
 
-/* The rest of the letters (initially hidden) */
-.rest-of-letters {
-    font-size: 5rem;
-    font-weight: bold;
-    height: 70px;
-    opacity: 0; /* Start hidden */
+/* Empty logo (outline) - positioned behind */
+.chalk-logo-empty {
+    width: 400px;
+    height: 200px;
+    object-fit: contain;
+    opacity: 1;
     position: absolute;
-    animation: showRestOfLetters 2s 1s forwards; /* Starts after the spin & slide */
-    transform: translateX(50%); /* Start offset to the right */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
 }
-/* Subtitle styling */
-.subtitle {
-    font-size: 2.7rem; /* Adjust as needed */
-    font-family: 'Gotham Light', Arial, sans-serif;
-    color: white;
-    opacity: 0; /* Start hidden */
+
+/* Filled logo - positioned exactly on top with fill animation */
+.chalk-logo {
+    width: 400px;
+    height: 200px;
+    object-fit: contain;
+    opacity: 1;
     position: absolute;
-    margin-top: 90px;
-    margin-right: 38px;
-    animation: fadeInSubtitle 2s ease forwards; /* Trigger this animation */
-    animation-delay: 1s; /* Delay matches "rest-of-letters" animation */
-    transform: translateY(20px); /* Slight offset for entry effect */
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* Progressive fill animation from left to right */
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+    animation: progressiveFillLeftRight 5s ease-in-out forwards;
+}
+
+@keyframes progressiveFillLeftRight {
+    0% {
+        clip-path: inset(0 100% 0 0);
+        -webkit-clip-path: inset(0 100% 0 0);
+    }
+    15% {
+        clip-path: inset(0 75% 0 0);
+        -webkit-clip-path: inset(0 75% 0 0);
+    }
+    20% {
+        clip-path: inset(0 75% 0 0);
+        -webkit-clip-path: inset(0 75% 0 0);
+    }
+    35% {
+        clip-path: inset(0 50% 0 0);
+        -webkit-clip-path: inset(0 50% 0 0);
+    }
+    40% {
+        clip-path: inset(0 50% 0 0);
+        -webkit-clip-path: inset(0 50% 0 0);
+    }
+    55% {
+        clip-path: inset(0 25% 0 0);
+        -webkit-clip-path: inset(0 25% 0 0);
+    }
+    60% {
+        clip-path: inset(0 25% 0 0);
+        -webkit-clip-path: inset(0 25% 0 0);
+    }
+    75% {
+        clip-path: inset(0 0% 0 0);
+        -webkit-clip-path: inset(0 0% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0% 0 0);
+        -webkit-clip-path: inset(0 0% 0 0);
+    }
 }
 
 * {

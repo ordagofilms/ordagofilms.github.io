@@ -17,12 +17,25 @@
 <body class="flex flex-col min-h-screen bg-black">
     <div class="loadingScreen text-white">
             <div class="logo-container bg-neutral-900"></div>
-            <div class="logo-container-inner"></div>
-            <img src="img/logo/letter.png" alt="" class="first-letter">
-            <img src="img/logo/rest.png" alt="Órdgao" class="rest-of-letters">
-            <h2 class="subtitle">FILMS</h2>
+            <div class="logo-container-inner">
+                <div class="logo-stack">
+                    <img src="/img/logo/logo-tiza-empty.png" alt="Órdago Films" class="chalk-logo-empty">
+                    <img src="/img/logo/logo-tiza.png" alt="Órdago Films" class="chalk-logo">
+                </div>
+            </div>
             <div class="loader hidden"></div>
     </div>
+    <script>
+        // Hide loading screen immediately if already shown (prevents flash)
+        (function() {
+            if (sessionStorage.getItem('loadingShown') === 'true') {
+                var loadingScreen = document.querySelector(".loadingScreen");
+                if (loadingScreen) {
+                    loadingScreen.style.display = 'none';
+                }
+            }
+        })();
+    </script>
     <main class="flex-grow">
         {{- partial "alert.html" . -}}
         {{- partial "header.html" . -}}
@@ -45,8 +58,8 @@
             <div class="video-top-overlay"></div>
             
             <!-- Scroll down arrow -->
-            <div class="scroll-arrow-container">
-                <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="scroll-arrow-container cursor-pointer">
+                <svg class="scroll-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
@@ -55,15 +68,82 @@
         <!-- Services Section -->
         <section id="services" class="services-section py-20 px-4">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 text-center">Servicios</h2>
+                <!-- Collaborators Carousel Section -->
+                {{ $collaborators := .Site.Data.collaborators }}
+                {{ if $collaborators }}
+                <div class="mb-20 pb-20">
+                    <div class="collaborators-carousel-wrapper overflow-hidden">
+                        <div class="collaborators-carousel flex">
+                            <!-- First set of logos -->
+                            {{ range $collaborators }}
+                            <div class="collaborator-logo flex-shrink-0 px-8 md:px-12">
+                                <img src="{{ .logo }}" alt="{{ .name }}" class="collaborator-logo-img opacity-70 hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            {{ end }}
+                            <!-- Duplicate set for seamless loop -->
+                            {{ range $collaborators }}
+                            <div class="collaborator-logo flex-shrink-0 px-8 md:px-12">
+                                <img src="{{ .logo }}" alt="{{ .name }}" class="collaborator-logo-img opacity-70 hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+                
+                <!-- Testimonials Section -->
+                {{ $testimonials := .Site.Data.testimonials }}
+                {{ if $testimonials }}
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-16 mb-16 text-center">Lo que dicen nuestros clientes</h2>
+                    <div class="testimonials-masonry">
+                        {{ range $testimonials }}
+                        <div class="testimonial-card bg-neutral-900 p-6 md:p-8 rounded-lg relative">
+                            <!-- Quote -->
+                            <p class="text-gray-300 text-lg mb-6 italic">"{{ .quote }}"</p>
+                            <!-- Name and Occupation -->
+                            <div class="border-t border-gray-700 pt-4">
+                                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                    <p class="text-white font-semibold">{{ .name }}</p>
+                                    <div class="testimonial-stars flex items-center">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#facc15" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#facc15" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#facc15" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#facc15" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#facc15" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm">{{ .occupation }}</p>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                
+                <!-- Spacer between testimonials and services -->
+                <div style="height: 5rem; min-height: 5rem;"></div>
+                
+                <div id="services-cards" style="scroll-margin-top: 90px;">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 text-center">Servicios</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     <!-- Service 1: Corporativo y Publicidad -->
                     <div class="service-card p-6 md:p-8 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors duration-300 relative">
                         <img src="/img/icons/icono_corp.webp" alt="Corporativo" class="service-icon">
                         <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 pl-14 md:pl-20">Corporativo y Publicidad</h3>
                         <p class="text-gray-300 text-lg leading-relaxed">
-                            Transformamos la comunicación de tu marca en una experiencia visual.
-                            Creamos spots, branded content y piezas para redes sociales que transmiten la esencia de tu proyecto con una mirada cinematográfica.
+                            Grabar es más fácil que nunca, diferenciar tu marca es lo más difícil.
+                            Creamos spots, branded content y piezas para redes sociales para que tu marca se destaque.
                         </p>
                     </div>
                     
@@ -91,8 +171,7 @@
                         <img src="/img/icons/icono_service.webp" alt="Service" class="service-icon">
                         <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 pl-14 md:pl-16">Service</h3>
                         <p class="text-gray-300 text-lg leading-relaxed">
-                            Ofrecemos soporte en múltiples departamentos a productoras y marcas que ruedan en España.
-                            Desde localizaciones y casting hasta equipo técnico y gestión de permisos, garantizamos rodajes fluidos y de calidad.
+                            Desde búsqueda de localizaciones y casting hasta equipo técnico y gestión de permisos, ofrecemos soporte en múltiples departamentos a productoras y marcas a través de nuestra experiencia y red de colaboradores.
                         </p>
                     </div>
                 </div>
@@ -117,6 +196,7 @@
         {{ end }}
     </main>
     
+    {{- partial "footer.html" . -}}
 </body>
 
 </html>
@@ -124,47 +204,27 @@
 <style>
     
 
-/* Spin animation and slide for the first letter */
-@keyframes spinAndSlide {
+/* Chalk drawing animation */
+@keyframes chalkDraw {
     0% {
-        opacity: 0;
-        transform: translateX(0%) rotate3d(0, 0, 0, 0deg); /* Centered */
-    }
-    55% {
-        opacity: 1;
-        transform: translateX(0%) rotate3d(1, -1, 0, 720deg); /* Spin in place */
+        clip-path: inset(0 100% 0 0);
+        -webkit-clip-path: inset(0 100% 0 0);
     }
     100% {
-        opacity: 1;
-        transform: translateX(0%) translateX(-120%); /* Adjust final position for collision */
+        clip-path: inset(0 0% 0 0);
+        -webkit-clip-path: inset(0 0% 0 0);
     }
 }
 
-/* Animation for showing the rest of the letters */
-@keyframes showRestOfLetters {
+/* Alternative mask-based animation for better browser support */
+@keyframes chalkReveal {
     0% {
-        opacity: 0;
-        transform: translateX(55%); /* Start offset */
-    }
-    1% {
-        opacity: 0;
-        transform: translateX(22%); /* Start offset */
+        mask-position: 100% 0;
+        -webkit-mask-position: 100% 0;
     }
     100% {
-        opacity: 1;
-        transform: translateX(22%); /* Move to the center next to the first letter */
-    }
-}
-
-/* Animation for fading in the subtitle */
-@keyframes fadeInSubtitle {
-    0% {
-        opacity: 0;
-        transform: translateY(20px); /* Start offset */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(-3px); /* Settle into position */
+        mask-position: 0% 0;
+        -webkit-mask-position: 0% 0;
     }
 }
 
@@ -249,17 +309,32 @@
 
 /* Scroll Arrow Styles */
 .scroll-arrow-container {
-    display: none; /* Hidden by default */
+    display: block;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-arrow-container:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 .scroll-arrow {
     width: 28px;
     height: 28px;
+    max-width: 28px;
+    max-height: 28px;
+    min-width: 28px;
+    min-height: 28px;
     animation: bounce 2s infinite;
+    cursor: pointer;
+    pointer-events: none;
 }
 
 @keyframes bounce {
@@ -274,19 +349,47 @@
     }
 }
 
-@media (max-width: 768px) {
-    .scroll-arrow-container {
-        display: block; /* Show only on mobile */
-        position: absolute;
-        bottom: 1.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-        cursor: pointer;
-        opacity: 0.6;
-        transition: opacity 0.3s ease;
+/* Testimonials Section Styles */
+
+.testimonials-masonry {
+    column-count: 1;
+    column-gap: 2rem;
+    column-fill: balance;
+}
+
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+@media (min-width: 768px) {
+    .testimonials-masonry {
+        column-count: 3;
     }
 }
+
+.testimonial-stars {
+    display: flex;
+    gap: 2px;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.testimonial-stars svg {
+    display: block;
+    flex-shrink: 0;
+}
+
 
 /* Services Section Styles */
 .services-section {
@@ -299,13 +402,12 @@
 }
 
 .service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     position: relative;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(57, 191, 184, 0.2);
 }
 
 .service-icon {
@@ -356,6 +458,67 @@
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
+/* Collaborators Carousel Styles */
+
+.collaborators-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.collaborators-carousel {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+.collaborator-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 150px;
+}
+
+.collaborator-logo-img {
+    width: 120px;
+    height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.collaborator-logo:hover .collaborator-logo-img {
+    filter: grayscale(0%);
+    transform: scale(1.15);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .collaborator-logo {
+        height: 80px;
+        width: 120px;
+    }
+    
+    .collaborator-logo-img {
+        width: 100px;
+        height: 60px;
+    }
+    
+    .collaborators-carousel {
+        animation-duration: 20s;
+    }
+}
+
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
@@ -367,39 +530,29 @@ html {
     var loadingScreen = document.querySelector(".loadingScreen");
     var loader = document.querySelector(".loader");
 
-    window.addEventListener('load', function() {
-        // Set a minimum delay of 3 seconds before starting fade out
-        setTimeout(function() {
-            loadingScreen.classList.add('hidden'); // Add the hidden class to start fade out
-            // After fade out completes, set display to 'none' to remove from the layout
+    // Only show animation if loading screen hasn't been shown yet
+    if (sessionStorage.getItem('loadingShown') !== 'true') {
+        window.addEventListener('load', function() {
+            // Set a minimum delay of 3 seconds before starting fade out
             setTimeout(function() {
-                loadingScreen.style.display = 'none';
-            }, 1000); // Wait for the fade-out transition to finish (1 second)
-        }, 3000); // 3000 milliseconds = 3 seconds
-    });
+                loadingScreen.classList.add('hidden'); // Add the hidden class to start fade out
+                // After fade out completes, set display to 'none' to remove from the layout
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                    // Mark as shown in sessionStorage
+                    sessionStorage.setItem('loadingShown', 'true');
+                }, 1000); // Wait for the fade-out transition to finish (1 second)
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    }
 
     document.addEventListener("DOMContentLoaded", function () {
-        const firstLetter = document.querySelector(".first-letter");
-        const restOfLetters = document.querySelector(".rest-of-letters");
-        const subtitle = document.querySelector(".subtitle");
-
-        // Delay the animation until the page is fully loaded
-        setTimeout(() => {
-            // Add classes to start animations for the logo
-            firstLetter.classList.add("spin");
-            restOfLetters.classList.add("show-rest");
-
-            // Delay showing the subtitle to match the end of "rest-of-letters" animation
-            setTimeout(() => {
-                subtitle.style.opacity = "1"; // Make subtitle visible
-                subtitle.style.transform = "translateY(0)"; // Ensure proper position
-            }, 2000); // Adjust this to match the duration of the previous animations
-        }, 500); // Initial delay for the logo animations
+        // Chalk logo animation is handled by CSS
         
         // Check for hash on DOMContentLoaded (for when navigating from other pages)
         function scrollToServices() {
-            if (window.location.hash === '#services') {
-                const servicesSection = document.getElementById('services');
+            if (window.location.hash === '#services' || window.location.hash === '#services-cards') {
+                const servicesSection = document.getElementById('services-cards');
                 if (servicesSection) {
                     const headerOffset = 90;
                     const elementPosition = servicesSection.getBoundingClientRect().top;
@@ -420,7 +573,7 @@ html {
         const scrollArrow = document.querySelector('.scroll-arrow-container');
         if (scrollArrow) {
             scrollArrow.addEventListener('click', function() {
-                const servicesSection = document.getElementById('services');
+                const servicesSection = document.getElementById('services-cards');
                 if (servicesSection) {
                     const headerOffset = 90;
                     const elementPosition = servicesSection.getBoundingClientRect().top;

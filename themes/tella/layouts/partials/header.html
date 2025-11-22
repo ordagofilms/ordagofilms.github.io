@@ -110,6 +110,9 @@
         }
         header img {
             margin-left: 20px; /* Adjust this value as needed */
+            max-height: 96px; /* Limit logo height to match h-24 (6rem = 96px) */
+            width: auto; /* Maintain aspect ratio */
+            height: auto; /* Allow natural height but constrained by max-height */
         }
 
     </style>
@@ -118,7 +121,7 @@
         <ul class="flex flex-col text-center list-none text-white text-3xl">
             <!-- Services link - First item -->
             <li class="p-2">
-                <a id="overlay-item" href="/#services" class="services-link">
+                <a id="overlay-item" href="/#services-cards" class="services-link">
                     <span>Servicios</span>
                 </a>
             </li>
@@ -133,7 +136,7 @@
         
     </div>
 
-    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-4">
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 px-4">
         <div class="flex items-center flex-shrink-0 text-xl text-grey-900">
             <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}"
                     class="{{ .Site.Params.logo.size }} mr-3 cursor-pointer hover:scale-105 duration-300" src="{{ .Site.Params.logo.main | relURL }}"></a>
@@ -150,7 +153,7 @@
             </div>
             <div class="text-lg flex items-center">
                 <!-- Services link with smooth scroll - First item -->
-                <a id="nav-header" href="/#services" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8 services-link">
+                <a id="nav-header" href="/#services-cards" class="duration-200 block mt-4 lg:inline-block cursor-pointer lg:mt-0 text-white mr-8 services-link">
                     Servicios
                 </a>
                 {{ range .Site.Menus.main }}
@@ -184,10 +187,10 @@
                     const currentPath = window.location.pathname;
                     const isHomepage = currentPath === "/" || currentPath === "/index.html" || currentPath === "" || (currentPath.endsWith("/") && currentPath.length <= 1);
                     
-                    if (isHomepage && window.location.hash === "#services") {
+                    if (isHomepage && window.location.hash === "#services-cards") {
                         // If already on homepage with services hash, prevent default and scroll smoothly
                         e.preventDefault();
-                        const servicesSection = document.getElementById("services");
+                        const servicesSection = document.getElementById("services-cards");
                         if (servicesSection) {
                             const headerOffset = 90;
                             const elementPosition = servicesSection.getBoundingClientRect().top;
@@ -201,8 +204,8 @@
                     } else if (isHomepage) {
                         // If on homepage but no hash, prevent reload and scroll
                         e.preventDefault();
-                        window.location.hash = "#services";
-                        const servicesSection = document.getElementById("services");
+                        window.location.hash = "#services-cards";
+                        const servicesSection = document.getElementById("services-cards");
                         if (servicesSection) {
                             const headerOffset = 90;
                             const elementPosition = servicesSection.getBoundingClientRect().top;

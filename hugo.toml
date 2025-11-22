@@ -29,12 +29,12 @@ enableRobotsTXT = true
   googleFonts = true
 
   [params.logo]
-    main = "img/logo/logo.svg"
+    main = "img/logo/logo-tiza.png"
     alt = "Órdago Films Logo"
 
     # The size parameter is the class name of tailwindcss
     # https://tailwindcss.com/
-    size = "h-14"
+    size = "h-24"
 
   [params.site]
     name = "Órdago Films"
