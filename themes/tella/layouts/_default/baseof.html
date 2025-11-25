@@ -8,6 +8,12 @@
 </head>
 
 <body class="flex flex-col min-h-screen bg-neutral-900 text-white">
+  {{ if not hugo.IsServer }}
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSGB7RC4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  {{ end }}
   <main class="flex-grow">
     {{- partial "header.html" . -}}
     <div class="mt-24">
