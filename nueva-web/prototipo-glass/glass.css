@@ -1,0 +1,74 @@
+:root {
+  color-scheme: dark;
+  --glass-rim: 1px solid #e9f3ff80;
+  --glass-depth: inset 0 2px 2px #ffffffb0, inset 2px 0 6px #d8eaff60,
+    inset 0 -4px 6px #a0c9ff50, inset 0 0 0 4px #e8f4ff16,
+    0 8px 22px #0007, 0 24px 60px #0005;
+}
+body {
+  color: #f4f8ff;
+  background: #080d16;
+}
+.hero {
+  background:
+    linear-gradient(145deg, #0a1429b5, #09122248 50%, #07101cce),
+    url("assets/atmosfera.jpg") center / cover,
+    #132743;
+}
+.hero::before { background: #050a1666; }
+.about {
+  background: radial-gradient(ellipse at 85% 20%, #345578 0, transparent 58%),
+    radial-gradient(ellipse at 15% 110%, #30375a 0, transparent 60%), #080e19;
+}
+.brand {
+  mix-blend-mode: normal;
+}
+.brand img { opacity: .46; }
+.brand::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg,
+    #e3f4ffb3 2%, #ffffff14 18%, #91ccfa34 32%,
+    #fff5e1cb 43%, #ffffff10 51%, #abcff832 72%,
+    #eaf8ffbb 87%, #ffffff26 96%);
+  -webkit-mask: url("assets/logo.png") center / contain no-repeat;
+  mask: url("assets/logo.png") center / contain no-repeat;
+}
+.brand {
+  filter: drop-shadow(-.7px -.7px 0 #e9f7ff9c)
+    drop-shadow(.8px .7px 0 #f7c79b50);
+}
+.reel-nav { inset-inline: clamp(.8rem, 3vw, 3.5rem); }
+.reel-nav button, .contact-trigger, .about-link, .about-email, .action, .about h2 {
+  background: linear-gradient(168deg, #fbfdffd9 8%, #d5edff2b 43%, #ffffff13 54%, #d4eaff9e 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: .45px #edf7ff9e;
+}
+.reel-nav button, .contact-trigger, .about-link, .about-email, .action {
+  border: 0;
+  padding: .72em 1.25em;
+}
+.reel-nav button:hover, .reel-nav button[aria-pressed=true], .contact-trigger:hover,
+.about-link:hover, .about-email:hover, .action:hover {
+  -webkit-text-stroke-color: #fff;
+}
+.reel-nav button:focus-visible, .contact-trigger:focus-visible, .about-link:focus-visible,
+.about-email:focus-visible, .action:focus-visible { outline-color: #e9f3ff; }
+.about-email { text-decoration: none; }
+dialog {
+  color: #f4f8ff;
+  border: var(--glass-rim);
+  box-shadow: var(--glass-depth);
+  border-radius: 1.75rem;
+  background: linear-gradient(155deg, #627797d9, #18273de6 52%, #0d192be8);
+}
+dialog::backdrop { background: #05091375; }
+input, textarea {
+  background: #0714268c;
+  border: 1px solid #d5e7ff55;
+  border-radius: .7rem;
+  box-shadow: inset 0 2px 5px #0006;
+}
