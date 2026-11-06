@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Órdago Films</title>
+  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="cine/cine.css?v=6">
+  <link rel="stylesheet" href="conocenos.css?v=17">
+  <link rel="stylesheet" href="mobile.css?v=5">
+  <script src="script.js?v=6" defer></script>
+  <script src="contact.js" defer></script>
+  <script src="conocenos.js?v=7" defer></script>
+  <script src="deck-motion.js?v=4" defer></script>
+  <script src="decks.js?v=7" defer></script>
+</head>
+<body>
+  <main>
+    <section class="hero" id="inicio" aria-label="Órdago Films">
+      <video class="reel" src="assets/reel.mp4?v=3" data-mobile-src="assets/reel-vertical.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <h1 class="brand"><a href="index.html" aria-label="Órdago Films, inicio"><img src="assets/logo.png" alt="Órdago Films"></a></h1>
+      <a class="contact-trigger contact-search" href="#contacto">
+        <span class="contact-search-caret" aria-hidden="true"></span>¡Cuéntanos tu idea!
+      </a>
+      <nav class="reel-nav" aria-label="Líneas de trabajo">
+        <a href="cine/index.html" data-reel="cine">Cine</a>
+        <a href="servicios/index.html" data-reel="servicios">Servicios</a>
+      </nav>
+      <a class="about-link" href="#conocenos">¡Conócenos!<span class="about-chevron" aria-hidden="true"></span></a>
+    </section>
+    <section class="about" id="conocenos" tabindex="-1">
+      <div class="about-intro">
+        <p>En <strong>Órdago Films</strong> creemos en las historias que arriesgan y emocionan, por eso las acompañamos durante todo el proceso, desde su concepción hasta la pantalla, cuidando cada decisión creativa y cada detalle de producción.</p>
+        <p><strong>¿Y por qué nosotros?</strong><br>Ofrecemos calidad cinematográfica con la cercanía de un estudio artesanal. Lo hacemos gracias a la optimización de recursos de producción, usando nuestra experiencia en diferentes medios y formatos.</p>
+      </div>
+      <h2 id="about-projects">Échale un <span class="about-eyes" aria-hidden="true"><img src="assets/conocenos/ojo-solo.png" alt="" width="80" height="72"></span><span class="about-sr">ojo</span> a nuestros proyectos</h2>
+      <div class="about-carousel" data-deck aria-labelledby="about-projects" role="region">
+        <div class="about-gallery" data-deck-track tabindex="0" aria-label="Carrusel de Cine y Servicios">
+          <ul class="about-track"></ul>
+        </div>
+        <div class="about-controls" role="group" aria-label="Controles del carrusel">
+          <button type="button" data-deck-step="-1" aria-label="Carta anterior">←</button>
+          <button type="button" data-deck-pause hidden aria-label="Pausar desplazamiento">Ⅱ</button>
+          <button type="button" data-deck-step="1" aria-label="Carta siguiente">→</button>
+        </div>
+      </div>
+      <div class="client-deck" data-deck>
+        <h2 id="client-title">Han confiado en nosotros</h2>
+        <ul class="client-logos" data-deck-track tabindex="0" aria-labelledby="client-title">
+          <li><img src="assets/clientes/iberozoa.png" alt="Iberozoa" loading="lazy" width="256" height="256"></li>
+          <li><img src="assets/clientes/picara.png" alt="La Pícara Producciones" loading="lazy" width="256" height="256"></li>
+          <li><img src="assets/clientes/thecore.png" alt="The Core" loading="lazy" width="256" height="256"></li>
+          <li><img src="assets/clientes/gplaneta.png" alt="Grupo Planeta" loading="lazy" width="256" height="256"></li>
+          <li><img src="assets/clientes/unie.png" alt="UNIE Universidad" loading="lazy" width="256" height="256"></li>
+          <li><img src="assets/clientes/oceanica.png" alt="Océanica" loading="lazy" width="256" height="256"></li>
+          <li><img src="assets/clientes/antipoda.png" alt="Antípoda" loading="lazy" width="256" height="256"></li>
+          <li><img class="client-logo-adidas" src="assets/clientes/adidas.png" alt="adidas" loading="lazy" decoding="async" width="320" height="216"></li>
+          <li><img class="client-logo-jd" src="assets/clientes/jd.svg" alt="JD Sports" loading="lazy" decoding="async" width="124" height="124"></li>
+          <li><img src="assets/clientes/global-nature-v2.png" alt="Fundación Global Nature" loading="lazy" decoding="async" width="480" height="94"></li>
+          <li><img class="client-logo-atletico" src="assets/clientes/atletico.svg" alt="Atlético de Madrid" loading="lazy" decoding="async" width="550" height="705"></li>
+          <li><img src="assets/clientes/canada.png" alt="CANADA, productora audiovisual" loading="lazy" decoding="async" width="600" height="140"></li>
+          <li><img src="assets/clientes/ufv.png" alt="Universidad Francisco de Vitoria" loading="lazy" decoding="async" width="480" height="139"></li>
+          <li><img src="assets/clientes/komunikatrik.png" alt="Komunikatrik" loading="lazy" decoding="async" width="480" height="76"></li>
+          <li><img src="assets/clientes/twic.png" alt="twic" loading="lazy" decoding="async" width="233" height="92"></li>
+        </ul>
+        <div class="work-controls" role="group" aria-label="Recorrer clientes">
+          <button type="button" data-deck-step="-1" aria-label="Clientes anteriores">←</button>
+          <button type="button" data-deck-pause aria-label="Pausar desplazamiento" hidden>Ⅱ</button>
+          <button type="button" data-deck-step="1" aria-label="Clientes siguientes">→</button>
+        </div>
+      </div>
+    </section>
+    <section class="team-section" aria-labelledby="team-title">
+      <h2 id="team-title">Conoce al equipo de <img class="team-wordmark" src="assets/logo.png" alt="Órdago Films"></h2>
+      <div class="team-members">
+        <article class="team-member">
+          <button type="button" class="cine-card team-portrait-card" data-flip aria-pressed="false" aria-label="Biografía de Mario Martín Higuera" aria-describedby="bio-mario">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img class="team-portrait" src="assets/equipo/mario.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="team-bio"><span class="cine-card-monogram" aria-hidden="true"></span><span id="bio-mario">Mario creó la productora en 2024. Se ocupa de la producción y de la relación con los clientes. Gestiona la empresa y el área de cine.</span></span></span>
+            </span>
+          </button>
+          <div><h3>Mario Martín Higuera</h3><p>Productor y fundador</p></div>
+        </article>
+        <article class="team-member">
+          <button type="button" class="cine-card team-portrait-card" data-flip aria-pressed="false" aria-label="Biografía de Javi Hernández" aria-describedby="bio-javier">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img class="team-portrait" src="assets/equipo/javier.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="team-bio"><span class="cine-card-monogram" aria-hidden="true"></span><span id="bio-javier">Javi trabaja en realización, rodaje y montaje. Se ocupa de la parte técnica de los proyectos. Formado en Dirección de Fotografía y especializado en el departamento de cámara.</span></span></span>
+            </span>
+          </button>
+          <div><h3>Javi Hernández</h3><p>Realizador y responsable técnico</p></div>
+        </article>
+        <article class="team-member">
+          <button type="button" class="cine-card team-portrait-card" data-flip aria-pressed="false" aria-label="Biografía de Olaya Guerrero" aria-describedby="bio-olaya">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img class="team-portrait" src="assets/equipo/olaya.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="team-bio"><span class="cine-card-monogram" aria-hidden="true"></span><span id="bio-olaya">Olaya trabaja en la imagen de la productora, rodaje y montaje. Lleva a cabo la parte técnica de los proyectos. Formada en Dirección de Fotografía y especializada en iluminación como Gaffer.</span></span></span>
+            </span>
+          </button>
+          <div><h3>Olaya Guerrero</h3><p>Realizadora / Diseño gráfico</p></div>
+        </article>
+      </div>
+      <aside class="team-projects" aria-label="Proyectos de Órdago">
+          <a class="cine-card team-card" href="cine/proyecto.html?id=tonos" aria-label="Ver proyecto Tonos">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img src="assets/equipo/tonos.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="cine-card-monogram" aria-hidden="true"></span><strong>Tonos</strong><span class="cine-card-action">Ver proyecto ↗</span></span>
+            </span>
+          </a>
+          <a class="cine-card team-card" href="cine/proyecto.html?id=jaen" aria-label="Ver proyecto ¿Quién se casa en julio en Jaén?">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img src="assets/cine/jaen-detalle.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="cine-card-monogram" aria-hidden="true"></span><strong>¿Quién se casa en julio en Jaén?</strong><span class="cine-card-action">Ver proyecto ↗</span></span>
+            </span>
+          </a>
+          <a class="cine-card team-card" href="cine/proyecto.html?id=ana" aria-label="Ver proyecto ANA">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img src="assets/cine/ana.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="cine-card-monogram" aria-hidden="true"></span><strong>ANA</strong><span class="cine-card-action">Ver proyecto ↗</span></span>
+            </span>
+          </a>
+          <a class="cine-card team-card" href="cine/proyecto.html?id=vigilia" aria-label="Ver proyecto Vigilia">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img src="assets/equipo/retrato.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="cine-card-monogram" aria-hidden="true"></span><strong>Vigilia</strong><span class="cine-card-action">Ver proyecto ↗</span></span>
+            </span>
+          </a>
+          <a class="cine-card team-card" href="cine/proyecto.html?id=tonos" aria-label="Ver proyecto Tonos">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img src="assets/cine/tonos-teaser.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="cine-card-monogram" aria-hidden="true"></span><strong>Tonos</strong><span class="cine-card-action">Ver proyecto ↗</span></span>
+            </span>
+          </a>
+          <a class="cine-card team-card" href="cine/proyecto.html?id=jaen" aria-label="Ver proyecto ¿Quién se casa en julio en Jaén?">
+            <span class="cine-card-faces">
+              <span class="cine-card-front"><img src="assets/cine/jaen-frame.webp" alt="" loading="lazy" decoding="async"></span>
+              <span class="cine-card-info"><span class="cine-card-monogram" aria-hidden="true"></span><strong>¿Quién se casa en julio en Jaén?</strong><span class="cine-card-action">Ver proyecto ↗</span></span>
+            </span>
+          </a>
+      </aside>
+    </section>
+    <section class="home-contact contact-section" id="contacto" tabindex="-1" aria-labelledby="contact-title">
+      <header>
+        <h2 id="contact-title">Contacta con nosotros</h2>
+        <p>Y cuéntanos tu idea :)</p>
+        <a href="mailto:info@ordagofilms.com">info@ordagofilms.com</a>
+      </header>
+      <div>
+<form id="contact-form" class="simple-contact">
+  <label>Nombre *<input name="nombre" autocomplete="given-name" required></label>
+  <label>Apellido<input name="apellido" autocomplete="family-name"></label>
+  <label>Teléfono<input name="telefono" type="tel" autocomplete="tel"></label>
+  <label>Correo electrónico *<input name="correo" type="email" autocomplete="email" required></label>
+  <label class="contact-message">Mensaje *<textarea name="proyecto" rows="6" required></textarea></label>
+  <button class="action" type="submit">Revisar mensaje</button>
+</form>
+<section id="review" hidden aria-labelledby="review-title">
+  <h3 id="review-title" tabindex="-1">Revisa tu mensaje</h3>
+  <dl></dl>
+  <button class="action" id="edit" type="button">Editar</button>
+  <a class="action" id="email">Abrir en mi correo</a>
+</section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

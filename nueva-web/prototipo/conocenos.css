@@ -1,0 +1,144 @@
+html {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
+.about {
+  display: block;
+  min-height: 100svh;
+  padding: clamp(5rem, 8vw, 9rem) 0 5rem;
+  background: #100e12;
+  isolation: isolate;
+}
+.about-intro {
+  width: min(80%, 76rem);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 8vw, 8rem);
+}
+.about-intro p {
+  margin: 0;
+  max-width: none;
+  font-size: clamp(.95rem, 1.17vw, 1.15rem);
+  line-height: 1.55;
+}
+.about #about-projects {
+  margin: clamp(2.5rem, 5vw, 5.5rem) 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 1.6vw, 1.65rem);
+  letter-spacing: 0;
+}
+#about-projects span[aria-hidden] { margin-inline: .25em; color: #d9c49d; letter-spacing: .12em; }
+.about-sr { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+.about-carousel { width: 100%; min-width: 0; contain: inline-size; }
+.about-gallery {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: none;
+  scrollbar-width: none;
+  padding-block: clamp(1.75rem, 4vw, 3rem);
+}
+.about-gallery::-webkit-scrollbar { display: none; }
+.about-track { display: flex; width: max-content; gap: clamp(1rem, 2.8vw, 3rem); padding: 0; margin: 0; list-style: none; }
+.about-track li { width: clamp(9.5rem, 16.55vw, 17rem); aspect-ratio: 7 / 10; }
+.about-track img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.about-controls { display: flex; justify-content: center; gap: .6rem; }
+.about-controls button { min-width: 2.75rem; min-height: 2.75rem; background: none; border: 0; cursor: pointer; }
+.about-controls button:disabled { opacity: .45; cursor: default; }
+@media (max-width: 650px) {
+  .about-intro { width: auto; margin-inline: 1.5rem; grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+.team-section, .home-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(3rem, 8vw, 8rem) clamp(1.5rem, 7vw, 7rem);
+}
+.team-section h2, .home-contact h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+.team-section h2 { position: sticky; top: 6rem; align-self: start; max-width: 9ch; }
+.team-members { display: grid; gap: clamp(2rem, 5vw, 5rem); }
+.team-member {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(.8rem, 2vw, 2rem);
+}
+.team-member h3, .team-member p { margin: 0 0 .5rem; }
+.team-portrait, .team-card { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: .75rem; }
+.team-portrait { filter: grayscale(1); }
+.team-card { --deal-angle: 9deg; aspect-ratio: 7 / 10; transform: rotate(var(--deal-angle)); }
+.team-card:nth-child(even) { --deal-angle: -9deg; }
+@media (prefers-reduced-motion: no-preference) {
+  .team-member.dealt .team-portrait { animation: portrait-in .45s ease-out both; }
+}
+@keyframes portrait-in { from { opacity: 0; transform: translateY(12px); } }
+.home-contact { min-height: 100dvh; align-content: center; grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr); }
+@media (max-width: 700px) {
+  .team-section, .home-contact { grid-template-columns: 1fr; }
+  .team-section h2 { position: static; max-width: none; }
+}
+
+#about-projects .about-eyes { display: inline-flex; gap: .12em; vertical-align: middle; }
+.about-eyes img { width: 2.4em; height: auto; object-fit: contain; }
+.client-deck { margin: clamp(2rem, 6vw, 6rem) auto 0; width: min(90%, 72rem); text-align: center; }
+.about .client-deck h2 { font-size: clamp(1.3rem, 2.4vw, 2.4rem); font-weight: 400; letter-spacing: -.025em; }
+.client-logos { display: flex; gap: 1rem; overflow-x: auto; padding: .85rem .2rem; list-style: none; margin: 1rem 0 0; }
+.client-logos li { flex: 0 0 clamp(6rem, 13vw, 10.5rem); aspect-ratio: 1; display: grid; place-items: center; }
+.client-logos img { width: 74%; height: auto; }
+.client-logos .client-logo-adidas { width: 52%; }
+.client-logos .client-logo-jd { width: 40%; }
+.client-logos .client-logo-atletico { width: 32%; }
+@media (min-width: 701px) {
+  .client-logos img {
+    opacity: var(--logo-visibility, 1);
+    filter: blur(calc((1 - var(--logo-visibility, 1)) * 5px));
+  }
+}
+.team-portrait-card { width: 100%; aspect-ratio: 3 / 4; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.team-portrait-card .cine-card-info { justify-content: flex-start; overflow-y: auto; font-size: clamp(.86rem, 1.3vw, 1.12rem); line-height: 1.5; }
+.team-section .cine-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.team-card .cine-card-info { padding: 9%; }
+.team-card .cine-card-info strong { font-size: clamp(.8rem, 1.35vw, 1.25rem); overflow-wrap: anywhere; }
+.team-card .cine-card-action { font-size: .78rem; }
+.team-section .cine-card { height: auto; }
+.team-section .cine-card-faces { position: absolute; inset: 0; }
+@media (min-width: 851px) {
+  .team-section { grid-template-columns: minmax(0, 1fr) minmax(0, 3.1fr) minmax(0, 1.15fr); }
+  .team-projects { display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+  .team-projects .team-card + .team-card { margin-top: -7%; }
+}
+.team-wordmark { display: block; width: min(100%, 12rem); margin-top: .4em; }
+.team-card { display: block; max-width: 14rem; }
+.team-card:is(:hover, :focus-visible) { z-index: 1; }
+@media (max-width: 850px) {
+  .team-projects { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: .6rem; }
+}
+@media (max-width: 500px) {
+  .team-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+}
+@media (hover: none) {
+  .team-card .cine-card-front::after {
+    content: "Ver proyecto ↗";
+    position: absolute;
+    inset: auto 0 0;
+    padding: .8rem .35rem .55rem;
+    background: linear-gradient(transparent, #000d);
+    color: #fff;
+    text-align: center;
+    font-size: .78rem;
+  }
+}
+
+.about-card-caption { display: none; }
+
+.team-bio { display: flex; flex-direction: column; align-items: center; gap: .75rem; margin-block: auto; flex-shrink: 0; }
+.team-bio .cine-card-monogram { margin: 0; }

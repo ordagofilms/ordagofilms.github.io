@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Órdago Films</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="contact.js" defer></script>
+</head>
+<body class="felt-ornate">
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <filter id="felt-gold">
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        4 0 -4 0 -.12"/>
+    </filter>
+  </svg>
+  <main>
+    <section class="hero" id="inicio" aria-label="Órdago Films">
+      <video class="reel" src="assets/reel.mp4?v=3" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <h1 class="brand" data-contact-origin><a href="index.html" aria-label="Órdago Films, inicio"><img src="assets/logo.png" alt="Órdago Films"></a></h1>
+      <nav class="reel-nav" aria-label="Líneas de trabajo">
+        <a href="cine/index.html" data-reel="cine">Cine</a>
+        <button type="button" data-reel="servicios" aria-pressed="false">Servicios</button>
+      </nav>
+      <button type="button" class="contact-trigger" aria-expanded="false" aria-controls="contacto">Cuéntanos tu idea</button>
+      <dialog id="contacto" aria-labelledby="contact-title">
+        <a class="contact-home" href="index.html" aria-label="Órdago Films, inicio"><img class="contact-brand" src="assets/logo.png" alt=""></a>
+        <div class="contact-header">
+          <h2 id="contact-title" tabindex="-1" autofocus>Cuéntanos tu idea</h2>
+          <button type="button" class="close" aria-label="Cerrar formulario">×</button>
+        </div>
+        <form id="contact-form">
+          <label>¿Qué quieres hacer?<textarea name="proyecto" rows="2" required></textarea></label>
+          <label>¿Qué necesitas de nosotros?<textarea name="necesidades" rows="2"></textarea></label>
+          <div class="contact-details">
+            <label>¿Cómo deberíamos llamarte?<input name="nombre" autocomplete="name" required></label>
+            <label>Correo de contacto<input name="correo" type="email" autocomplete="email" required></label>
+            <label>Teléfono <small>(opcional)</small><input name="telefono" type="tel" autocomplete="tel"></label>
+          </div>
+          <button class="action" type="submit">Revisar mensaje</button>
+        </form>
+        <section id="review" hidden aria-labelledby="review-title">
+          <h3 id="review-title" tabindex="-1">Revisa tu mensaje</h3>
+          <dl></dl>
+          <button class="action" id="edit" type="button">Editar</button>
+          <a class="action" id="email">Abrir en mi correo</a>
+        </section>
+      </dialog>
+      <a class="about-link" href="#conocenos">conócenos cojones</a>
+    </section>
+    <section class="about" id="conocenos" tabindex="-1">
+      <h2>Conócenos.</h2>
+      <p>Somos Órdago Films. Hacemos cine y producción audiovisual para marcas, artistas y productoras.</p>
+      <a href="#inicio">Volver arriba ↑</a>
+      <a class="about-email" href="mailto:info@ordagofilms.com">info@ordagofilms.com</a>
+    </section>
+  </main>
+</body>
+</html>

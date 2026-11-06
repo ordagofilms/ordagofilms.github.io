@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios · Órdago Films</title>
+  <link rel="stylesheet" href="../style.css?v=6">
+  <link rel="stylesheet" href="../cine/cine.css?v=6">
+  <link rel="stylesheet" href="../mobile.css?v=5">
+  <script src="../contact.js" defer></script>
+  <script src="services.js?v=2" defer></script>
+  <script src="portfolio.js" defer></script>
+  <script src="../cine/section-nav.js?v=2" defer></script>
+  <script src="../deck-motion.js?v=4" defer></script>
+  <script src="../decks.js?v=6" defer></script>
+</head>
+<body>
+  <main class="cine-layout">
+    <header class="cine-sidebar">
+      <a class="cine-home" href="../index.html"><img src="../assets/logo.png" alt="Órdago Films, inicio"></a>
+      <h1>Servicios</h1>
+      <nav aria-label="Secciones de Servicios">
+        <a href="#portfolio" aria-current="location">Portfolio</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+    <div class="cine-content">
+  <section class="cine-portfolio services-portfolio" id="portfolio" aria-label="Portfolio">
+    <div class="cine-carousel" data-stack-mobile data-deck>
+      <div id="services-gallery" class="cine-gallery" data-deck-track tabindex="0" aria-label="Tipos de servicios">
+        <ul class="cine-track"></ul>
+      </div>
+      <div class="cine-controls" role="group" aria-label="Recorrer servicios">
+        <button type="button" data-deck-step="-1" aria-label="Servicio anterior" aria-controls="services-gallery">←</button>
+        <button type="button" data-deck-pause aria-label="Pausar desplazamiento" hidden>Ⅱ</button>
+        <button type="button" data-deck-step="1" aria-label="Servicio siguiente" aria-controls="services-gallery">→</button>
+      </div>
+    </div>
+    <details class="services-reel">
+      <summary>Ver reel de Servicios</summary>
+      <video src="../assets/reel.mp4?v=3" controls playsinline preload="none" aria-label="Reel de Servicios"></video>
+    </details>
+  </section>
+  <section class="cine-section" id="como-trabajamos" aria-labelledby="work-title">
+    <h2 id="work-title">Cómo trabajamos</h2>
+    <div class="work-intro">
+      <p>Partimos de lo que quieres comunicar y de dónde se va a ver. Con eso decidimos el formato, el equipo y el plan de rodaje.</p>
+      <p>Te acompañamos durante la producción y el montaje, y preparamos las versiones que necesites para publicar cada pieza.</p>
+    </div>
+    <div class="work-deck" data-deck data-stack-mobile>
+      <div class="work-gallery" data-deck-track tabindex="0" aria-label="Etapas de un proyecto de servicios">
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Definimos qué quieres contar, a quién va dirigido y qué formato encaja con el proyecto."><img src="../assets/servicios/documental-1.webp" alt="" loading="lazy"><span>Idea y guion</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Organizamos equipo, localizaciones y horarios según lo que necesite la grabación."><img src="../assets/servicios/entrevistas-2.webp" alt="" loading="lazy"><span>Rodaje</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Trabajamos el ritmo, el sonido y el color para dar a cada pieza su forma final."><img src="../assets/servicios/corporativo-3.webp" alt="" loading="lazy"><span>Montaje y acabados</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Preparamos las versiones y formatos que necesites para publicar la pieza en cada canal."><img src="../assets/servicios/redes-3.webp" alt="" loading="lazy"><span>Adaptaciones</span></button>
+      </div>
+      <div class="work-controls" role="group" aria-label="Recorrer cartas">
+        <button type="button" data-deck-step="-1" aria-label="Carta anterior">←</button>
+        <button type="button" data-deck-pause aria-label="Pausar desplazamiento" hidden>Ⅱ</button>
+        <button type="button" data-deck-step="1" aria-label="Carta siguiente">→</button>
+      </div>
+      <article class="work-detail" id="work-detail" aria-live="polite" hidden>
+        <div><h3></h3><p></p></div><img alt="">
+      </article>
+    </div>
+  </section>
+  <section class="cine-section cine-contact contact-section" id="contacto" aria-labelledby="contact-title">
+    <header>
+      <h2 id="contact-title">Cuéntanos tu idea</h2>
+      <a href="mailto:info@ordagofilms.com">info@ordagofilms.com</a>
+    </header>
+    <div>
+<form id="contact-form" class="simple-contact">
+  <label>Nombre *<input name="nombre" autocomplete="given-name" required></label>
+  <label>Apellido<input name="apellido" autocomplete="family-name"></label>
+  <label>Teléfono<input name="telefono" type="tel" autocomplete="tel"></label>
+  <label>Correo electrónico *<input name="correo" type="email" autocomplete="email" required></label>
+  <label class="contact-message">Mensaje *<textarea name="proyecto" rows="6" required></textarea></label>
+  <button class="action" type="submit">Revisar mensaje</button>
+</form>
+<section id="review" hidden aria-labelledby="review-title">
+  <h3 id="review-title" tabindex="-1">Revisa tu mensaje</h3>
+  <dl></dl>
+  <button class="action" id="edit" type="button">Editar</button>
+  <a class="action" id="email">Abrir en mi correo</a>
+</section>
+    </div>
+  </section>
+
+    </div>
+  </main>
+</body>
+</html>
