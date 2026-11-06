@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cine · Órdago Films</title>
+  <link rel="stylesheet" href="../style.css?v=6">
+  <link rel="stylesheet" href="cine.css?v=6">
+  <link rel="stylesheet" href="../mobile.css?v=5">
+  <script src="../contact.js" defer></script>
+  <script src="projects.js?v=3" defer></script>
+  <script src="../deck-motion.js?v=4" defer></script>
+  <script src="cine.js?v=7" defer></script>
+  <script src="section-nav.js?v=2" defer></script>
+  <script src="../decks.js?v=6" defer></script>
+</head>
+<body class="cine-page">
+  <main class="cine-layout">
+    <header class="cine-sidebar">
+      <a class="cine-home" href="../index.html" aria-label="Órdago Films, inicio">
+        <img src="../assets/logo.png" alt="Órdago Films">
+      </a>
+      <h1>Cine</h1>
+      <nav aria-label="Secciones de Cine">
+        <a href="#portfolio" aria-current="location">Portfolio</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+    <div class="cine-content">
+  <section class="cine-portfolio" id="portfolio" aria-label="Portfolio">
+    <div class="cine-carousel" data-stack-mobile>
+    <section id="cine-gallery" class="cine-gallery" aria-label="Producciones recientes" tabindex="0">
+      <ul class="cine-track"></ul>
+    </section>
+    <div class="cine-controls" role="group" aria-label="Desplazar proyectos">
+      <button type="button" data-direction="-1" aria-label="Proyecto anterior" aria-controls="cine-gallery"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button type="button" data-deck-pause aria-label="Pausar desplazamiento" hidden>Ⅱ</button>
+      <button type="button" data-direction="1" aria-label="Proyecto siguiente" aria-controls="cine-gallery"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+    </div>
+  </section>
+  <section class="cine-section" id="como-trabajamos" aria-labelledby="work-title">
+    <h2 id="work-title">Cómo trabajamos</h2>
+    <div class="work-intro">
+      <p>En Órdago Films creemos en las historias que arriesgan y emocionan. Las acompañamos desde su concepción hasta la pantalla, cuidando cada decisión creativa y cada detalle de producción.</p>
+      <p><strong>¿Cómo lo hacemos?</strong><br>Damos a cada proyecto las dimensiones adecuadas y reunimos el equipo y los recursos que necesita. Mantenemos una comunicación transparente para encontrar soluciones durante todo el proceso.</p>
+    </div>
+    <div class="work-deck" data-deck data-stack-mobile>
+      <div class="work-gallery" data-deck-track tabindex="0" aria-label="Etapas de producción">
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Damos forma a la idea, trabajamos el guion y definimos el alcance de la película."><img src="../assets/rodaje/1.webp" alt="" loading="lazy"><span>Desarrollo</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Diseñamos el plan de trabajo y reunimos el equipo, las localizaciones y los recursos que necesita el proyecto."><img src="../assets/rodaje/4.webp" alt="" loading="lazy"><span>Preproducción</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Organizamos el trabajo en set, coordinamos a los departamentos y adaptamos el plan cuando el rodaje lo pide."><img src="../assets/rodaje/2.webp" alt="" loading="lazy"><span>Producción y rodaje</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Acompañamos la película durante el montaje, el acabado de imagen y sonido y la preparación de los materiales de entrega."><img src="../assets/rodaje/5.webp" alt="" loading="lazy"><span>Posproducción</span></button>
+      <button type="button" class="work-card" aria-expanded="false" aria-controls="work-detail" data-description="Coproducimos con otras productoras y aportamos equipo técnico para cubrir las necesidades de cada película."><img src="../assets/rodaje/3.webp" alt="" loading="lazy"><span>Coproducción y equipo técnico</span></button>
+      </div>
+      <div class="work-controls" role="group" aria-label="Recorrer cartas">
+        <button type="button" data-deck-step="-1" aria-label="Carta anterior">←</button>
+        <button type="button" data-deck-pause aria-label="Pausar desplazamiento" hidden>Ⅱ</button>
+        <button type="button" data-deck-step="1" aria-label="Carta siguiente">→</button>
+      </div>
+      <article class="work-detail" id="work-detail" aria-live="polite" hidden>
+        <div><h3></h3><p></p></div><img alt="">
+      </article>
+    </div>
+  </section>
+  <section class="cine-section cine-contact contact-section" id="contacto" aria-labelledby="contact-title">
+    <header>
+      <h2 id="contact-title">Cuéntanos tu idea</h2>
+      <a href="mailto:info@ordagofilms.com">info@ordagofilms.com</a>
+    </header>
+    <div>
+<form id="contact-form" class="simple-contact">
+  <label>Nombre *<input name="nombre" autocomplete="given-name" required></label>
+  <label>Apellido<input name="apellido" autocomplete="family-name"></label>
+  <label>Teléfono<input name="telefono" type="tel" autocomplete="tel"></label>
+  <label>Correo electrónico *<input name="correo" type="email" autocomplete="email" required></label>
+  <label class="contact-message">Mensaje *<textarea name="proyecto" rows="6" required></textarea></label>
+  <button class="action" type="submit">Revisar mensaje</button>
+</form>
+<section id="review" hidden aria-labelledby="review-title">
+  <h3 id="review-title" tabindex="-1">Revisa tu mensaje</h3>
+  <dl></dl>
+  <button class="action" id="edit" type="button">Editar</button>
+  <a class="action" id="email">Abrir en mi correo</a>
+</section>
+    </div>
+  </section>
+    </div>
+  </main>
+</body>
+</html>
