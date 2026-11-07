@@ -85,4 +85,11 @@ enableRobotsTXT = true
     url = "/contact/"
     weight = 4
 
+# Publica el prototipo como archivos estáticos en /vista-previa/.
+[[module.mounts]]
+  source = "static"
+  target = "static"
 
+[[module.mounts]]
+  source = "nueva-web/prototipo"
+  target = "static/vista-previa"
