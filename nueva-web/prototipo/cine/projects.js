@@ -12,7 +12,7 @@ const projects = [
     teaserStill: 'tonos-teaser.webp', producers: 'Órdago Films · La Mala Fama · SkyAngel Productions',
   },
   {
-    id: 'vigilia', title: 'Vigilia', poster: 'vigilia-v2.webp', titleArt: 'vigilia-titulo.svg',
+    id: 'vigilia', title: 'Vigilia', poster: 'vigilia-v3.webp', titleArt: 'vigilia-titulo.svg',
     directors: 'Ivan Dimitrov', year: 2026, duration: '15 min', genre: 'Drama histórico',
     producers: 'Órdago Films · Aparat Films',
     frames: ['vigilia-frame.webp', 'vigilia-detalle.webp'], teaserStill: 'vigilia-detalle.webp',
