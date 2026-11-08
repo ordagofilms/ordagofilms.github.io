@@ -60,25 +60,10 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
-      - name: Publish new website and preserve previous homepage
+      - name: Publish current website and exclude legacy pages from search
         env:
           SITE_BASE_URL: "${{ steps.pages.outputs.base_url }}/"
-        run: |
-          python3 - <<'PY'
-          import html
-          import os
-          import shutil
-          from pathlib import Path
-
-          public = Path("public")
-          previous = public / "web-anterior"
-          previous.mkdir(exist_ok=True)
-          homepage = (public / "index.html").read_text(encoding="utf-8")
-          base_url = html.escape(os.environ["SITE_BASE_URL"], quote=True)
-          homepage = homepage.replace("<head>", f'<head><base href="{base_url}"><meta name="robots" content="noindex,follow">', 1)
-          (previous / "index.html").write_text(homepage, encoding="utf-8")
-          shutil.copytree("nueva-web/prototipo", public, dirs_exist_ok=True)
-          PY
+        run: python3 scripts/prepare-pages.py --base-url "$SITE_BASE_URL"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
