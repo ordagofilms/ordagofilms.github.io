@@ -103,8 +103,13 @@ html {
     filter: blur(calc((1 - var(--logo-visibility, 1)) * 5px));
   }
 }
+.team-portrait-slot { container-type: inline-size; }
 .team-portrait-card { width: 100%; aspect-ratio: 3 / 4; border: 0; padding: 0; background: transparent; cursor: pointer; }
-.team-portrait-card .cine-card-info { justify-content: flex-start; overflow-y: auto; font-size: clamp(.86rem, 1.3vw, 1.12rem); line-height: 1.5; }
+.team-portrait-card .cine-card-info {
+  padding: 12%;
+  font-size: clamp(.5625rem, 7cqw, 1.05rem);
+  line-height: 1.3;
+}
 .team-section .cine-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .team-card .cine-card-info { padding: 9%; }
 .team-card .cine-card-info strong { font-size: clamp(.8rem, 1.35vw, 1.25rem); overflow-wrap: anywhere; }
@@ -140,5 +145,5 @@ html {
 
 .about-card-caption { display: none; }
 
-.team-bio { display: flex; flex-direction: column; align-items: center; gap: .75rem; margin-block: auto; flex-shrink: 0; }
-.team-bio .cine-card-monogram { margin: 0; }
+.team-bio { display: flex; flex-direction: column; align-items: center; gap: 3cqw; width: 100%; }
+.team-bio .cine-card-monogram { width: clamp(.9rem, 14cqw, 1.85rem); height: auto; aspect-ratio: 1.85 / 2.65; margin: 0; }
