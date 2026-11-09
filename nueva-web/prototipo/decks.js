@@ -38,7 +38,7 @@ for (const deck of document.querySelectorAll('[data-deck]')) {
 
       panel.querySelector('h3').textContent = card.textContent.trim();
       panel.querySelector('p').textContent = card.dataset.description;
-      panel.querySelector('img').src = card.querySelector('img').src;
+      panel.querySelector('img').src = card.dataset.detailImage || card.querySelector('img').src;
       if (panel.getBoundingClientRect().bottom > window.innerHeight) {
         panel.scrollIntoView({ block: 'nearest', behavior: deckMotion.matches ? 'instant' : 'smooth' });
       }
