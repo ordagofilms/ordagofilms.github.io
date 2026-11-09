@@ -3,8 +3,12 @@
   const gallery = carousel.querySelector('.about-gallery');
   const track = carousel.querySelector('.about-track');
   const cards = [
-    ['eventos', 'Servicios'], ['jaen-alba-v1', 'Cine'], ['marca', 'Servicios'],
-    ['atardecer', 'Cine'], ['experiencia', 'Servicios'], ['cine-rojo', 'Cine'],
+    ['assets/conocenos/eventos.jpg', 'Servicios'],
+    ['assets/conocenos/jaen-alba-v1.jpg', 'Cine'],
+    ['assets/servicios/trantran-7-10.jpg', 'Servicios'],
+    ['assets/conocenos/atardecer.jpg', 'Cine'],
+    ['assets/conocenos/experiencia-v1.webp', 'Servicios'],
+    ['assets/conocenos/cine-rojo.jpg', 'Cine'],
   ];
 
   for (const [image, category] of cards) {
@@ -15,7 +19,7 @@
     link.href = category === 'Cine' ? 'cine/index.html' : 'servicios/index.html';
     link.innerHTML = `
       <span class="cine-card-faces">
-        <span class="cine-card-front"><img alt="" loading="lazy" decoding="async" src="assets/conocenos/${image === "experiencia" ? "experiencia-v1.webp" : image + ".jpg"}"><span class="about-card-caption" aria-hidden="true">Portfolio <strong>${category}</strong></span></span>
+        <span class="cine-card-front"><img alt="" loading="lazy" decoding="async" src="${image}"><span class="about-card-caption" aria-hidden="true">Portfolio <strong>${category}</strong></span></span>
         <span class="cine-card-info">
           <span class="cine-card-monogram" aria-hidden="true"></span>
           <strong>${category}</strong>
