@@ -21,7 +21,7 @@
   }
   .hero .brand {
     grid-row: 2;
-    width: min(100%, 25rem);
+    width: min(80%, 20rem);
     margin-bottom: clamp(1.35rem, 4vh, 2.5rem);
     mix-blend-mode: normal;
   }
