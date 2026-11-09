@@ -1,6 +1,22 @@
+/* Self-hosted DM Sans: Latin characters, including Spanish accents. */
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("assets/fonts/dm-sans-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: italic;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("assets/fonts/dm-sans-latin-italic.woff2") format("woff2");
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: clip; }
-body { margin: 0; color: #111; background: #fdfdfd; font-family: Arial, sans-serif; }
+body { margin: 0; color: #111; background: #fdfdfd; font-family: "DM Sans", Arial, sans-serif; }
 button, input, textarea { font: inherit; }
 button { color: inherit; }
 a { color: inherit; }
@@ -239,3 +255,4 @@ dd { margin: .25rem 0 .9rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 
 .hero .about-link:has(.about-chevron) { display: grid; justify-items: center; gap: .38rem; }
 .about-chevron { width: .48em; height: .48em; border: solid currentColor; border-width: 0 1px 1px 0; transform: rotate(45deg); }
+
