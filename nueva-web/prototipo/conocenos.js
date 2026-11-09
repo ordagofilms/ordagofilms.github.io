@@ -3,7 +3,7 @@
   const gallery = carousel.querySelector('.about-gallery');
   const track = carousel.querySelector('.about-track');
   const cards = [
-    ['eventos', 'Servicios'], ['jaen', 'Cine'], ['marca', 'Servicios'],
+    ['eventos', 'Servicios'], ['jaen-alba-v1', 'Cine'], ['marca', 'Servicios'],
     ['atardecer', 'Cine'], ['experiencia', 'Servicios'], ['cine-rojo', 'Cine'],
   ];
 
