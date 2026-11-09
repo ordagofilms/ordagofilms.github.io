@@ -103,6 +103,11 @@ if (project) {
     producers.textContent = 'Una coproducción de ' + project.producers;
     credits.after(producers);
   }
+  if (project.cast) {
+    const cast = document.createElement('p');
+    cast.textContent = 'Cast: ' + project.cast;
+    credits.after(cast);
+  }
   if (project.description) {
     description.textContent = project.description;
     description.hidden = false;
