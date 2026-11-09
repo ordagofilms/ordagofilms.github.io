@@ -17,7 +17,7 @@ const projects = [
     producers: 'Órdago Films · Aparat Films',
     frames: ['vigilia-frame.webp', 'vigilia-detalle.webp'], teaserStill: 'vigilia-detalle.webp',
   },
-  { id: 'ana', title: 'ANA', poster: 'ana.webp', directors: 'Andrés Gese y Mario Martín' },
+  { id: 'ana', title: 'ANA', poster: 'ana-ordago.jpg', directors: 'Andrés Gese y Mario Martín' },
 ];
 
 function projectPoster(project) {
