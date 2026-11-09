@@ -108,6 +108,11 @@ if (project) {
     cast.textContent = 'Cast: ' + project.cast;
     credits.after(cast);
   }
+  if (project.status) {
+    const status = document.createElement('p');
+    status.textContent = 'Estado: ' + project.status;
+    credits.after(status);
+  }
   if (project.description) {
     description.textContent = project.description;
     description.hidden = false;
