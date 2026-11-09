@@ -247,6 +247,11 @@
   color: #fff;
 }
 .project-immersive > .cine-home { width: clamp(5.5rem, 9vw, 9rem); }
+/* Keep the original logo artwork while bringing FILMS 16 source pixels closer. */
+.project-logo { position: relative; aspect-ratio: 331 / 156; }
+.project-logo > img { position: absolute; inset: 0 auto auto 0; width: 100%; height: auto; }
+.project-logo-wordmark { clip-path: inset(0 0 22.1% 0); }
+.project-logo-films { clip-path: inset(77.9% 0 0); transform: translateY(-9.3023%); }
 .project-back { align-self: end; }
 .project-immersive .cine-home img { filter: invert(1); }
 .project-immersive .project-detail { flex: 1; align-items: center; }

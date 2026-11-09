@@ -17,7 +17,12 @@ const projects = [
     producers: 'Órdago Films · Aparat Films',
     frames: ['vigilia-frame.webp', 'vigilia-detalle.webp'], teaserStill: 'vigilia-detalle.webp',
   },
-  { id: 'ana', title: 'ANA', poster: 'ana-ordago.jpg', directors: 'Andrés Gese y Mario Martín' },
+  {
+    id: 'ana', title: 'ANA', poster: 'ana-ordago.jpg', year: 2025,
+    directors: 'Andrés Gese y Mario Martín',
+    description: 'Ana Robisco es una joven de 24 años que trabaja de au pair en Italia. Después de una adolescencia difícil, le ha surgido la oportunidad de mandar su mensaje a través de la música.',
+    frames: ['ana-fondo.jpg'],
+  },
 ];
 
 function projectPoster(project) {
