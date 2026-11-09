@@ -5,7 +5,7 @@ for (const project of projects) {
   const item = document.createElement('li');
   const link = document.createElement('a');
   link.className = 'cine-card';
-  link.href = 'proyecto.html?id=' + encodeURIComponent(project.id);
+  link.href = project.slug + '/';
   const faces = document.createElement('span');
   faces.className = 'cine-card-faces';
   const front = document.createElement('span');

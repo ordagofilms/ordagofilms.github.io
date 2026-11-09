@@ -4,7 +4,7 @@ for (const service of services) {
   const item = document.createElement('li');
   const link = document.createElement('a');
   link.className = 'cine-card service-card';
-  link.href = 'servicio.html?id=' + encodeURIComponent(service.id);
+  link.href = service.slug + '/';
   link.setAttribute('aria-label', 'Ver ' + service.title);
   link.innerHTML = `
     <span class="cine-card-faces">

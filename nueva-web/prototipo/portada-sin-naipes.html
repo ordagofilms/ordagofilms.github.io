@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <script src="routes.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Órdago Films</title>
   <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -22,14 +23,14 @@
   <main>
     <section class="hero" id="inicio" aria-label="Órdago Films">
       <video class="reel" src="assets/reel.mp4?v=3" muted loop playsinline preload="none" aria-hidden="true"></video>
-      <h1 class="brand" data-contact-origin><a href="index.html" aria-label="Órdago Films, inicio"><img src="assets/logo.png" alt="Órdago Films"></a></h1>
+      <h1 class="brand" data-contact-origin><a href="./" aria-label="Órdago Films, inicio"><img src="assets/logo.png" alt="Órdago Films"></a></h1>
       <nav class="reel-nav" aria-label="Líneas de trabajo">
-        <a href="cine/index.html" data-reel="cine">Cine</a>
+        <a href="cine/" data-reel="cine">Cine</a>
         <button type="button" data-reel="servicios" aria-pressed="false">Servicios</button>
       </nav>
       <button type="button" class="contact-trigger" aria-expanded="false" aria-controls="contacto">Cuéntanos tu idea</button>
       <dialog id="contacto" aria-labelledby="contact-title">
-        <a class="contact-home" href="index.html" aria-label="Órdago Films, inicio"><img class="contact-brand" src="assets/logo.png" alt=""></a>
+        <a class="contact-home" href="./" aria-label="Órdago Films, inicio"><img class="contact-brand" src="assets/logo.png" alt=""></a>
         <div class="contact-header">
           <h2 id="contact-title" tabindex="-1" autofocus>Cuéntanos tu idea</h2>
           <button type="button" class="close" aria-label="Cerrar formulario">×</button>

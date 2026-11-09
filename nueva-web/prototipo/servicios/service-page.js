@@ -1,7 +1,14 @@
-const serviceId = new URLSearchParams(location.search).get('id');
+const serviceId = document.documentElement.dataset.serviceId || new URLSearchParams(location.search).get('id');
 const service = services.find(item => item.id === serviceId);
 
 if (service) {
+  if (!document.documentElement.dataset.serviceId) {
+    const destination = new URL(service.slug + '/', location.href);
+    destination.search = location.search;
+    destination.searchParams.delete('id');
+    destination.hash = location.hash;
+    location.replace(destination.href);
+  }
   document.title = service.title + ' · Órdago Films';
   document.querySelector('h1').textContent = service.title;
   const description = document.querySelector('.service-heading p');

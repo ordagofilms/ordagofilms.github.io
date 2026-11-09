@@ -16,7 +16,7 @@
     const link = document.createElement('a');
     link.className = 'cine-card';
     link.setAttribute('aria-label', 'Ver portfolio de ' + category);
-    link.href = category === 'Cine' ? 'cine/index.html' : 'servicios/index.html';
+    link.href = category === 'Cine' ? 'cine/' : 'servicios/';
     link.innerHTML = `
       <span class="cine-card-faces">
         <span class="cine-card-front"><img alt="" loading="lazy" decoding="async" src="${image}"><span class="about-card-caption" aria-hidden="true">Portfolio <strong>${category}</strong></span></span>

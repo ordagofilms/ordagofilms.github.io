@@ -60,6 +60,10 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
+      - name: Check public page routes
+        run: |
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          node --test scripts/test-routes.cjs
       - name: Publish current website and exclude legacy pages from search
         env:
           SITE_BASE_URL: "${{ steps.pages.outputs.base_url }}/"

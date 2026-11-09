@@ -1,7 +1,14 @@
-const id = new URLSearchParams(location.search).get('id');
+const id = document.documentElement.dataset.projectId || new URLSearchParams(location.search).get('id');
 const project = projects.find(item => item.id === id);
 
 if (project) {
+  if (!document.documentElement.dataset.projectId) {
+    const destination = new URL(project.slug + '/', location.href);
+    destination.search = location.search;
+    destination.searchParams.delete('id');
+    destination.hash = location.hash;
+    location.replace(destination.href);
+  }
   const assets = '../assets/cine/';
   const detail = document.querySelector('.project-detail');
   const heading = detail.querySelector('h1');
@@ -93,7 +100,7 @@ if (project) {
   }
   if (project.producers) {
     const producers = document.createElement('p');
-    producers.textContent = 'Una producción de ' + project.producers;
+    producers.textContent = 'Una coproducción de ' + project.producers;
     credits.after(producers);
   }
   if (project.description) {
