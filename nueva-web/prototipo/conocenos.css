@@ -72,6 +72,10 @@ html {
   align-items: center;
   gap: clamp(.8rem, 2vw, 2rem);
 }
+@media (min-width: 701px) {
+  /* Keep the row width while reducing the portrait column by 25%. */
+  .team-member { grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); }
+}
 .team-member h3, .team-member p { margin: 0 0 .5rem; }
 .team-portrait, .team-card { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: .75rem; }
 .team-portrait { filter: grayscale(1); }
