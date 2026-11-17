@@ -16,7 +16,7 @@
 }
 .cine-home { display: block; width: clamp(5.5rem, 9vw, 9rem); }
 .cine-home img { display: block; width: 100%; height: auto; }
-.cine-sidebar h1 { margin: .7em 0 0; font-size: clamp(1.8rem, 2.8vw, 3rem); font-weight: 400; text-transform: uppercase; }
+.cine-sidebar .section-label { margin: .7em 0 0; font-size: clamp(1.8rem, 2.8vw, 3rem); font-weight: 400; text-transform: uppercase; }
 .cine-sidebar nav {
   position: absolute;
   top: var(--portfolio-top);
@@ -70,7 +70,7 @@
     border-bottom: 1px solid #1111;
   }
   .cine-content > section { scroll-margin-top: var(--cine-header-height, 8rem); }
-  .cine-sidebar h1 { margin: .7em 0 .4em; }
+  .cine-sidebar .section-label { margin: .7em 0 .4em; }
   .cine-sidebar nav { position: static; display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
   .cine-carousel { padding-top: 0; }
   .cine-track { padding: 0 var(--gutter) 1rem; }

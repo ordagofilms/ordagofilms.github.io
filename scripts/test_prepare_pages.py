@@ -64,10 +64,12 @@ class PublicRoutesTest(unittest.TestCase):
                         target = self.output / urlsplit(urljoin(base, resource)).path.lstrip('/')
                         self.assertTrue(target.is_file(), str(target))
 
-    def test_sitemap_contains_only_the_eleven_clean_public_urls(self):
+    def test_sitemap_contains_current_pages_and_legal_information(self):
         root = ET.parse(self.output / 'sitemap.xml').getroot()
         urls = [node.text for node in root.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-        self.assertEqual(len(urls), 11)
+        self.assertEqual(len(urls), 14)
+        self.assertIn(ORIGIN + 'privacidad/', urls)
+        self.assertNotIn(ORIGIN + 'gestor/', urls)
         self.assertIn(ORIGIN + 'cine/quien-se-casa-en-julio-en-jaen/', urls)
         self.assertIn(ORIGIN + 'servicios/video-corporativo/', urls)
         self.assertTrue(all(url.endswith('/') and '.html' not in url and '?' not in url for url in urls))
@@ -116,6 +118,48 @@ class PublicRoutesTest(unittest.TestCase):
             text = (output / 'cine/tonos/index.html').read_text()
             self.assertIn('<base href="/site/cine/">', text)
             self.assertIn('href="https://example.com/site/cine/tonos/"', text)
+
+    def test_detail_content_is_present_without_running_javascript(self):
+        for section, route, kind, path in self.detail_pages():
+            with self.subTest(path=path):
+                text = path.read_text()
+                self.assertIn(route['description'], text)
+                self.assertNotIn('Servicio no disponible', text)
+                self.assertNotIn('Proyecto no disponible', text)
+                self.assertTrue(any(tag == 'meta' and attrs.get('name') == 'description' and attrs.get('content') for tag, attrs in Elements(text).tags))
+
+    def test_forms_have_unique_explicit_labels_and_privacy_information(self):
+        for relative in ('index.html', 'cine/index.html', 'servicios/index.html'):
+            tags = Elements((self.output / relative).read_text()).tags
+            ids = [attrs['id'] for _, attrs in tags if attrs.get('id')]
+            self.assertFalse(any(ord(character) < 32 and character not in '\n\r\t' for character in (self.output / relative).read_text()))
+            self.assertEqual(len(ids), len(set(ids)))
+            labels = {attrs['for'] for tag, attrs in tags if tag == 'label' and attrs.get('for')}
+            for tag, attrs in tags:
+                if tag in ('input', 'textarea'):
+                    self.assertIn(attrs['id'], labels)
+                    self.assertIn(attrs['aria-describedby'], ids)
+            self.assertIn(('a', {'href': '/privacidad/'}), tags)
+
+    def test_editor_content_escapes_html_and_supports_english_pages(self):
+        import json
+        import shutil
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder) / 'source'
+            shutil.copytree(SOURCE, source)
+            data = json.loads((source / 'site-content.json').read_text())
+            data['pages']['home']['heading'] = '<script>alert(1)</script>'
+            data['articles'] = [{'title': 'About our films', 'slug': 'our-films', 'language': 'en', 'description': 'Films and audiovisual work.', 'body': 'First paragraph.\n\nSecond paragraph.'}]
+            (source / 'site-content.json').write_text(json.dumps(data))
+            output = Path(folder) / 'public'
+            output.mkdir()
+            (output / 'index.html').write_text('<html><head><title>Old</title></head><body></body></html>')
+            pages.prepare(output, source, ORIGIN)
+            home = (output / 'index.html').read_text()
+            self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', home)
+            article = (output / 'en/contenidos/our-films/index.html').read_text()
+            self.assertIn('<html lang="en">', article)
+            self.assertIn('<p>First paragraph.</p><p>Second paragraph.</p>', article)
 
 
 if __name__ == '__main__':

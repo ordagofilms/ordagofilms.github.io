@@ -118,7 +118,7 @@
     box-shadow: 0 2px 12px #17131a09;
   }
   .cine-sidebar .cine-home { width: clamp(6.5rem, 28vw, 9rem); padding-block: .35rem; }
-  .cine-sidebar h1 { margin: 0; font-size: clamp(1.1rem, 5.5vw, 1.8rem); letter-spacing: -.04em; }
+  .cine-sidebar .section-label { margin: 0; font-size: clamp(1.1rem, 5.5vw, 1.8rem); letter-spacing: -.04em; }
   .cine-sidebar nav { grid-column: 1 / -1; flex-wrap: nowrap; justify-content: space-between; gap: .5rem; font-size: clamp(.76rem, 3.6vw, 1rem); }
   .cine-sidebar nav a { display: grid; align-items: center; min-height: 44px; }
   .cine-sidebar nav a[aria-current="location"] { transform: none; text-decoration: underline; text-underline-offset: .3em; }

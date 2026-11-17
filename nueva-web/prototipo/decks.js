@@ -93,6 +93,7 @@ for (const deck of document.querySelectorAll('[data-deck]')) {
       const copy = item.cloneNode(true);
       copy.setAttribute('aria-hidden', 'true');
       copy.setAttribute('data-deck-copy', '');
+      for (const element of [copy, ...copy.querySelectorAll('[id]')]) element.removeAttribute('id');
       for (const control of [copy, ...copy.querySelectorAll('a, button')]) {
         if (control.matches('a, button')) control.tabIndex = -1;
       }

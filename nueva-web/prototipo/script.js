@@ -10,12 +10,15 @@ let activeButton = null;
 let hoverTimer;
 let heroVisible = false;
 let previewRequest = 0;
+let heroPaused = false;
+const heroMotionButton = document.querySelector('.hero-motion');
 
 function cancelHover() {
   clearTimeout(hoverTimer);
 }
 
 function preview(button, background = false) {
+  if (button && heroPaused) return;
   const request = ++previewRequest;
   activeButton = button;
   reelButtons.forEach(item => {
@@ -32,6 +35,7 @@ function preview(button, background = false) {
     : button.dataset.reelSrc || defaultReel;
   if (reel.getAttribute('src') !== source) reel.src = source;
   reel.play().then(() => {
+    if (heroMotionButton) heroMotionButton.hidden = false;
     if (request === previewRequest && background) {
       hero.classList.add('playing');
     }
@@ -118,7 +122,7 @@ function queueBrandUpdate() {
   brandFrame ??= requestAnimationFrame(updateBrand);
 }
 
-function updateBrand(now) {
+function updateBrand(now = performance.now()) {
   brandFrame = undefined;
   if (phoneHero.matches && trigger.matches('.contact-search')) {
     trigger.inert = false;
@@ -129,7 +133,7 @@ function updateBrand(now) {
     return;
   }
   const distance = Math.max(0, window.scrollY);
-  const height = hero.offsetHeight;
+  const height = Math.max(hero.offsetHeight, 1);
   const progress = Math.min(distance / (height * 0.5), 1);
   const contactExit = Math.min(distance / (height * 0.24), 1);
 
@@ -157,7 +161,7 @@ function updateBrand(now) {
   hero.style.setProperty('--brand-progress', brandProgress);
 
   const logoBottom = brand.getBoundingClientRect().bottom;
-  const linkHeight = aboutLink.offsetHeight;
+  const linkHeight = Math.max(aboutLink.offsetHeight, 1);
   const linkTop = hero.getBoundingClientRect().top + aboutLink.offsetTop - linkHeight / 2;
   const gap = 16;
   const aboutExit = Math.min(Math.max((logoBottom + gap - linkTop) / linkHeight, 0), 1);
@@ -210,4 +214,16 @@ aboutLink.addEventListener('click', event => scrollToHomeSection(event, about));
 if (trigger instanceof HTMLAnchorElement) {
   const contact = document.querySelector(trigger.hash);
   trigger.addEventListener('click', event => scrollToHomeSection(event, contact));
+}
+
+
+if (heroMotionButton) {
+  heroMotionButton.addEventListener('click', () => {
+    heroPaused = !heroPaused;
+    heroMotionButton.textContent = heroPaused ? 'Reanudar vídeo de fondo' : 'Pausar vídeo de fondo';
+    heroMotionButton.setAttribute('aria-pressed', String(heroPaused));
+    if (heroPaused) reel.pause();
+    else if (phoneHero.matches) syncPhoneReel();
+    else preview(activeButton || reelButtons[0]);
+  });
 }
