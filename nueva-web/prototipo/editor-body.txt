@@ -1,0 +1,23 @@
+<h1>Gestor de contenidos</h1>
+<p>Edita los textos de Inicio, Cine y Servicios, o crea páginas en español e inglés. Los cambios se preparan en tu navegador y se publican desde la cuenta de GitHub con permisos sobre la web.</p>
+<ol>
+  <li>Edita los campos y descarga el archivo actualizado.</li>
+  <li>Abre la carpeta de contenidos en GitHub y usa «Add file → Upload files» para sustituir <strong>site-content.json</strong> por el archivo descargado.</li>
+  <li>Confirma el cambio en GitHub. La web se actualizará cuando termine su despliegue.</li>
+</ol>
+<p>Revisa los cambios antes de publicarlos. Este editor no pide ni almacena contraseñas o claves de GitHub.</p>
+<form class="editor-form" id="content-editor">
+  <div id="editor-fields"></div>
+  <fieldset><legend>Páginas adicionales</legend>
+    <p>Cada página tiene su propia dirección, idioma, título y descripción. El texto admite párrafos separados por una línea en blanco.</p>
+    <div id="article-fields"></div>
+    <button type="button" id="add-article">Crear una página</button>
+  </fieldset>
+  <div class="editor-actions">
+    <button type="submit" class="action">Descargar cambios</button>
+    <a id="github-content-folder" href="https://github.com/ordagofilms/ordagofilms.github.io/upload/main/nueva-web/prototipo" target="_blank" rel="noopener">Abrir publicación en GitHub</a>
+  </div>
+  <p><label for="import-content">Continuar desde un archivo descargado<input id="import-content" type="file" accept="application/json,.json"></label></p>
+</form>
+<p id="editor-status" class="editor-status" role="status">Cargando los contenidos actuales…</p>
+<noscript><p>Activa JavaScript para utilizar el editor. También puedes editar los contenidos desde el repositorio en GitHub.</p></noscript>

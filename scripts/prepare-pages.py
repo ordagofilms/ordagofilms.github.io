@@ -7,6 +7,7 @@ import shutil
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 from xml.etree import ElementTree as ET
+from site_support import enhance
 
 ROBOTS_META = re.compile(
     r'<meta\b[^>]*\bname\s*=\s*(?:"(?:robots|googlebot)"|\'(?:robots|googlebot)\'|(?:robots|googlebot))(?=[\s/>])[^>]*>',
@@ -51,6 +52,13 @@ def detail_routes(data):
             if not match:
                 raise ValueError(f'Missing {field} in detail page record')
             fields[field] = match.group(1).replace("\\'", "'").replace('\\\\', '\\')
+        for field in ('description', 'poster', 'coverImage', 'genre', 'duration', 'directors'):
+            match = re.search(r"\b" + field + r"\s*:\s*'((?:\\.|[^'\\])*)'", record)
+            if match:
+                fields[field] = match.group(1).replace("\\'", "'").replace('\\\\', '\\')
+        year = re.search(r'\byear\s*:\s*(\d{4})', record)
+        if year:
+            fields['year'] = year.group(1)
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', fields['slug']):
             raise ValueError(f"Invalid page slug: {fields['slug']}")
         if any(route['slug'] == fields['slug'] or route['id'] == fields['id'] for route in routes):
@@ -86,6 +94,12 @@ def publish_detail_pages(output, source, base_url):
             document = re.sub(r'<title>[^<]*</title>', f'<title>{title} · Órdago Films</title>', document, count=1)
             document = document.replace('</head>', f'  <link rel="canonical" href="{canonical}">\n</head>', 1)
             document = re.sub(r'<h1>[^<]*</h1>', lambda _: f'<h1>{title}</h1>', document, count=1)
+            description = html.escape(route.get('description', ''))
+            if kind == 'project':
+                credits = ' · '.join(route[field] for field in ('year', 'duration', 'genre', 'directors') if route.get(field))
+                document = document.replace('<p hidden></p><p hidden></p>', f'<p>{html.escape(credits)}</p><p>{description}</p>', 1)
+            else:
+                document = document.replace('<p hidden></p>', f'<p>{description}</p>', 1)
             path = output / relative / 'index.html'
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(document, encoding='utf-8')
@@ -126,6 +140,11 @@ def prepare(output, source, base_url):
 
     shutil.copytree(source, output, dirs_exist_ok=True)
     detail_urls = publish_detail_pages(output, source, base_url)
+    records = {
+        section: detail_routes((source / section / data).read_text(encoding='utf-8'))
+        for section, data in (('cine', 'projects.js'), ('servicios', 'services.js'))
+    }
+    extra_urls = enhance(output, source, base_url, records)
 
     for prefix in ('vista-previa', 'web-anterior'):
         for page in (output / prefix).rglob('*.html'):
@@ -149,7 +168,7 @@ def prepare(output, source, base_url):
     namespace = 'http://www.sitemaps.org/schemas/sitemap/0.9'
     ET.register_namespace('', namespace)
     sitemap = ET.Element(f'{{{namespace}}}urlset')
-    urls = ['', 'cine/', 'servicios/', *detail_urls]
+    urls = ['', 'cine/', 'servicios/', *detail_urls, *extra_urls]
     for relative in dict.fromkeys(urls):
         item = ET.SubElement(sitemap, f'{{{namespace}}}url')
         ET.SubElement(item, f'{{{namespace}}}loc').text = urljoin(base_url, relative)

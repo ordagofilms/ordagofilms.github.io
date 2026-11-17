@@ -1,6 +1,6 @@
 const serviceTrack = document.querySelector('.services-portfolio .cine-track');
 
-for (const service of services) {
+for (const service of (serviceTrack.children.length ? [] : services)) {
   const item = document.createElement('li');
   const link = document.createElement('a');
   link.className = 'cine-card service-card';

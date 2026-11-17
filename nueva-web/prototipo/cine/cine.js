@@ -1,7 +1,7 @@
 const gallery = document.querySelector('.cine-gallery');
 
 const track = gallery.querySelector('.cine-track');
-for (const project of projects) {
+for (const project of (track.children.length ? [] : projects)) {
   const item = document.createElement('li');
   const link = document.createElement('a');
   link.className = 'cine-card';

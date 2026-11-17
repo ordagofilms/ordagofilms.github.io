@@ -11,28 +11,32 @@
   <link rel="stylesheet" href="../style.css?v=8">
   <link rel="stylesheet" href="cine.css?v=6">
   <link rel="stylesheet" href="../mobile.css?v=5">
-  <script src="../contact.js" defer></script>
+  <script src="../contact.js?v=20261117" defer></script>
   <script src="projects.js?v=11" defer></script>
   <script src="../deck-motion.js?v=4" defer></script>
-  <script src="cine.js?v=8" defer></script>
+  <script src="cine.js?v=20261117" defer></script>
   <script src="section-nav.js?v=2" defer></script>
-  <script src="../decks.js?v=8" defer></script>
+  <script src="../decks.js?v=20261117" defer></script>
+  <link rel="stylesheet" href="../site-support.css?v=1">
+  <script src="../consent.js?v=1" defer></script>
 </head>
 <body class="cine-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <main class="cine-layout">
     <header class="cine-sidebar">
       <a class="cine-home" href="../" aria-label="Órdago Films, inicio">
         <img src="../assets/logo.png" alt="Órdago Films">
       </a>
-      <h1>Cine</h1>
+      <p class="section-label">Cine</p>
       <nav aria-label="Secciones de Cine">
         <a href="#portfolio" aria-current="location">Portfolio</a>
         <a href="#como-trabajamos">Cómo trabajamos</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
-    <div class="cine-content">
+    <div class="cine-content" id="contenido" tabindex="-1">
   <section class="cine-portfolio" id="portfolio" aria-label="Portfolio">
+    <h1 class="portfolio-heading">Producción cinematográfica</h1>
     <div class="cine-carousel" data-stack-mobile>
     <section id="cine-gallery" class="cine-gallery" aria-label="Producciones recientes" tabindex="0">
       <ul class="cine-track"></ul>
@@ -74,12 +78,15 @@
       <a href="mailto:info@ordagofilms.com">info@ordagofilms.com</a>
     </header>
     <div>
-<form id="contact-form" class="simple-contact">
-  <label>Nombre *<input name="nombre" autocomplete="given-name" required></label>
-  <label>Apellido<input name="apellido" autocomplete="family-name"></label>
-  <label>Teléfono<input name="telefono" type="tel" autocomplete="tel"></label>
-  <label>Correo electrónico *<input name="correo" type="email" autocomplete="email" required></label>
-  <label class="contact-message">Mensaje *<textarea name="proyecto" rows="6" required></textarea></label>
+<p class="contact-help" id="contact-help">Los campos con * son obligatorios. Revisa tu mensaje antes de abrirlo en tu aplicación de correo; se enviará cuando tú lo confirmes allí.</p>
+<form id="contact-form" class="simple-contact" action="mailto:info@ordagofilms.com" method="post" enctype="text/plain" aria-describedby="contact-help">
+  <label for="contact-nombre">Nombre *<input id="contact-nombre" aria-describedby="nombre-error" name="nombre" autocomplete="given-name" required><span class="field-error" id="nombre-error" hidden></span></label>
+  <label for="contact-apellido">Apellido<input id="contact-apellido" aria-describedby="apellido-error" name="apellido" autocomplete="family-name"><span class="field-error" id="apellido-error" hidden></span></label>
+  <label for="contact-telefono">Teléfono<input id="contact-telefono" aria-describedby="telefono-error" name="telefono" type="tel" autocomplete="tel"><span class="field-error" id="telefono-error" hidden></span></label>
+  <label for="contact-correo">Correo electrónico *<input id="contact-correo" aria-describedby="correo-error" name="correo" type="email" autocomplete="email" required><span class="field-error" id="correo-error" hidden></span></label>
+  <label class="contact-message" for="contact-proyecto">Mensaje *<textarea id="contact-proyecto" aria-describedby="proyecto-error" name="proyecto" rows="6" required></textarea><span class="field-error" id="proyecto-error" hidden></span></label>
+  <p class="form-error-summary" role="alert" id="contact-errors" hidden></p>
+  <!-- CONTACT_PRIVACY -->
   <button class="action" type="submit">Revisar mensaje</button>
 </form>
 <section id="review" hidden aria-labelledby="review-title">
@@ -87,6 +94,7 @@
   <dl></dl>
   <button class="action" id="edit" type="button">Editar</button>
   <a class="action" id="email">Abrir en mi correo</a>
+  <p>El mensaje todavía no se ha enviado. Confirma el envío en tu aplicación de correo.</p>
 </section>
     </div>
   </section>

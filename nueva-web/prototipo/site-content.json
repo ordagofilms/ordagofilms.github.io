@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "company": {
+    "name": "ORDAGO FILMS PRODUCCIONES SL",
+    "taxId": "B21846167",
+    "address": "Sector Pueblos 20, Portal 5, 1ºB. 28760 Tres Cantos, Madrid, España",
+    "email": "info@ordagofilms.com",
+    "registry": "Registro Mercantil de Madrid, sección 8, hoja M-849569, inscripción 1"
+  },
+  "pages": {
+    "home": {
+      "title": "Órdago Films | Productora audiovisual y cinematográfica",
+      "description": "Productora audiovisual y cinematográfica. Desarrollamos películas, documentales, entrevistas, vídeos corporativos y contenido para redes sociales.",
+      "heading": "Productora audiovisual y cinematográfica",
+      "intro1": "En Órdago Films desarrollamos proyectos de cine y producimos contenido audiovisual para empresas, organizaciones y creadores. Acompañamos cada historia desde la idea y el guion hasta el rodaje, el montaje y la entrega.",
+      "intro2": "Trabajamos en cortometrajes, documentales, entrevistas, vídeos corporativos y piezas para redes sociales. Adaptamos el equipo y los recursos a cada proyecto, con calidad cinematográfica y una comunicación cercana durante todo el proceso."
+    },
+    "cine": {
+      "title": "Producción de cine y cortometrajes | Órdago Films",
+      "description": "Conoce las películas y cortometrajes de Órdago Films. Desarrollo, preproducción, rodaje, posproducción y coproducción cinematográfica.",
+      "heading": "Producción cinematográfica",
+      "intro1": "En Órdago Films producimos cine y acompañamos películas y cortometrajes desde el desarrollo hasta su acabado. Trabajamos el guion, la planificación y el rodaje con el equipo y los recursos que necesita cada historia.",
+      "intro2": "Participamos en desarrollo, preproducción, producción y posproducción. También colaboramos en coproducciones y aportamos equipo técnico. En nuestro portfolio puedes conocer las sinopsis, la dirección y el estado de cada proyecto."
+    },
+    "servicios": {
+      "title": "Servicios de producción audiovisual | Órdago Films",
+      "description": "Producción de documentales, entrevistas, vídeos corporativos y contenido para redes sociales. Idea, guion, rodaje, edición y entrega con Órdago Films.",
+      "heading": "Servicios de producción audiovisual",
+      "intro1": "Producimos documentales, entrevistas, vídeos corporativos y contenido para redes sociales. Partimos de lo que quieres comunicar, a quién te diriges y dónde se publicará la pieza para definir el formato, el guion y el plan de rodaje.",
+      "intro2": "Organizamos el equipo, las localizaciones y la grabación. Después trabajamos el montaje, el sonido y el color y preparamos las versiones que necesites para publicar. Puedes consultar nuestros servicios o contarnos tu proyecto para estudiar sus necesidades."
+    }
+  },
+  "articles": []
+}

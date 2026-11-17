@@ -39,8 +39,33 @@ if (dialog) {
 
 }
 
+form.noValidate = true;
+const requiredMessages = {
+  nombre: 'Indica tu nombre.', correo: 'Indica un correo electrónico válido.',
+  proyecto: 'Escribe un mensaje para explicar tu proyecto.',
+};
+function fieldError(control) {
+  const missing = control.required && !control.value.trim();
+  const message = missing ? requiredMessages[control.name] : control.validity.typeMismatch ? 'Introduce un correo como nombre@dominio.es.' : '';
+  const hint = document.getElementById(control.name + '-error');
+  if (hint) { hint.textContent = message; hint.hidden = !message; }
+  if (message) control.setAttribute('aria-invalid', 'true');
+  else control.removeAttribute('aria-invalid');
+  return message;
+}
+for (const control of form.querySelectorAll('input, textarea')) {
+  control.addEventListener('input', () => {
+    if (control.hasAttribute('aria-invalid')) fieldError(control);
+  });
+}
 form.addEventListener('submit', event => {
   event.preventDefault();
+  const controls = Array.from(form.querySelectorAll('input, textarea'));
+  const invalid = controls.filter(control => fieldError(control));
+  const errors = document.getElementById('contact-errors');
+  errors.hidden = !invalid.length;
+  errors.textContent = invalid.length ? 'Revisa los campos indicados antes de continuar.' : '';
+  if (invalid.length) { invalid[0].focus(); return; }
   const fields = new FormData(form);
   const labels = {
     nombre: 'Nombre', apellido: 'Apellido', telefono: 'Teléfono',
