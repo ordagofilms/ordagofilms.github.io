@@ -2,6 +2,7 @@
 
 import importlib.util
 import tempfile
+import re
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -140,6 +141,33 @@ class PublicRoutesTest(unittest.TestCase):
                     self.assertIn(attrs['id'], labels)
                     self.assertIn(attrs['aria-describedby'], ids)
             self.assertIn(('a', {'href': '/privacidad/'}), tags)
+
+    def test_cookie_panel_and_alternate_form_label_every_control_explicitly(self):
+        # TAW (WCAG 1.1.1, 1.3.1, 3.3.2, 4.1.2) requires each control to be named by a label with for/id.
+        for relative in ('consent.js', 'portada-sin-naipes.html'):
+            with self.subTest(file=relative):
+                tags = Elements((SOURCE / relative).read_text()).tags
+                labels = [attrs.get('for') for tag, attrs in tags if tag == 'label']
+                controls = [attrs for tag, attrs in tags if tag in ('input', 'textarea', 'select')]
+                self.assertTrue(controls)
+                self.assertTrue(all(labels))
+                for attrs in controls:
+                    self.assertIn(attrs.get('id'), labels)
+
+    def test_detail_pages_describe_the_film_or_service_for_search_engines(self):
+        import json
+        for section, route, kind, path in self.detail_pages():
+            with self.subTest(path=path):
+                text = path.read_text()
+                tags = Elements(text).tags
+                image = next(attrs['content'] for tag, attrs in tags if tag == 'meta' and attrs.get('property') == 'og:image')
+                self.assertNotIn('logo.png', image)
+                self.assertTrue((self.output / urlsplit(image).path.lstrip('/')).is_file(), image)
+                data = [json.loads(block) for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)]
+                types = {item['@type']: item for item in data}
+                self.assertEqual(types['Movie' if kind == 'project' else 'Service']['name'], route['title'])
+                self.assertEqual(types['BreadcrumbList']['itemListElement'][-1]['item'], f'{ORIGIN}{section}/{route["slug"]}/')
+                self.assertIn('Organization', types)
 
     def test_editor_content_escapes_html_and_supports_english_pages(self):
         import json

@@ -110,8 +110,8 @@
         <button type="button" data-consent="configure" aria-expanded="false" aria-controls="cookie-options">Configurar</button>
       </div>
       <fieldset id="cookie-options" hidden><legend>Preferencias</legend>
-        <label><input type="checkbox" checked disabled> Almacenamiento técnico necesario</label>
-        <label><input type="checkbox" id="cookie-analytics"> Analítica de Google Analytics</label>
+        <label for="cookie-necessary"><input type="checkbox" id="cookie-necessary" checked disabled> Almacenamiento técnico necesario</label>
+        <label for="cookie-analytics"><input type="checkbox" id="cookie-analytics"> Analítica de Google Analytics</label>
         <div class="consent-actions"><button type="button" data-consent="save">Guardar preferencias</button></div>
       </fieldset>`;
     panel.querySelector('#cookie-analytics').checked = consent?.analytics === true;
