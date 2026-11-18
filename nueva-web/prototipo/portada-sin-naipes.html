@@ -36,13 +36,14 @@
           <button type="button" class="close" aria-label="Cerrar formulario">×</button>
         </div>
         <form id="contact-form">
-          <label>¿Qué quieres hacer?<textarea name="proyecto" rows="2" required></textarea></label>
-          <label>¿Qué necesitas de nosotros?<textarea name="necesidades" rows="2"></textarea></label>
+          <label for="contact-proyecto">¿Qué quieres hacer?<textarea id="contact-proyecto" name="proyecto" rows="2" required></textarea></label>
+          <label for="contact-necesidades">¿Qué necesitas de nosotros?<textarea id="contact-necesidades" name="necesidades" rows="2"></textarea></label>
           <div class="contact-details">
-            <label>¿Cómo deberíamos llamarte?<input name="nombre" autocomplete="name" required></label>
-            <label>Correo de contacto<input name="correo" type="email" autocomplete="email" required></label>
-            <label>Teléfono <small>(opcional)</small><input name="telefono" type="tel" autocomplete="tel"></label>
+            <label for="contact-nombre">¿Cómo deberíamos llamarte?<input id="contact-nombre" name="nombre" autocomplete="name" required></label>
+            <label for="contact-correo">Correo de contacto<input id="contact-correo" name="correo" type="email" autocomplete="email" required></label>
+            <label for="contact-telefono">Teléfono <small>(opcional)</small><input id="contact-telefono" name="telefono" type="tel" autocomplete="tel"></label>
           </div>
+          <p class="form-error-summary" role="alert" id="contact-errors" hidden></p>
           <button class="action" type="submit">Revisar mensaje</button>
         </form>
         <section id="review" hidden aria-labelledby="review-title">

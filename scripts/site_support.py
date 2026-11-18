@@ -52,7 +52,7 @@ def footer(company, base_url):
 </footer>'''
 
 
-def head(document, title, description, canonical, base_url, company):
+def head(document, title, description, canonical, base_url, company, image='assets/logo.png', extra=()):
     document = re.sub(r'<title>.*?</title>', lambda _: f'<title>{esc(title)}</title>', document, count=1, flags=re.S)
     for pattern in (r'<meta\b[^>]*name="description"[^>]*>', r'<meta\b[^>]*property="og:[^"]*"[^>]*>', r'<link\b[^>]*rel="canonical"[^>]*>'):
         document = re.sub(pattern, '', document, flags=re.I)
@@ -69,9 +69,12 @@ def head(document, title, description, canonical, base_url, company):
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description)}">
   <meta property="og:url" content="{esc(canonical)}">
-  <meta property="og:image" content="{esc(urljoin(base_url, 'assets/logo.png'))}">
-  <script type="application/ld+json">{json.dumps(organization, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
+  <meta property="og:image" content="{esc(urljoin(base_url, image))}">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
 '''
+    for data in (organization, *extra):
+        metadata += f'''  <script type="application/ld+json">{json.dumps(data, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>\n'''
     return document.replace('</head>', metadata + '</head>', 1)
 
 
@@ -79,6 +82,9 @@ def document(body, title, description, relative, base_url, company, language='es
     text = f'''<!doctype html><html lang="{language}"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="{esc(link(base_url, 'style.css?v=10'))}">
   <link rel="stylesheet" href="{esc(link(base_url, 'site-support.css?v=1'))}">
   <script src="{esc(link(base_url, 'consent.js?v=1'))}" defer></script>
@@ -128,6 +134,43 @@ def legal_pages(company, base_url):
     return {'aviso-legal/': ('Aviso legal', notice), 'privacidad/': ('Política de privacidad', privacy), 'cookies/': ('Política de cookies', cookies)}
 
 
+def people(names):
+    return [name for name in re.split(r'\s*,\s*|\s+y\s+', names or '') if name]
+
+
+def detail_metadata(section, route, url, base_url):
+    """Sharing image and structured data (film or service, plus breadcrumb) for a detail page."""
+    label = 'Cine' if section == 'cine' else 'Servicios'
+    crumbs = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': base_url},
+        {'@type': 'ListItem', 'position': 2, 'name': label, 'item': urljoin(base_url, section + '/')},
+        {'@type': 'ListItem', 'position': 3, 'name': route['title'], 'item': url}]}
+    provider = {'@id': urljoin(base_url, '#organization')}
+    if section == 'cine':
+        image = 'assets/cine/' + (route.get('teaserStill') or route.get('poster') or '../logo.png')
+        item = {'@context': 'https://schema.org', '@type': 'Movie', 'name': route['title'], 'url': url,
+                'description': route.get('description', ''), 'image': urljoin(base_url, image),
+                'productionCompany': [provider]}
+        if route.get('year'):
+            item['dateCreated'] = route['year']
+        if route.get('genre'):
+            item['genre'] = re.split(r'\s+-\s+', route['genre'])
+        minutes = re.search(r'\d+', route.get('duration', ''))
+        if minutes:
+            item['duration'] = f'PT{minutes.group(0)}M'
+        if route.get('directors'):
+            item['director'] = [{'@type': 'Person', 'name': name} for name in people(route['directors'])]
+        if route.get('cast'):
+            item['actor'] = [{'@type': 'Person', 'name': name} for name in people(route['cast'])]
+    else:
+        cover = route.get('coverImage') or ('lucera.webp' if route['id'] == 'redes' else route['id'] + '-1.webp')
+        image = 'assets/servicios/' + cover
+        item = {'@context': 'https://schema.org', '@type': 'Service', 'name': route['title'], 'url': url,
+                'serviceType': route['title'], 'description': route.get('description', ''),
+                'image': urljoin(base_url, image), 'provider': provider}
+    return image, (item, crumbs)
+
+
 def enhance(output, source, base_url, routes):
     content = load_content(source)
     company = content['company']
@@ -145,7 +188,7 @@ def enhance(output, source, base_url, routes):
             for route in routes[key]:
                 title = esc(route['title'])
                 if key == 'cine':
-                    front = f'<img src="../assets/cine/{esc(route.get("poster", ""))}" alt="" loading="lazy" decoding="async">'
+                    front = f'<img src="../assets/cine/{esc(route.get("poster", ""))}" alt="Cartel de {title}" loading="lazy" decoding="async">'
                 else:
                     cover = route.get('coverImage') or ('lucera.webp' if route['id'] == 'redes' else route['id']+'-1.webp')
                     front = f'<img src="../assets/servicios/{esc(cover)}" alt="" loading="lazy" decoding="async"><span class="service-card-title">{title}</span>'
@@ -160,7 +203,9 @@ def enhance(output, source, base_url, routes):
             relative = f'{section}/{route["slug"]}/'
             path = output / relative / 'index.html'
             text = path.read_text(encoding='utf-8')
-            text = head(text, route['title']+' · Órdago Films', route.get('description') or route['title'], urljoin(base_url, relative), base_url, company)
+            url = urljoin(base_url, relative)
+            image, data = detail_metadata(section, route, url, base_url)
+            text = head(text, route['title']+' · Órdago Films', route.get('description') or route['title'], url, base_url, company, image, data)
             text = text.replace('</body>', footer(company, base_url)+'\n</body>', 1)
             path.write_text(text, encoding='utf-8')
     extra = []

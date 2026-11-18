@@ -52,7 +52,8 @@ def detail_routes(data):
             if not match:
                 raise ValueError(f'Missing {field} in detail page record')
             fields[field] = match.group(1).replace("\\'", "'").replace('\\\\', '\\')
-        for field in ('description', 'poster', 'coverImage', 'genre', 'duration', 'directors'):
+        for field in ('description', 'poster', 'coverImage', 'genre', 'duration', 'directors',
+                      'cast', 'producers', 'teaserStill'):
             match = re.search(r"\b" + field + r"\s*:\s*'((?:\\.|[^'\\])*)'", record)
             if match:
                 fields[field] = match.group(1).replace("\\'", "'").replace('\\\\', '\\')
