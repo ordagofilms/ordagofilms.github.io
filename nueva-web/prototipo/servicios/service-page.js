@@ -18,14 +18,17 @@ if (service) {
   const deck = document.querySelector('.service-deck');
   const track = deck.querySelector('.service-stills');
   track.classList.toggle('service-stills-vertical', Boolean(service.vertical));
-  for (let index = 1; index <= service.frames; index++) {
+  const frameNumbers = Array.isArray(service.frames)
+    ? service.frames
+    : Array.from({ length: service.frames }, (_, index) => index + 1);
+  for (const [index, number] of frameNumbers.entries()) {
     const item = document.createElement('li');
-    const image = serviceImage(service, index);
-    image.alt = service.title + ' · Imagen ' + index;
-    if (index > 1) image.loading = 'lazy';
+    const image = serviceImage(service, number);
+    image.alt = service.title + ' · Imagen ' + (index + 1);
+    if (index > 0) image.loading = 'lazy';
     item.append(image);
     track.append(item);
   }
-  deck.querySelector('.work-controls').hidden = service.frames < 2;
+  deck.querySelector('.work-controls').hidden = frameNumbers.length < 2;
   deck.hidden = false;
 }
