@@ -5,7 +5,7 @@ const projects = [
     year: 2026, duration: '16 min', directors: 'Paula Cruz', status: 'En distribución',
     cast: 'Carmen Orellana, Antonio Dechent, Ángel Benítez y Beatriz Peña',
     producers: 'Aquí y Allí Films, La Mirada Oblicua, EFD Studios y Órdago Films',
-    frames: ['m-main.webp'], teaserStill: 'm-2.webp',
+    frames: ['m-main.webp?v=2'], teaserStill: 'm-2.webp?v=2',
   },
   {
     id: 'jaen', slug: 'quien-se-casa-en-julio-en-jaen', title: '¿Quién se casa en julio en Jaén?', poster: 'jaen.jpg',
