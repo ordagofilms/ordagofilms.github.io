@@ -138,9 +138,12 @@
   [data-stack-mobile] .work-card { width: 100%; transform: none; }
   [data-stack-mobile] [data-deck-copy] { display: none; }
 
-  .services-portfolio .cine-track { grid-template-columns: minmax(0, 1fr); max-width: 33rem; margin-inline: auto; gap: 1rem; }
-  .services-portfolio .cine-track li { aspect-ratio: 4 / 3; }
-  .services-portfolio .service-card-title { padding: 2.2rem 1rem 1rem; font-size: 1.15rem; }
+  .services-portfolio .service-card .cine-card-faces { transform: none; }
+  .services-portfolio .service-card-title {
+    padding: 1.65rem .65rem .65rem;
+    font-size: clamp(.875rem, 3.6vw, 1.1rem);
+    line-height: 1.2;
+  }
   .services-reel { max-width: 30rem; margin: 1.5rem auto 0; padding-inline: var(--gutter); }
   .services-reel summary { padding-block: .8rem; }
   .cine-section { min-height: auto; padding: 3rem var(--gutter); }
