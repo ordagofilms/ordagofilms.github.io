@@ -1,6 +1,7 @@
 const projects = [
   {
     id: 'm', slug: 'm', title: 'M.', poster: 'm-cartel.webp',
+    description: 'Marina tiene un trabajo que le gusta y una vida estable con Javi. Al quedarse embarazada, revive el dolor de haber perdido a su madre a los quince años. ¿De verdad quiere ser madre? ¿Y si la historia se repite?',
     year: 2026, duration: '16 min', directors: 'Paula Cruz', status: 'En distribución',
     cast: 'Carmen Orellana, Antonio Dechent, Ángel Benítez y Beatriz Peña',
     producers: 'Aquí y Allí Films, La Mirada Oblicua, EFD Studios y Órdago Films',
