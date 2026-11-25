@@ -98,7 +98,8 @@ def publish_detail_pages(output, source, base_url):
             description = html.escape(route.get('description', ''))
             if kind == 'project':
                 credits = ' · '.join(route[field] for field in ('year', 'duration', 'genre', 'directors') if route.get(field))
-                document = document.replace('<p hidden></p><p hidden></p>', f'<p>{html.escape(credits)}</p><p>{description}</p>', 1)
+                synopsis = f'<p>{description}</p>' if description else '<p hidden></p>'
+                document = document.replace('<p hidden></p><p hidden></p>', f'<p>{html.escape(credits)}</p>{synopsis}', 1)
             else:
                 document = document.replace('<p hidden></p>', f'<p>{description}</p>', 1)
             path = output / relative / 'index.html'

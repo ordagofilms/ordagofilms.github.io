@@ -48,7 +48,7 @@ class PublicRoutesTest(unittest.TestCase):
 
     def test_direct_detail_routes_have_titles_canonicals_and_correct_resource_base(self):
         records = list(self.detail_pages())
-        self.assertEqual(len(records), 8)
+        self.assertEqual(len(records), 9)
         for section, route, kind, path in records:
             with self.subTest(path=path):
                 text = path.read_text()
@@ -68,9 +68,10 @@ class PublicRoutesTest(unittest.TestCase):
     def test_sitemap_contains_current_pages_and_legal_information(self):
         root = ET.parse(self.output / 'sitemap.xml').getroot()
         urls = [node.text for node in root.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-        self.assertEqual(len(urls), 14)
+        self.assertEqual(len(urls), 15)
         self.assertIn(ORIGIN + 'privacidad/', urls)
         self.assertNotIn(ORIGIN + 'gestor/', urls)
+        self.assertIn(ORIGIN + 'cine/m/', urls)
         self.assertIn(ORIGIN + 'cine/quien-se-casa-en-julio-en-jaen/', urls)
         self.assertIn(ORIGIN + 'servicios/video-corporativo/', urls)
         self.assertTrue(all(url.endswith('/') and '.html' not in url and '?' not in url for url in urls))
@@ -124,7 +125,8 @@ class PublicRoutesTest(unittest.TestCase):
         for section, route, kind, path in self.detail_pages():
             with self.subTest(path=path):
                 text = path.read_text()
-                self.assertIn(route['description'], text)
+                if route.get('description'):
+                    self.assertIn(route['description'], text)
                 self.assertNotIn('Servicio no disponible', text)
                 self.assertNotIn('Proyecto no disponible', text)
                 self.assertTrue(any(tag == 'meta' and attrs.get('name') == 'description' and attrs.get('content') for tag, attrs in Elements(text).tags))

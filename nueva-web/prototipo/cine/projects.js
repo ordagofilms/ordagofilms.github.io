@@ -1,5 +1,12 @@
 const projects = [
   {
+    id: 'm', slug: 'm', title: 'M.', poster: 'm-cartel.webp',
+    year: 2026, duration: '16 min', directors: 'Paula Cruz', status: 'En distribución',
+    cast: 'Carmen Orellana, Antonio Dechent, Ángel Benítez y Beatriz Peña',
+    producers: 'Aquí y Allí Films, La Mirada Oblicua, EFD Studios y Órdago Films',
+    frames: ['m-main.webp'], teaserStill: 'm-2.webp',
+  },
+  {
     id: 'jaen', slug: 'quien-se-casa-en-julio-en-jaen', title: '¿Quién se casa en julio en Jaén?', poster: 'jaen.jpg',
     description: 'Dos amigas de ciudad viajan a un pequeño pueblo de Jaén para asistir a una boda. Durante el trayecto, un posible embarazo y una infidelidad desatan una serie de tensiones y reproches que pondrán a prueba su amistad antes de llegar al altar.',
     titleArt: 'jaen-titulo.svg', year: 2026, duration: '11 min', genre: 'Comedia', status: 'En distribución (MMS)',
