@@ -101,6 +101,7 @@ html {
 .client-logos .client-logo-adidas { width: 52%; }
 .client-logos .client-logo-jd { width: 40%; }
 .client-logos .client-logo-atletico { width: 32%; }
+.client-logos .client-logo-multiple { width: 100%; }
 @media (min-width: 701px) {
   .client-logos img {
     opacity: var(--logo-visibility, 1);
